@@ -1,0 +1,74 @@
+package demo;
+
+import java.sql.DriverManager;
+import java.util.Scanner;
+
+public class Connection {
+	
+	private void getcon()
+    {
+        java.sql.Connection con=null;
+        try{
+            Class.forName("org.postgresql.Driver");
+            con=DriverManager.getConnection("jdbc:postgresql://localhost:5433/Test_1","postgres","rtsAdmin");
+            if(con!=null)
+                System.out.println("Connection OK");
+            else
+                System.out.println("Connection Failed");
+ 
+        }
+        catch(Exception e)
+            {
+                System.out.println(e);
+            }
+    }
+	public static void main(String[] args)
+	{
+		
+		Connection sqlconnect=new Connection();
+		sqlconnect.getcon();
+		
+		
+		String dbUrl = "jdbc:postgresql://localhost:7070/Aubaid";
+        String dbUsername = "postgres";
+        String dbPassword = "rtsAdmin";
+
+        EmployeeDAO employeeDAO = new EmployeeDAO(dbUrl, dbUsername, dbPassword);
+        EmployeeManager manager = new EmployeeManager(employeeDAO);
+		  while (true) {
+	            System.out.println("Employee Management System");
+	            System.out.println("1. Add Employee");
+	            System.out.println("2. List Employees");
+	            System.out.println("3. Update Employee");
+	            System.out.println("4. Delete Employee");
+	            System.out.println("5. Exit");
+
+	            Scanner scanner = new Scanner(System.in);
+	            int choice = scanner.nextInt();
+
+	            switch (choice) {
+	                case 1:
+	                    manager.addEmployee();
+	                    break;
+	                case 2:
+	                    manager.listEmployees();
+	                    break;
+	                case 3:
+	                    manager.updateEmployee();
+	                    break;
+	                case 4:
+	                    manager.deleteEmployee();
+	                    break;
+	                case 5:
+	                    employeeDAO.close(); // Close the database connection
+	                    System.out.println("Exiting the program.");
+	                    System.exit(0);
+	                default:
+	                    System.out.println("Invalid choice. Please try again.");
+	            }
+	        }
+	}
+	
+	
+
+}
