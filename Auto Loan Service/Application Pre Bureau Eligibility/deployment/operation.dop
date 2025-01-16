@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" rulesetName="operation" targetRuleProjectName="Application Pre Bureau Eligibility">
+  <name>Application_Pre_Bureau_Eligibility</name>
+  <uuid>53eeddb1-1003-4008-bca6-95f16b1a7332</uuid>
+  <decisionModel href="../rules/decisionModel.dmo#1f686877-6ad1-4bb4-b3a5-774f6d1026da"/>
+  <targetRuleProject href="../../Application%20Pre%20Bureau%20Eligibility#84641ea5-645c-4d1c-b11f-572b18489552"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>

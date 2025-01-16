@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionmodel:DecisionModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionmodel="http://com.ibm.rules.studio/model/decisionmodel.ecore">
+  <name>decisionModel</name>
+  <uuid>1f686877-6ad1-4bb4-b3a5-774f6d1026da</uuid>
+  <locale>en_US</locale>
+  <definition><definitions xmlns="http://www.omg.org/spec/DMN/20180521/MODEL/" id="decisions" name="diagram" namespace="">
+    <extensionElements>
+        <locale xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" id="en_US"/>
+    </extensionElements>
+    <inputData id="node_0" name="Application">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Application" collection="false" name="Application"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_0_ii" name="Application" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.Application"/>
+    </inputData>
+    <decision id="node_1" name="Applicant Submitted Income Acceptability">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Application" collection="false" name="Application"/>
+                <output bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Acceptable$NotAcceptable" collection="false" name="Applicant Submitted Income Acceptability"/>
+                <rule defaultRule="false" href="node_1/Applicant%20Submitted%20Income%20Acceptability.dmt" kind="DecisionTable" name="Applicant Submitted Income Acceptability"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_1_ii" name="Applicant Submitted Income Acceptability" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.Acceptable$NotAcceptable"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+    </decision>
+    <inputData id="node_2" name="Customer">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Customer" collection="true" name="Customer"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_2_ii" name="Customer" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.Customer[]"/>
+    </inputData>
+    <decision id="node_3" name="Applicant Age">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Application" collection="false" name="Application"/>
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Customer" collection="true" name="Customer"/>
+                <output bomType="java.lang.Double" collection="true" name="Applicant Age"/>
+                <rule defaultRule="false" href="node_3/Applicant%20Age.drl" kind="BusinessRule" name="Applicant Age"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_3_ii" name="Applicant Age" typeRef="java.lang.Double[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_4" name="Applicant Age Acceptability">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.Double" collection="true" name="Applicant Age"/>
+                <output bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Acceptable$NotAcceptable" collection="true" name="Applicant Age Acceptability"/>
+                <rule defaultRule="false" href="node_4/Applicant%20Age%20Acceptability.dmt" kind="DecisionTable" name="Applicant Age Acceptability"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_4_ii" name="Applicant Age Acceptability" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.Acceptable$NotAcceptable[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_3"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_5" name="Applicant Location Acceptability">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Customer" collection="true" name="Customer"/>
+                <output bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Acceptable$NotAcceptable" collection="true" name="Applicant Location Acceptability"/>
+                <rule defaultRule="false" href="node_5/Applicant%20Location%20Acceptability.dmt" kind="DecisionTable" name="Applicant Location Acceptability"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_5_ii" name="Applicant Location Acceptability" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.Acceptable$NotAcceptable[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_6" name="Applicant Employment Acceptability">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Customer" collection="true" name="Customer"/>
+                <output bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Acceptable$NotAcceptable" collection="true" name="Applicant Employment Acceptability"/>
+                <rule defaultRule="false" href="node_6/Applicant%20Employment%20Acceptability.dmt" kind="DecisionTable" name="Applicant Employment Acceptability"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_6_ii" name="Applicant Employment Acceptability" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.Acceptable$NotAcceptable[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_7" name="Applicant Eligibility">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Acceptable$NotAcceptable" collection="false" name="Applicant Submitted Income Acceptability"/>
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Acceptable$NotAcceptable" collection="true" name="Applicant Age Acceptability"/>
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Acceptable$NotAcceptable" collection="true" name="Applicant Location Acceptability"/>
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Acceptable$NotAcceptable" collection="true" name="Applicant Employment Acceptability"/>
+                <output bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Eligible$NotEligible" collection="true" name="Applicant Eligibility"/>
+                <rule defaultRule="false" href="node_7/Applicant%20Eligibility.dmt" kind="DecisionTable" name="Applicant Eligibility"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_7_ii" name="Applicant Eligibility" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.Eligible$NotEligible[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_1"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_4"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_5"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_6"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_8" name="Application PreBureau Eligibility">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Eligible$NotEligible" collection="true" name="Applicant Eligibility"/>
+                <output bomType="java.lang.String" collection="false" name="Application PreBureau Eligibility"/>
+                <rule defaultRule="false" href="node_8/Application%20PreBureau%20Eligibility.drl" kind="BusinessRule" name="Application PreBureau Eligibility"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_8_ii" name="Application PreBureau Eligibility" typeRef="java.lang.String"/>
+        <informationRequirement>
+            <requiredInput href="#node_7"/>
+        </informationRequirement>
+    </decision>
+</definitions>
+</definition>
+</com.ibm.rules.studio.model.decisionmodel:DecisionModel>

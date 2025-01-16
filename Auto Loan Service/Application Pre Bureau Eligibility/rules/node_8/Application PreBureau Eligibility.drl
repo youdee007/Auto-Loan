@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Application PreBureau Eligibility</name>
+  <uuid>1c2f1d8c-ccfc-4e5b-8fa7-8b4826ff493a</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[definitions 
+	set 'an Applicant Eligibility' to an Eligible/Not Eligible in 'Applicant Eligibility' ; 
+if
+	'an Applicant Eligibility' is one of { Not Eligible } 
+then
+	set decision to "Not Eligible" ;
+     
+else 
+ set decision to "Eligible" ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

@@ -1,0 +1,865 @@
+
+package agull.auto_loan_demo.auto_loan_service.datastructure;
+
+
+class Acceptable$NotAcceptable
+        extends java.lang.Enum
+        property ads.typeId "11"
+        property com.fasterxml.jackson.annotation.JsonTypeName "Acceptable/NotAcceptable"
+        #de.generated
+{
+    domain {static acceptable, static notAcceptable}
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.Acceptable$NotAcceptable acceptable
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Acceptable";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.Acceptable$NotAcceptable notAcceptable
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Not Acceptable";
+}
+
+class AccountNetCharacteristics
+        property ads.typeId "10"
+        property com.fasterxml.jackson.annotation.JsonTypeName "AccountNetCharacteristics"
+        #de.generated
+{
+    java.time.LocalDate dateOfMostRecentBankruptcyDischarge
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "dateOfMostRecentBankruptcyDischarge"
+                #update;
+    java.time.LocalDate dateOfMostRecentBankruptcyReportedDate
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "dateOfMostRecentBankruptcyReportedDate"
+                #update;
+    AccountNetCharacteristics(java.time.LocalDate dateOfMostRecentBankruptcyDischarge, java.time.LocalDate dateOfMostRecentBankruptcyReportedDate)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    AccountNetCharacteristics()
+                #dataio.default;
+}
+
+class Application
+        property ads.typeId "1"
+        property com.fasterxml.jackson.annotation.JsonTypeName "Application"
+        #de.generated
+{
+    boolean borrowerAdded
+                property ads.attributeId "13"
+                property com.fasterxml.jackson.annotation.JsonProperty "borrowerAdded"
+                #update;
+    boolean borrowerRemoved
+                property ads.attributeId "21"
+                property com.fasterxml.jackson.annotation.JsonProperty "borrowerRemoved"
+                #update;
+    double combinedTDSR
+                property ads.attributeId "24"
+                property com.fasterxml.jackson.annotation.JsonProperty "combinedTDSR"
+                #update;
+    string createdBy
+                property ads.attributeId "14"
+                property com.fasterxml.jackson.annotation.JsonProperty "createdBy"
+                #update;
+    java.time.LocalDate createdOn
+                property ads.attributeId "25"
+                property com.fasterxml.jackson.annotation.JsonProperty "createdOn"
+                #update;
+    string customerProvince
+                property ads.attributeId "29"
+                property com.fasterxml.jackson.annotation.JsonProperty "customerProvince"
+                #update;
+    boolean dealerBlacklistIndicator
+                property ads.attributeId "32"
+                property com.fasterxml.jackson.annotation.JsonProperty "dealerBlacklistIndicator"
+                #update;
+    string dealerID
+                property ads.attributeId "31"
+                property com.fasterxml.jackson.annotation.JsonProperty "dealerID"
+                #update;
+    string dealerName
+                property ads.attributeId "19"
+                property com.fasterxml.jackson.annotation.JsonProperty "dealerName"
+                #update;
+    double id
+                property ads.attributeId "26"
+                property com.fasterxml.jackson.annotation.JsonProperty "id"
+                #update;
+    string incomeStatus
+                property ads.attributeId "15"
+                property com.fasterxml.jackson.annotation.JsonProperty "incomeStatus"
+                #update;
+    double interestRate
+                property ads.attributeId "16"
+                property com.fasterxml.jackson.annotation.JsonProperty "interestRate"
+                #update;
+    double ltv
+                property ads.attributeId "17"
+                property com.fasterxml.jackson.annotation.JsonProperty "ltv"
+                #update;
+    string productType
+                property ads.attributeId "4"
+                property com.fasterxml.jackson.annotation.JsonProperty "productType"
+                #update;
+    double pti
+                property ads.attributeId "11"
+                property com.fasterxml.jackson.annotation.JsonProperty "pti"
+                #update;
+    java.time.LocalDate requestDate
+                property ads.attributeId "30"
+                property com.fasterxml.jackson.annotation.JsonProperty "requestDate"
+                #update;
+    string riskTierCode
+                property ads.attributeId "22"
+                property com.fasterxml.jackson.annotation.JsonProperty "riskTierCode"
+                #update;
+    string shoppingCustomerFlag
+                property ads.attributeId "18"
+                property com.fasterxml.jackson.annotation.JsonProperty "shoppingCustomerFlag"
+                #update;
+    string source
+                property ads.attributeId "10"
+                property com.fasterxml.jackson.annotation.JsonProperty "source"
+                #update;
+    double submittedIncome
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "submittedIncome"
+                #update;
+    double tds
+                property ads.attributeId "9"
+                property com.fasterxml.jackson.annotation.JsonProperty "tds"
+                #update;
+    double tdsExpenses
+                property ads.attributeId "12"
+                property com.fasterxml.jackson.annotation.JsonProperty "tdsExpenses"
+                #update;
+    double tdsIncome
+                property ads.attributeId "6"
+                property com.fasterxml.jackson.annotation.JsonProperty "tdsIncome"
+                #update;
+    double verifiedMonthlyIncome
+                property ads.attributeId "28"
+                property com.fasterxml.jackson.annotation.JsonProperty "verifiedMonthlyIncome"
+                #update;
+    double warrantyMonths
+                property ads.attributeId "5"
+                property com.fasterxml.jackson.annotation.JsonProperty "warrantyMonths"
+                #update;
+    double worksheetAmount
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "worksheetAmount"
+                #update;
+    double worksheetBuyRate
+                property ads.attributeId "8"
+                property com.fasterxml.jackson.annotation.JsonProperty "worksheetBuyRate"
+                #update;
+    double worksheetExtendedWarranty
+                property ads.attributeId "7"
+                property com.fasterxml.jackson.annotation.JsonProperty "worksheetExtendedWarranty"
+                #update;
+    string worksheetOptionalAHInsurance
+                property ads.attributeId "27"
+                property com.fasterxml.jackson.annotation.JsonProperty "worksheetOptionalAHInsurance"
+                #update;
+    double worksheetOptionalLifeInsurance
+                property ads.attributeId "20"
+                property com.fasterxml.jackson.annotation.JsonProperty "worksheetOptionalLifeInsurance"
+                #update;
+    double worksheetTerm
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "worksheetTerm"
+                #update;
+    double worksheetTotalMthPay
+                property ads.attributeId "23"
+                property com.fasterxml.jackson.annotation.JsonProperty "worksheetTotalMthPay"
+                #update;
+    Application(boolean borrowerAdded, 
+        boolean borrowerRemoved, 
+        double combinedTDSR, 
+        string createdBy, 
+        java.time.LocalDate createdOn, 
+        string customerProvince, 
+        boolean dealerBlacklistIndicator, 
+        string dealerID, 
+        string dealerName, 
+        double id, 
+        string incomeStatus, 
+        double interestRate, 
+        double ltv, 
+        string productType, 
+        double pti, 
+        java.time.LocalDate requestDate, 
+        string riskTierCode, 
+        string shoppingCustomerFlag, 
+        string source, 
+        double submittedIncome, 
+        double tds, 
+        double tdsExpenses, 
+        double tdsIncome, 
+        double verifiedMonthlyIncome, 
+        double warrantyMonths, 
+        double worksheetAmount, 
+        double worksheetBuyRate, 
+        double worksheetExtendedWarranty, 
+        string worksheetOptionalAHInsurance, 
+        double worksheetOptionalLifeInsurance, 
+        double worksheetTerm, 
+        double worksheetTotalMthPay)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    Application()
+                #dataio.default;
+}
+
+class Asset
+        property ads.typeId "2"
+        property com.fasterxml.jackson.annotation.JsonTypeName "Asset"
+        #de.generated
+{
+    string adds
+                property ads.attributeId "16"
+                property com.fasterxml.jackson.annotation.JsonProperty "adds"
+                #update;
+    double adjustedMSRP
+                property ads.attributeId "13"
+                property com.fasterxml.jackson.annotation.JsonProperty "adjustedMSRP"
+                #update;
+    string bodyStyle
+                property ads.attributeId "10"
+                property com.fasterxml.jackson.annotation.JsonProperty "bodyStyle"
+                #update;
+    double bookValue
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "bookValue"
+                #update;
+    double cashSalePrice
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "cashSalePrice"
+                #update;
+    string condition
+                property ads.attributeId "6"
+                property com.fasterxml.jackson.annotation.JsonProperty "condition"
+                #update;
+    string description
+                property ads.attributeId "11"
+                property com.fasterxml.jackson.annotation.JsonProperty "description"
+                #update;
+    double id
+                property ads.attributeId "8"
+                property com.fasterxml.jackson.annotation.JsonProperty "id"
+                #update;
+    string make
+                property ads.attributeId "9"
+                property com.fasterxml.jackson.annotation.JsonProperty "make"
+                #update;
+    double mileage
+                property ads.attributeId "4"
+                property com.fasterxml.jackson.annotation.JsonProperty "mileage"
+                #update;
+    string model
+                property ads.attributeId "15"
+                property com.fasterxml.jackson.annotation.JsonProperty "model"
+                #update;
+    double sequenceNumber
+                property ads.attributeId "14"
+                property com.fasterxml.jackson.annotation.JsonProperty "sequenceNumber"
+                #update;
+    string series
+                property ads.attributeId "7"
+                property com.fasterxml.jackson.annotation.JsonProperty "series"
+                #update;
+    string vehiclePrimaryUse
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "vehiclePrimaryUse"
+                #update;
+    string vin
+                property ads.attributeId "5"
+                property com.fasterxml.jackson.annotation.JsonProperty "vin"
+                #update;
+    double year
+                property ads.attributeId "12"
+                property com.fasterxml.jackson.annotation.JsonProperty "year"
+                #update;
+    Asset(string adds, 
+        double adjustedMSRP, 
+        string bodyStyle, 
+        double bookValue, 
+        double cashSalePrice, 
+        string condition, 
+        string description, 
+        double id, 
+        string make, 
+        double mileage, 
+        string model, 
+        double sequenceNumber, 
+        string series, 
+        string vehiclePrimaryUse, 
+        string vin, 
+        double year)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    Asset()
+                #dataio.default;
+}
+
+class CreditBureauReport
+        property ads.typeId "7"
+        property com.fasterxml.jackson.annotation.JsonTypeName "CreditBureauReport"
+        #de.generated
+{
+    string accountType
+                property ads.attributeId "5"
+                property com.fasterxml.jackson.annotation.JsonProperty "accountType"
+                #update;
+    double creditScore
+                property ads.attributeId "14"
+                property com.fasterxml.jackson.annotation.JsonProperty "creditScore"
+                #update;
+    string creditScoreProduct
+                property ads.attributeId "11"
+                property com.fasterxml.jackson.annotation.JsonProperty "creditScoreProduct"
+                #update;
+    string currentMannerOfPayment
+                property ads.attributeId "10"
+                property com.fasterxml.jackson.annotation.JsonProperty "currentMannerOfPayment"
+                #update;
+    string latePaymentIndicator
+                property ads.attributeId "8"
+                property com.fasterxml.jackson.annotation.JsonProperty "latePaymentIndicator"
+                #update;
+    double monthsSinceAnyBankruptcy
+                property ads.attributeId "13"
+                property com.fasterxml.jackson.annotation.JsonProperty "monthsSinceAnyBankruptcy"
+                #update;
+    double monthsSinceAnyCollection
+                property ads.attributeId "9"
+                property com.fasterxml.jackson.annotation.JsonProperty "monthsSinceAnyCollection"
+                #update;
+    double monthsSinceAnyConsumerProposal
+                property ads.attributeId "4"
+                property com.fasterxml.jackson.annotation.JsonProperty "monthsSinceAnyConsumerProposal"
+                #update;
+    double monthsSinceAnyRepossesion
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "monthsSinceAnyRepossesion"
+                #update;
+    double monthsSinceOldestDateOpen
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "monthsSinceOldestDateOpen"
+                #update;
+    string newTradesOpenInTheLast6Months
+                property ads.attributeId "7"
+                property com.fasterxml.jackson.annotation.JsonProperty "newTradesOpenInTheLast6Months"
+                #update;
+    string primaryBureau
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "primaryBureau"
+                #update;
+    string segment
+                property ads.attributeId "15"
+                property com.fasterxml.jackson.annotation.JsonProperty "segment"
+                #update;
+    boolean telecomIndicator
+                property ads.attributeId "6"
+                property com.fasterxml.jackson.annotation.JsonProperty "telecomIndicator"
+                #update;
+    double totalOpenTrades
+                property ads.attributeId "12"
+                property com.fasterxml.jackson.annotation.JsonProperty "totalOpenTrades"
+                #update;
+    CreditBureauReport(string accountType, 
+        double creditScore, 
+        string creditScoreProduct, 
+        string currentMannerOfPayment, 
+        string latePaymentIndicator, 
+        double monthsSinceAnyBankruptcy, 
+        double monthsSinceAnyCollection, 
+        double monthsSinceAnyConsumerProposal, 
+        double monthsSinceAnyRepossesion, 
+        double monthsSinceOldestDateOpen, 
+        string newTradesOpenInTheLast6Months, 
+        string primaryBureau, 
+        string segment, 
+        boolean telecomIndicator, 
+        double totalOpenTrades)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    CreditBureauReport()
+                #dataio.default;
+}
+
+class Customer
+        property ads.typeId "4"
+        property com.fasterxml.jackson.annotation.JsonTypeName "Customer"
+        #de.generated
+{
+    double applicationID
+                property ads.attributeId "22"
+                property com.fasterxml.jackson.annotation.JsonProperty "applicationID"
+                #update;
+    double customScore
+                property ads.attributeId "31"
+                property com.fasterxml.jackson.annotation.JsonProperty "customScore"
+                #update;
+    double customerScore
+                property ads.attributeId "15"
+                property com.fasterxml.jackson.annotation.JsonProperty "customerScore"
+                #update;
+    string customerType
+                property ads.attributeId "30"
+                property com.fasterxml.jackson.annotation.JsonProperty "customerType"
+                #update;
+    java.time.LocalDate dateOfBirth
+                property ads.attributeId "20"
+                property com.fasterxml.jackson.annotation.JsonProperty "dateOfBirth"
+                #update;
+    double empMonths
+                property ads.attributeId "23"
+                property com.fasterxml.jackson.annotation.JsonProperty "empMonths"
+                #update;
+    string empStatus
+                property ads.attributeId "19"
+                property com.fasterxml.jackson.annotation.JsonProperty "empStatus"
+                #update;
+    string empType
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "empType"
+                #update;
+    double empYears
+                property ads.attributeId "16"
+                property com.fasterxml.jackson.annotation.JsonProperty "empYears"
+                #update;
+    string employerName
+                property ads.attributeId "6"
+                property com.fasterxml.jackson.annotation.JsonProperty "employerName"
+                #update;
+    double grossIncome
+                property ads.attributeId "4"
+                property com.fasterxml.jackson.annotation.JsonProperty "grossIncome"
+                #update;
+    string grossIncomeFrq
+                property ads.attributeId "11"
+                property com.fasterxml.jackson.annotation.JsonProperty "grossIncomeFrq"
+                #update;
+    string id
+                property ads.attributeId "25"
+                property com.fasterxml.jackson.annotation.JsonProperty "id"
+                #update;
+    double incomeMonth
+                property ads.attributeId "28"
+                property com.fasterxml.jackson.annotation.JsonProperty "incomeMonth"
+                #update;
+    string incomeType
+                property ads.attributeId "18"
+                property com.fasterxml.jackson.annotation.JsonProperty "incomeType"
+                #update;
+    double insolvAmt
+                property ads.attributeId "10"
+                property com.fasterxml.jackson.annotation.JsonProperty "insolvAmt"
+                #update;
+    double maxPTI
+                property ads.attributeId "8"
+                property com.fasterxml.jackson.annotation.JsonProperty "maxPTI"
+                #update;
+    double maxTDSRatio
+                property ads.attributeId "9"
+                property com.fasterxml.jackson.annotation.JsonProperty "maxTDSRatio"
+                #update;
+    string occupation
+                property ads.attributeId "26"
+                property com.fasterxml.jackson.annotation.JsonProperty "occupation"
+                #update;
+    string otherDescription
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "otherDescription"
+                #update;
+    string otherFrq
+                property ads.attributeId "14"
+                property com.fasterxml.jackson.annotation.JsonProperty "otherFrq"
+                #update;
+    double otherIncomeAmt
+                property ads.attributeId "13"
+                property com.fasterxml.jackson.annotation.JsonProperty "otherIncomeAmt"
+                #update;
+    string otherIncomeType
+                property ads.attributeId "17"
+                property com.fasterxml.jackson.annotation.JsonProperty "otherIncomeType"
+                #update;
+    string province
+                property ads.attributeId "27"
+                property com.fasterxml.jackson.annotation.JsonProperty "province"
+                #update;
+    string relationCode
+                property ads.attributeId "5"
+                property com.fasterxml.jackson.annotation.JsonProperty "relationCode"
+                #update;
+    double sequenceNumber
+                property ads.attributeId "7"
+                property com.fasterxml.jackson.annotation.JsonProperty "sequenceNumber"
+                #update;
+    string sin
+                property ads.attributeId "21"
+                property com.fasterxml.jackson.annotation.JsonProperty "sin"
+                #update;
+    string state
+                property ads.attributeId "29"
+                property com.fasterxml.jackson.annotation.JsonProperty "state"
+                #update;
+    string streetNumber
+                property ads.attributeId "24"
+                property com.fasterxml.jackson.annotation.JsonProperty "streetNumber"
+                #update;
+    double tdsIncome
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "tdsIncome"
+                #update;
+    double totalHouseAutOblig
+                property ads.attributeId "12"
+                property com.fasterxml.jackson.annotation.JsonProperty "totalHouseAutOblig"
+                #update;
+    Customer(double applicationID, 
+        double customScore, 
+        double customerScore, 
+        string customerType, 
+        java.time.LocalDate dateOfBirth, 
+        double empMonths, 
+        string empStatus, 
+        string empType, 
+        double empYears, 
+        string employerName, 
+        double grossIncome, 
+        string grossIncomeFrq, 
+        string id, 
+        double incomeMonth, 
+        string incomeType, 
+        double insolvAmt, 
+        double maxPTI, 
+        double maxTDSRatio, 
+        string occupation, 
+        string otherDescription, 
+        string otherFrq, 
+        double otherIncomeAmt, 
+        string otherIncomeType, 
+        string province, 
+        string relationCode, 
+        double sequenceNumber, 
+        string sin, 
+        string state, 
+        string streetNumber, 
+        double tdsIncome, 
+        double totalHouseAutOblig)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    Customer()
+                #dataio.default;
+}
+
+class Debt
+        property ads.typeId "6"
+        property com.fasterxml.jackson.annotation.JsonTypeName "Debt"
+        #de.generated
+{
+    string actType
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "actType"
+                #update;
+    string autoLoanType
+                property ads.attributeId "17"
+                property com.fasterxml.jackson.annotation.JsonProperty "autoLoanType"
+                #update;
+    double balAmt
+                property ads.attributeId "8"
+                property com.fasterxml.jackson.annotation.JsonProperty "balAmt"
+                #update;
+    string creditorName
+                property ads.attributeId "5"
+                property com.fasterxml.jackson.annotation.JsonProperty "creditorName"
+                #update;
+    string currPmt
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "currPmt"
+                #update;
+    java.time.LocalDate dateOpened
+                property ads.attributeId "6"
+                property com.fasterxml.jackson.annotation.JsonProperty "dateOpened"
+                #update;
+    java.time.LocalDate dateReported
+                property ads.attributeId "15"
+                property com.fasterxml.jackson.annotation.JsonProperty "dateReported"
+                #update;
+    double highCredAmt
+                property ads.attributeId "11"
+                property com.fasterxml.jackson.annotation.JsonProperty "highCredAmt"
+                #update;
+    boolean manuallyAdded
+                property ads.attributeId "16"
+                property com.fasterxml.jackson.annotation.JsonProperty "manuallyAdded"
+                #update;
+    string modifiedBy
+                property ads.attributeId "10"
+                property com.fasterxml.jackson.annotation.JsonProperty "modifiedBy"
+                #update;
+    double monthlyPmtAmt
+                property ads.attributeId "9"
+                property com.fasterxml.jackson.annotation.JsonProperty "monthlyPmtAmt"
+                #update;
+    string narrativesOrFrequency
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "narrativesOrFrequency"
+                #update;
+    double origMonthPmtAmt
+                property ads.attributeId "13"
+                property com.fasterxml.jackson.annotation.JsonProperty "origMonthPmtAmt"
+                #update;
+    string paymentRate
+                property ads.attributeId "4"
+                property com.fasterxml.jackson.annotation.JsonProperty "paymentRate"
+                #update;
+    string portfolioType
+                property ads.attributeId "7"
+                property com.fasterxml.jackson.annotation.JsonProperty "portfolioType"
+                #update;
+    double tradeRating
+                property ads.attributeId "14"
+                property com.fasterxml.jackson.annotation.JsonProperty "tradeRating"
+                #update;
+    boolean used
+                property ads.attributeId "12"
+                property com.fasterxml.jackson.annotation.JsonProperty "used"
+                #update;
+    Debt(string actType, 
+        string autoLoanType, 
+        double balAmt, 
+        string creditorName, 
+        string currPmt, 
+        java.time.LocalDate dateOpened, 
+        java.time.LocalDate dateReported, 
+        double highCredAmt, 
+        boolean manuallyAdded, 
+        string modifiedBy, 
+        double monthlyPmtAmt, 
+        string narrativesOrFrequency, 
+        double origMonthPmtAmt, 
+        string paymentRate, 
+        string portfolioType, 
+        double tradeRating, 
+        boolean used)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    Debt()
+                #dataio.default;
+}
+
+class Eligible$NotEligible
+        extends java.lang.Enum
+        property ads.typeId "12"
+        property com.fasterxml.jackson.annotation.JsonTypeName "Eligible/NotEligible"
+        #de.generated
+{
+    domain {static eligible, static notEligible}
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.Eligible$NotEligible eligible
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Eligible";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.Eligible$NotEligible notEligible
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Not Eligible";
+}
+
+class EquifaxReport
+        property ads.typeId "8"
+        property com.fasterxml.jackson.annotation.JsonTypeName "EquifaxReport"
+        #de.generated
+{
+    double amount
+                property ads.attributeId "11"
+                property com.fasterxml.jackson.annotation.JsonProperty "amount"
+                #update;
+    boolean consumerStatement
+                property ads.attributeId "9"
+                property com.fasterxml.jackson.annotation.JsonProperty "consumerStatement"
+                #update;
+    java.time.LocalDate consumerStatementDateReported
+                property ads.attributeId "10"
+                property com.fasterxml.jackson.annotation.JsonProperty "consumerStatementDateReported"
+                #update;
+    java.time.LocalDate dateFiled
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "dateFiled"
+                #update;
+    java.time.LocalDate dateLastActivity
+                property ads.attributeId "6"
+                property com.fasterxml.jackson.annotation.JsonProperty "dateLastActivity"
+                #update;
+    java.time.LocalDate dateReported
+                property ads.attributeId "5"
+                property com.fasterxml.jackson.annotation.JsonProperty "dateReported"
+                #update;
+    java.time.LocalDate dateSettled
+                property ads.attributeId "8"
+                property com.fasterxml.jackson.annotation.JsonProperty "dateSettled"
+                #update;
+    string dispositionCode
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "dispositionCode"
+                #update;
+    string narrativeCode1
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "narrativeCode1"
+                #update;
+    string narrativeCode2
+                property ads.attributeId "7"
+                property com.fasterxml.jackson.annotation.JsonProperty "narrativeCode2"
+                #update;
+    string segment
+                property ads.attributeId "4"
+                property com.fasterxml.jackson.annotation.JsonProperty "segment"
+                #update;
+    EquifaxReport(double amount, 
+        boolean consumerStatement, 
+        java.time.LocalDate consumerStatementDateReported, 
+        java.time.LocalDate dateFiled, 
+        java.time.LocalDate dateLastActivity, 
+        java.time.LocalDate dateReported, 
+        java.time.LocalDate dateSettled, 
+        string dispositionCode, 
+        string narrativeCode1, 
+        string narrativeCode2, 
+        string segment)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    EquifaxReport()
+                #dataio.default;
+}
+
+class ExternalCreditScore
+        property ads.typeId "5"
+        property com.fasterxml.jackson.annotation.JsonTypeName "ExternalCreditScore"
+        #de.generated
+{
+    double paymentFrom
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "paymentFrom"
+                #update;
+    string recommendation
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "recommendation"
+                #update;
+    ExternalCreditScore(double paymentFrom, string recommendation)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    ExternalCreditScore()
+                #dataio.default;
+}
+
+class PreviousDecision
+        property ads.typeId "3"
+        property com.fasterxml.jackson.annotation.JsonTypeName "PreviousDecision"
+        #de.generated
+{
+    double applicant1Income
+                property ads.attributeId "6"
+                property com.fasterxml.jackson.annotation.JsonProperty "applicant1Income"
+                #update;
+    double applicant2Income
+                property ads.attributeId "5"
+                property com.fasterxml.jackson.annotation.JsonProperty "applicant2Income"
+                #update;
+    double applicationID
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "applicationID"
+                #update;
+    double bureauDataID
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "bureauDataID"
+                #update;
+    java.time.LocalDate decDateTime
+                property ads.attributeId "11"
+                property com.fasterxml.jackson.annotation.JsonProperty "decDateTime"
+                #update;
+    string decStatus
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "decStatus"
+                #update;
+    double dtInterfaceID
+                property ads.attributeId "9"
+                property com.fasterxml.jackson.annotation.JsonProperty "dtInterfaceID"
+                #update;
+    double id
+                property ads.attributeId "7"
+                property com.fasterxml.jackson.annotation.JsonProperty "id"
+                #update;
+    double interestRate
+                property ads.attributeId "10"
+                property com.fasterxml.jackson.annotation.JsonProperty "interestRate"
+                #update;
+    string subsidiaryCreditUnion
+                property ads.attributeId "12"
+                property com.fasterxml.jackson.annotation.JsonProperty "subsidiaryCreditUnion"
+                #update;
+    string tier
+                property ads.attributeId "8"
+                property com.fasterxml.jackson.annotation.JsonProperty "tier"
+                #update;
+    double totalMthPay
+                property ads.attributeId "4"
+                property com.fasterxml.jackson.annotation.JsonProperty "totalMthPay"
+                #update;
+    PreviousDecision(double applicant1Income, 
+        double applicant2Income, 
+        double applicationID, 
+        double bureauDataID, 
+        java.time.LocalDate decDateTime, 
+        string decStatus, 
+        double dtInterfaceID, 
+        double id, 
+        double interestRate, 
+        string subsidiaryCreditUnion, 
+        string tier, 
+        double totalMthPay)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    PreviousDecision()
+                #dataio.default;
+}
+
+class TranUnionReport
+        property ads.typeId "9"
+        property com.fasterxml.jackson.annotation.JsonTypeName "TranUnionReport"
+        #de.generated
+{
+    string tradeFrequencyOfPayment
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "tradeFrequencyOfPayment"
+                #update;
+    string tradeIndustryCode
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "tradeIndustryCode"
+                #update;
+    double tradePmtAmt
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "tradePmtAmt"
+                #update;
+    TranUnionReport(string tradeFrequencyOfPayment, string tradeIndustryCode, double tradePmtAmt)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    TranUnionReport()
+                #dataio.default;
+}
+
