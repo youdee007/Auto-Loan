@@ -305,6 +305,24 @@ class Asset
                 #dataio.default;
 }
 
+class AutoApprove$ManualReview$AutoDecline
+        extends java.lang.Enum
+        property ads.typeId "13"
+        property com.fasterxml.jackson.annotation.JsonTypeName "Auto Approve/Manual Review/Auto Decline"
+        #de.generated
+{
+    domain {static autoApprove, static autoDecline, static manualReview}
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline autoApprove
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "Auto Approve";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline autoDecline
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Auto Decline";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline manualReview
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Manual Review";
+}
+
 class CreditBureauReport
         property ads.typeId "7"
         property com.fasterxml.jackson.annotation.JsonTypeName "CreditBureauReport"
@@ -401,6 +419,10 @@ class Customer
     double applicationID
                 property ads.attributeId "22"
                 property com.fasterxml.jackson.annotation.JsonProperty "applicationID"
+                #update;
+    agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReport creditBureauReport
+                property ads.attributeId "32"
+                property com.fasterxml.jackson.annotation.JsonProperty "CreditBureauReport"
                 #update;
     double customScore
                 property ads.attributeId "31"
@@ -523,6 +545,7 @@ class Customer
                 property com.fasterxml.jackson.annotation.JsonProperty "totalHouseAutOblig"
                 #update;
     Customer(double applicationID, 
+        agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReport creditBureauReport, 
         double customScore, 
         double customerScore, 
         string customerType, 
@@ -835,6 +858,30 @@ class PreviousDecision
                 #prototype;
     PreviousDecision()
                 #dataio.default;
+}
+
+class Tier
+        extends java.lang.Enum
+        property ads.typeId "14"
+        property com.fasterxml.jackson.annotation.JsonTypeName "Tier"
+        #de.generated
+{
+    domain {static tierA, static tierB, static tierC, static tierD, static tierE}
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.Tier tierA
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Tier A";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.Tier tierB
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Tier B";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.Tier tierC
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "Tier C";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.Tier tierD
+                property ads.attributeId "4"
+                property com.fasterxml.jackson.annotation.JsonProperty "Tier D";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.Tier tierE
+                property ads.attributeId "5"
+                property com.fasterxml.jackson.annotation.JsonProperty "Tier E";
 }
 
 class TranUnionReport

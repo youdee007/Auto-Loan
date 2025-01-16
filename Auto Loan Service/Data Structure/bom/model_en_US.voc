@@ -179,6 +179,14 @@ agull.auto_loan_demo.auto_loan_service.datastructure.Asset.year#phrase.addition_
 agull.auto_loan_demo.auto_loan_service.datastructure.Asset.year#phrase.navigation = {year} of {this}
 agull.auto_loan_demo.auto_loan_service.datastructure.Asset.year#phrase.subtraction_setter = subtract {year} from the year of {this}
 
+# agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline
+agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline#concept.documentation = Auto Approve/Manual Review/Auto Decline
+agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline#concept.label = Auto Approve/Manual Review/Auto Decline
+agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline.autoApprove#instance.label = Auto Approve
+agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline.autoDecline#instance.label = Auto Decline
+agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline.manualReview#instance.documentation = 
+agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline.manualReview#instance.label = Manual Review
+
 # agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReport
 agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReport#concept.label = Credit Bureau Report
 agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReport.CreditBureauReport(java.lang.String,double,java.lang.String,java.lang.String,java.lang.String,double,double,double,double,double,java.lang.String,java.lang.String,java.lang.String,boolean,double)#phrase.navigation = a new {Credit Bureau Report} where {0, accountType} {1, creditScore} {2, creditScoreProduct} {3, currentMannerOfPayment} {4, latePaymentIndicator} {5, monthsSinceAnyBankruptcy} {6, monthsSinceAnyCollection} {7, monthsSinceAnyConsumerProposal} {8, monthsSinceAnyRepossesion} {9, monthsSinceOldestDateOpen} {10, newTradesOpenInTheLast6Months} {11, primaryBureau} {12, segment} {13, telecomIndicator} {14, totalOpenTrades}
@@ -234,11 +242,14 @@ agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReport.totalOpe
 
 # agull.auto_loan_demo.auto_loan_service.datastructure.Customer
 agull.auto_loan_demo.auto_loan_service.datastructure.Customer#concept.label = Customer
-agull.auto_loan_demo.auto_loan_service.datastructure.Customer.Customer(double,double,double,java.lang.String,java.time.LocalDate,double,java.lang.String,java.lang.String,double,java.lang.String,double,java.lang.String,java.lang.String,double,java.lang.String,double,double,double,java.lang.String,java.lang.String,java.lang.String,double,java.lang.String,java.lang.String,java.lang.String,double,java.lang.String,java.lang.String,java.lang.String,double,double)#phrase.navigation = a new {Customer} where {0, applicationID} {1, customScore} {2, customerScore} {3, customerType} {4, dateOfBirth} {5, empMonths} {6, empStatus} {7, empType} {8, empYears} {9, employerName} {10, grossIncome} {11, grossIncomeFrq} {12, id} {13, incomeMonth} {14, incomeType} {15, insolvAmt} {16, maxPTI} {17, maxTDSRatio} {18, occupation} {19, otherDescription} {20, otherFrq} {21, otherIncomeAmt} {22, otherIncomeType} {23, province} {24, relationCode} {25, sequenceNumber} {26, sin} {27, state} {28, streetNumber} {29, tdsIncome} {30, totalHouseAutOblig}
+agull.auto_loan_demo.auto_loan_service.datastructure.Customer.Customer(double,agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReport,double,double,java.lang.String,java.time.LocalDate,double,java.lang.String,java.lang.String,double,java.lang.String,double,java.lang.String,java.lang.String,double,java.lang.String,double,double,double,java.lang.String,java.lang.String,java.lang.String,double,java.lang.String,java.lang.String,java.lang.String,double,java.lang.String,java.lang.String,java.lang.String,double,double)#phrase.navigation = a new {Customer} where {0, applicationID} {1, Credit Bureau Report} {2, customScore} {3, customerScore} {4, customerType} {5, dateOfBirth} {6, empMonths} {7, empStatus} {8, empType} {9, empYears} {10, employerName} {11, grossIncome} {12, grossIncomeFrq} {13, id} {14, incomeMonth} {15, incomeType} {16, insolvAmt} {17, maxPTI} {18, maxTDSRatio} {19, occupation} {20, otherDescription} {21, otherFrq} {22, otherIncomeAmt} {23, otherIncomeType} {24, province} {25, relationCode} {26, sequenceNumber} {27, sin} {28, state} {29, streetNumber} {30, tdsIncome} {31, totalHouseAutOblig}
 agull.auto_loan_demo.auto_loan_service.datastructure.Customer.applicationID#phrase.action = set the applicationID of {this} to {applicationID}
 agull.auto_loan_demo.auto_loan_service.datastructure.Customer.applicationID#phrase.addition_setter = add {applicationID} to the applicationID of {this}
 agull.auto_loan_demo.auto_loan_service.datastructure.Customer.applicationID#phrase.navigation = {applicationID} of {this}
 agull.auto_loan_demo.auto_loan_service.datastructure.Customer.applicationID#phrase.subtraction_setter = subtract {applicationID} from the applicationID of {this}
+agull.auto_loan_demo.auto_loan_service.datastructure.Customer.creditBureauReport#phrase.action = set the Credit Bureau Report of {this} to {Credit Bureau Report}
+agull.auto_loan_demo.auto_loan_service.datastructure.Customer.creditBureauReport#phrase.clearer = clear the Credit Bureau Report of {this}
+agull.auto_loan_demo.auto_loan_service.datastructure.Customer.creditBureauReport#phrase.navigation = {Credit Bureau Report} of {this}
 agull.auto_loan_demo.auto_loan_service.datastructure.Customer.customScore#phrase.action = set the customScore of {this} to {customScore}
 agull.auto_loan_demo.auto_loan_service.datastructure.Customer.customScore#phrase.addition_setter = add {customScore} to the customScore of {this}
 agull.auto_loan_demo.auto_loan_service.datastructure.Customer.customScore#phrase.navigation = {customScore} of {this}
@@ -475,6 +486,14 @@ agull.auto_loan_demo.auto_loan_service.datastructure.PreviousDecision.totalMthPa
 agull.auto_loan_demo.auto_loan_service.datastructure.PreviousDecision.totalMthPay#phrase.addition_setter = add {totalMthPay} to the totalMthPay of {this}
 agull.auto_loan_demo.auto_loan_service.datastructure.PreviousDecision.totalMthPay#phrase.navigation = {totalMthPay} of {this}
 agull.auto_loan_demo.auto_loan_service.datastructure.PreviousDecision.totalMthPay#phrase.subtraction_setter = subtract {totalMthPay} from the totalMthPay of {this}
+
+# agull.auto_loan_demo.auto_loan_service.datastructure.Tier
+agull.auto_loan_demo.auto_loan_service.datastructure.Tier#concept.label = Tier
+agull.auto_loan_demo.auto_loan_service.datastructure.Tier.tierA#instance.label = Tier A
+agull.auto_loan_demo.auto_loan_service.datastructure.Tier.tierB#instance.label = Tier B
+agull.auto_loan_demo.auto_loan_service.datastructure.Tier.tierC#instance.label = Tier C
+agull.auto_loan_demo.auto_loan_service.datastructure.Tier.tierD#instance.label = Tier D
+agull.auto_loan_demo.auto_loan_service.datastructure.Tier.tierE#instance.label = Tier E
 
 # agull.auto_loan_demo.auto_loan_service.datastructure.TranUnionReport
 agull.auto_loan_demo.auto_loan_service.datastructure.TranUnionReport#concept.label = TranUnion Report

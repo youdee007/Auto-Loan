@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" rulesetName="operation" targetRuleProjectName="Loan Affordability Recommended Outcome">
+  <name>Loan_Affordability_Recommended_Outcome</name>
+  <uuid>807eec2c-917e-4d68-8c7f-718422f52eae</uuid>
+  <decisionModel href="../rules/decisionModel.dmo#1201316c-0147-40dd-8677-6ece93a5729b"/>
+  <targetRuleProject href="../../Loan%20Affordability%20Recommended%20Outcome#686991db-7cb6-4c8d-bcf8-4afd635ccba3"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>

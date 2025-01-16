@@ -66,6 +66,7 @@
         <module>.decisionservice</module>
         <module>Application Pre Bureau Eligibility</module>
         <module>Data Structure</module>
+        <module>Loan Affordability Recommended Outcome</module>
     </modules>
 
     <build>
