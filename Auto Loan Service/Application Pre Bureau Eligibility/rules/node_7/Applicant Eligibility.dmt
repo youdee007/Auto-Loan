@@ -100,16 +100,6 @@
                         </Condition>
                     </Partition>
                 </Condition>
-                <Condition>
-                    <Expression/>
-                    <ActionSet>
-                        <Action DefId="A0">
-                            <Expression>
-                                <Param><![CDATA[Not Eligible]]></Param>
-                            </Expression>
-                        </Action>
-                    </ActionSet>
-                </Condition>
             </Partition>
         </Contents>
     </Body>

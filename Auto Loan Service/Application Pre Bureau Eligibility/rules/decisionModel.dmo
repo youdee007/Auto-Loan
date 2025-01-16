@@ -101,6 +101,7 @@
                 <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Acceptable$NotAcceptable" collection="true" name="Applicant Employment Acceptability"/>
                 <output bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Eligible$NotEligible" collection="true" name="Applicant Eligibility"/>
                 <rule defaultRule="false" href="node_7/Applicant%20Eligibility.dmt" kind="DecisionTable" name="Applicant Eligibility"/>
+                <rule defaultRule="true" href="node_7/output-default-setting.drl" kind="BusinessRule" name="output-default-setting"/>
             </ruleset>
         </extensionElements>
         <variable id="node_7_ii" name="Applicant Eligibility" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.Eligible$NotEligible[]"/>
