@@ -328,6 +328,10 @@ class CreditBureauReport
         property com.fasterxml.jackson.annotation.JsonTypeName "CreditBureauReport"
         #de.generated
 {
+    agull.auto_loan_demo.auto_loan_service.datastructure.AccountNetCharacteristics accountNetCharacteristics
+                property ads.attributeId "18"
+                property com.fasterxml.jackson.annotation.JsonProperty "AccountNetCharacteristics"
+                #update;
     string accountType
                 property ads.attributeId "5"
                 property com.fasterxml.jackson.annotation.JsonProperty "accountType"
@@ -343,6 +347,10 @@ class CreditBureauReport
     string currentMannerOfPayment
                 property ads.attributeId "10"
                 property com.fasterxml.jackson.annotation.JsonProperty "currentMannerOfPayment"
+                #update;
+    agull.auto_loan_demo.auto_loan_service.datastructure.EquifaxReport equifaxReport
+                property ads.attributeId "16"
+                property com.fasterxml.jackson.annotation.JsonProperty "EquifaxReport"
                 #update;
     string latePaymentIndicator
                 property ads.attributeId "8"
@@ -388,10 +396,16 @@ class CreditBureauReport
                 property ads.attributeId "12"
                 property com.fasterxml.jackson.annotation.JsonProperty "totalOpenTrades"
                 #update;
-    CreditBureauReport(string accountType, 
+    agull.auto_loan_demo.auto_loan_service.datastructure.TranUnionReport transUnionReport
+                property ads.attributeId "17"
+                property com.fasterxml.jackson.annotation.JsonProperty "TransUnionReport"
+                #update;
+    CreditBureauReport(agull.auto_loan_demo.auto_loan_service.datastructure.AccountNetCharacteristics accountNetCharacteristics, 
+        string accountType, 
         double creditScore, 
         string creditScoreProduct, 
         string currentMannerOfPayment, 
+        agull.auto_loan_demo.auto_loan_service.datastructure.EquifaxReport equifaxReport, 
         string latePaymentIndicator, 
         double monthsSinceAnyBankruptcy, 
         double monthsSinceAnyCollection, 
@@ -402,7 +416,8 @@ class CreditBureauReport
         string primaryBureau, 
         string segment, 
         boolean telecomIndicator, 
-        double totalOpenTrades)
+        double totalOpenTrades, 
+        agull.auto_loan_demo.auto_loan_service.datastructure.TranUnionReport transUnionReport)
                 #autoExpand
                 #beanConstructor
                 property groups "BALA"
@@ -440,6 +455,10 @@ class Customer
                 property ads.attributeId "20"
                 property com.fasterxml.jackson.annotation.JsonProperty "dateOfBirth"
                 #update;
+    java.util.List debts domain 0,* class agull.auto_loan_demo.auto_loan_service.datastructure.Debt
+                property ads.attributeId "33"
+                property com.fasterxml.jackson.annotation.JsonProperty "Debts"
+                #update;
     double empMonths
                 property ads.attributeId "23"
                 property com.fasterxml.jackson.annotation.JsonProperty "empMonths"
@@ -459,6 +478,10 @@ class Customer
     string employerName
                 property ads.attributeId "6"
                 property com.fasterxml.jackson.annotation.JsonProperty "employerName"
+                #update;
+    java.util.List externalCreditScores domain 0,* class agull.auto_loan_demo.auto_loan_service.datastructure.ExternalCreditScore
+                property ads.attributeId "34"
+                property com.fasterxml.jackson.annotation.JsonProperty "ExternalCreditScores"
                 #update;
     double grossIncome
                 property ads.attributeId "4"
@@ -550,11 +573,13 @@ class Customer
         double customerScore, 
         string customerType, 
         java.time.LocalDate dateOfBirth, 
+        java.util.List debts domain 0,* class agull.auto_loan_demo.auto_loan_service.datastructure.Debt, 
         double empMonths, 
         string empStatus, 
         string empType, 
         double empYears, 
         string employerName, 
+        java.util.List externalCreditScores domain 0,* class agull.auto_loan_demo.auto_loan_service.datastructure.ExternalCreditScore, 
         double grossIncome, 
         string grossIncomeFrq, 
         string id, 
@@ -582,6 +607,30 @@ class Customer
                 #prototype;
     Customer()
                 #dataio.default;
+    void addTo_debts(agull.auto_loan_demo.auto_loan_service.datastructure.Debt debts)
+                property collectionAttribute "debts"
+                #update;
+    void addTo_externalCreditScores(agull.auto_loan_demo.auto_loan_service.datastructure.ExternalCreditScore externalCreditScores)
+                property collectionAttribute "externalCreditScores"
+                #update;
+    void clear_debts()
+                property collectionAttribute "debts"
+                #update;
+    void clear_externalCreditScores()
+                property collectionAttribute "externalCreditScores"
+                #update;
+    void removeFrom_debts(agull.auto_loan_demo.auto_loan_service.datastructure.Debt debts)
+                property collectionAttribute "debts"
+                #update;
+    void removeFrom_externalCreditScores(agull.auto_loan_demo.auto_loan_service.datastructure.ExternalCreditScore externalCreditScores)
+                property collectionAttribute "externalCreditScores"
+                #update;
+    void set_debts(java.util.Collection debts domain 0,* class agull.auto_loan_demo.auto_loan_service.datastructure.Debt)
+                property collectionAttribute "debts"
+                #update;
+    void set_externalCreditScores(java.util.Collection externalCreditScores domain 0,* class agull.auto_loan_demo.auto_loan_service.datastructure.ExternalCreditScore)
+                property collectionAttribute "externalCreditScores"
+                #update;
 }
 
 class Debt

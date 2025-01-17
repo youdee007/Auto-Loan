@@ -189,7 +189,10 @@ agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$Au
 
 # agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReport
 agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReport#concept.label = Credit Bureau Report
-agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReport.CreditBureauReport(java.lang.String,double,java.lang.String,java.lang.String,java.lang.String,double,double,double,double,double,java.lang.String,java.lang.String,java.lang.String,boolean,double)#phrase.navigation = a new {Credit Bureau Report} where {0, accountType} {1, creditScore} {2, creditScoreProduct} {3, currentMannerOfPayment} {4, latePaymentIndicator} {5, monthsSinceAnyBankruptcy} {6, monthsSinceAnyCollection} {7, monthsSinceAnyConsumerProposal} {8, monthsSinceAnyRepossesion} {9, monthsSinceOldestDateOpen} {10, newTradesOpenInTheLast6Months} {11, primaryBureau} {12, segment} {13, telecomIndicator} {14, totalOpenTrades}
+agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReport.CreditBureauReport(agull.auto_loan_demo.auto_loan_service.datastructure.AccountNetCharacteristics,java.lang.String,double,java.lang.String,java.lang.String,agull.auto_loan_demo.auto_loan_service.datastructure.EquifaxReport,java.lang.String,double,double,double,double,double,java.lang.String,java.lang.String,java.lang.String,boolean,double,agull.auto_loan_demo.auto_loan_service.datastructure.TranUnionReport)#phrase.navigation = a new {Credit Bureau Report} where {0, Account Net Characteristics} {1, accountType} {2, creditScore} {3, creditScoreProduct} {4, currentMannerOfPayment} {5, Equifax Report} {6, latePaymentIndicator} {7, monthsSinceAnyBankruptcy} {8, monthsSinceAnyCollection} {9, monthsSinceAnyConsumerProposal} {10, monthsSinceAnyRepossesion} {11, monthsSinceOldestDateOpen} {12, newTradesOpenInTheLast6Months} {13, primaryBureau} {14, segment} {15, telecomIndicator} {16, totalOpenTrades} {17, TransUnion Report}
+agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReport.accountNetCharacteristics#phrase.action = set the Account Net Characteristics of {this} to {Account Net Characteristics}
+agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReport.accountNetCharacteristics#phrase.clearer = clear the Account Net Characteristics of {this}
+agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReport.accountNetCharacteristics#phrase.navigation = {Account Net Characteristics} of {this}
 agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReport.accountType#phrase.action = set the accountType of {this} to {accountType}
 agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReport.accountType#phrase.navigation = {accountType} of {this}
 agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReport.creditScore#phrase.action = set the creditScore of {this} to {creditScore}
@@ -200,6 +203,9 @@ agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReport.creditSc
 agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReport.creditScoreProduct#phrase.navigation = {creditScoreProduct} of {this}
 agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReport.currentMannerOfPayment#phrase.action = set the currentMannerOfPayment of {this} to {currentMannerOfPayment}
 agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReport.currentMannerOfPayment#phrase.navigation = {currentMannerOfPayment} of {this}
+agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReport.equifaxReport#phrase.action = set the Equifax Report of {this} to {Equifax Report}
+agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReport.equifaxReport#phrase.clearer = clear the Equifax Report of {this}
+agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReport.equifaxReport#phrase.navigation = {Equifax Report} of {this}
 agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReport.latePaymentIndicator#phrase.action = set the latePaymentIndicator of {this} to {latePaymentIndicator}
 agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReport.latePaymentIndicator#phrase.navigation = {latePaymentIndicator} of {this}
 agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReport.monthsSinceAnyBankruptcy#phrase.action = set the monthsSinceAnyBankruptcy of {this} to {monthsSinceAnyBankruptcy}
@@ -239,14 +245,21 @@ agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReport.totalOpe
 agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReport.totalOpenTrades#phrase.addition_setter = add {totalOpenTrades} to the totalOpenTrades of {this}
 agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReport.totalOpenTrades#phrase.navigation = {totalOpenTrades} of {this}
 agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReport.totalOpenTrades#phrase.subtraction_setter = subtract {totalOpenTrades} from the totalOpenTrades of {this}
+agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReport.transUnionReport#phrase.action = set the TransUnion Report of {this} to {TransUnion Report}
+agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReport.transUnionReport#phrase.clearer = clear the TransUnion Report of {this}
+agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReport.transUnionReport#phrase.navigation = {TransUnion Report} of {this}
 
 # agull.auto_loan_demo.auto_loan_service.datastructure.Customer
 agull.auto_loan_demo.auto_loan_service.datastructure.Customer#concept.label = Customer
-agull.auto_loan_demo.auto_loan_service.datastructure.Customer.Customer(double,agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReport,double,double,java.lang.String,java.time.LocalDate,double,java.lang.String,java.lang.String,double,java.lang.String,double,java.lang.String,java.lang.String,double,java.lang.String,double,double,double,java.lang.String,java.lang.String,java.lang.String,double,java.lang.String,java.lang.String,java.lang.String,double,java.lang.String,java.lang.String,java.lang.String,double,double)#phrase.navigation = a new {Customer} where {0, applicationID} {1, Credit Bureau Report} {2, customScore} {3, customerScore} {4, customerType} {5, dateOfBirth} {6, empMonths} {7, empStatus} {8, empType} {9, empYears} {10, employerName} {11, grossIncome} {12, grossIncomeFrq} {13, id} {14, incomeMonth} {15, incomeType} {16, insolvAmt} {17, maxPTI} {18, maxTDSRatio} {19, occupation} {20, otherDescription} {21, otherFrq} {22, otherIncomeAmt} {23, otherIncomeType} {24, province} {25, relationCode} {26, sequenceNumber} {27, sin} {28, state} {29, streetNumber} {30, tdsIncome} {31, totalHouseAutOblig}
+agull.auto_loan_demo.auto_loan_service.datastructure.Customer.Customer(double,agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReport,double,double,java.lang.String,java.time.LocalDate,java.util.List,double,java.lang.String,java.lang.String,double,java.lang.String,java.util.List,double,java.lang.String,java.lang.String,double,java.lang.String,double,double,double,java.lang.String,java.lang.String,java.lang.String,double,java.lang.String,java.lang.String,java.lang.String,double,java.lang.String,java.lang.String,java.lang.String,double,double)#phrase.navigation = a new {Customer} where {0, applicationID} {1, Credit Bureau Report} {2, customScore} {3, customerScore} {4, customerType} {5, dateOfBirth} {6, Debt} {7, empMonths} {8, empStatus} {9, empType} {10, empYears} {11, employerName} {12, External Credit Score} {13, grossIncome} {14, grossIncomeFrq} {15, id} {16, incomeMonth} {17, incomeType} {18, insolvAmt} {19, maxPTI} {20, maxTDSRatio} {21, occupation} {22, otherDescription} {23, otherFrq} {24, otherIncomeAmt} {25, otherIncomeType} {26, province} {27, relationCode} {28, sequenceNumber} {29, sin} {30, state} {31, streetNumber} {32, tdsIncome} {33, totalHouseAutOblig}
+agull.auto_loan_demo.auto_loan_service.datastructure.Customer.addTo_debts(agull.auto_loan_demo.auto_loan_service.datastructure.Debt)#phrase.action = add {0} to the Debts of {this}
+agull.auto_loan_demo.auto_loan_service.datastructure.Customer.addTo_externalCreditScores(agull.auto_loan_demo.auto_loan_service.datastructure.ExternalCreditScore)#phrase.action = add {0} to the External Credit Scores of {this}
 agull.auto_loan_demo.auto_loan_service.datastructure.Customer.applicationID#phrase.action = set the applicationID of {this} to {applicationID}
 agull.auto_loan_demo.auto_loan_service.datastructure.Customer.applicationID#phrase.addition_setter = add {applicationID} to the applicationID of {this}
 agull.auto_loan_demo.auto_loan_service.datastructure.Customer.applicationID#phrase.navigation = {applicationID} of {this}
 agull.auto_loan_demo.auto_loan_service.datastructure.Customer.applicationID#phrase.subtraction_setter = subtract {applicationID} from the applicationID of {this}
+agull.auto_loan_demo.auto_loan_service.datastructure.Customer.clear_debts()#phrase.action = clear the Debts of {this}
+agull.auto_loan_demo.auto_loan_service.datastructure.Customer.clear_externalCreditScores()#phrase.action = clear the External Credit Scores of {this}
 agull.auto_loan_demo.auto_loan_service.datastructure.Customer.creditBureauReport#phrase.action = set the Credit Bureau Report of {this} to {Credit Bureau Report}
 agull.auto_loan_demo.auto_loan_service.datastructure.Customer.creditBureauReport#phrase.clearer = clear the Credit Bureau Report of {this}
 agull.auto_loan_demo.auto_loan_service.datastructure.Customer.creditBureauReport#phrase.navigation = {Credit Bureau Report} of {this}
@@ -262,6 +275,8 @@ agull.auto_loan_demo.auto_loan_service.datastructure.Customer.customerType#phras
 agull.auto_loan_demo.auto_loan_service.datastructure.Customer.customerType#phrase.navigation = {customerType} of {this}
 agull.auto_loan_demo.auto_loan_service.datastructure.Customer.dateOfBirth#phrase.action = set the dateOfBirth of {this} to {dateOfBirth}
 agull.auto_loan_demo.auto_loan_service.datastructure.Customer.dateOfBirth#phrase.navigation = {dateOfBirth} of {this}
+agull.auto_loan_demo.auto_loan_service.datastructure.Customer.debts#phrase.action = set the Debts of {this} to {Debt}
+agull.auto_loan_demo.auto_loan_service.datastructure.Customer.debts#phrase.navigation = {Debt} of {this}
 agull.auto_loan_demo.auto_loan_service.datastructure.Customer.empMonths#phrase.action = set the empMonths of {this} to {empMonths}
 agull.auto_loan_demo.auto_loan_service.datastructure.Customer.empMonths#phrase.addition_setter = add {empMonths} to the empMonths of {this}
 agull.auto_loan_demo.auto_loan_service.datastructure.Customer.empMonths#phrase.navigation = {empMonths} of {this}
@@ -276,6 +291,8 @@ agull.auto_loan_demo.auto_loan_service.datastructure.Customer.empYears#phrase.na
 agull.auto_loan_demo.auto_loan_service.datastructure.Customer.empYears#phrase.subtraction_setter = subtract {empYears} from the empYears of {this}
 agull.auto_loan_demo.auto_loan_service.datastructure.Customer.employerName#phrase.action = set the employerName of {this} to {employerName}
 agull.auto_loan_demo.auto_loan_service.datastructure.Customer.employerName#phrase.navigation = {employerName} of {this}
+agull.auto_loan_demo.auto_loan_service.datastructure.Customer.externalCreditScores#phrase.action = set the External Credit Scores of {this} to {External Credit Score}
+agull.auto_loan_demo.auto_loan_service.datastructure.Customer.externalCreditScores#phrase.navigation = {External Credit Score} of {this}
 agull.auto_loan_demo.auto_loan_service.datastructure.Customer.grossIncome#phrase.action = set the grossIncome of {this} to {grossIncome}
 agull.auto_loan_demo.auto_loan_service.datastructure.Customer.grossIncome#phrase.addition_setter = add {grossIncome} to the grossIncome of {this}
 agull.auto_loan_demo.auto_loan_service.datastructure.Customer.grossIncome#phrase.navigation = {grossIncome} of {this}
@@ -318,6 +335,8 @@ agull.auto_loan_demo.auto_loan_service.datastructure.Customer.province#phrase.ac
 agull.auto_loan_demo.auto_loan_service.datastructure.Customer.province#phrase.navigation = {province} of {this}
 agull.auto_loan_demo.auto_loan_service.datastructure.Customer.relationCode#phrase.action = set the relationCode of {this} to {relationCode}
 agull.auto_loan_demo.auto_loan_service.datastructure.Customer.relationCode#phrase.navigation = {relationCode} of {this}
+agull.auto_loan_demo.auto_loan_service.datastructure.Customer.removeFrom_debts(agull.auto_loan_demo.auto_loan_service.datastructure.Debt)#phrase.action = remove {0} from the Debts of {this}
+agull.auto_loan_demo.auto_loan_service.datastructure.Customer.removeFrom_externalCreditScores(agull.auto_loan_demo.auto_loan_service.datastructure.ExternalCreditScore)#phrase.action = remove {0} from the External Credit Scores of {this}
 agull.auto_loan_demo.auto_loan_service.datastructure.Customer.sequenceNumber#phrase.action = set the sequenceNumber of {this} to {sequenceNumber}
 agull.auto_loan_demo.auto_loan_service.datastructure.Customer.sequenceNumber#phrase.addition_setter = add {sequenceNumber} to the sequenceNumber of {this}
 agull.auto_loan_demo.auto_loan_service.datastructure.Customer.sequenceNumber#phrase.navigation = {sequenceNumber} of {this}
