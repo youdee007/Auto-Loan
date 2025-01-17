@@ -924,6 +924,21 @@ class Qualified$NotQualified
                 property com.fasterxml.jackson.annotation.JsonProperty "Qualified";
 }
 
+class Required$NotRequired
+        extends java.lang.Enum
+        property ads.typeId "17"
+        property com.fasterxml.jackson.annotation.JsonTypeName "Required/NotRequired"
+        #de.generated
+{
+    domain {static notRequired, static required}
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.Required$NotRequired notRequired
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Not Required";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.Required$NotRequired required
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Required";
+}
+
 class Tier
         extends java.lang.Enum
         property ads.typeId "14"
