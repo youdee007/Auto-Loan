@@ -41,6 +41,66 @@
             <requiredInput href="#node_0"/>
         </informationRequirement>
     </decision>
+    <decision id="node_3" name="Debt Manual Edits Qualified">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Customer" collection="true" name="Customer"/>
+                <output bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Qualified$NotQualified" collection="true" name="Debt Manual Edits Qualified"/>
+                <rule defaultRule="false" href="node_3/Debt%20Manual%20Edits%20Qualification.dmt" kind="DecisionTable" name="Debt Manual Edits Qualification"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_3_ii" name="Debt Manual Edits Qualified" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.Qualified$NotQualified[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_4" name="Installment Debt Monthly Payments Remaining from Balance Amount">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Customer" collection="true" name="Customer"/>
+                <output bomType="java.lang.Double" collection="true" name="Installment Debt Monthly Payments Remaining from Balance Amount"/>
+                <rule defaultRule="false" href="node_4/Installment%20Debt%20Monthly%20Payments%20Remaining%20from%20Balance%20Amount.dmt" kind="DecisionTable" name="Installment Debt Monthly Payments Remaining from Balance Amount"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_4_ii" name="Installment Debt Monthly Payments Remaining from Balance Amount" typeRef="java.lang.Double[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_5" name="Trade Equivalent Monthly Payment Amount">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Customer" collection="true" name="Customer"/>
+                <input bomType="java.lang.Double" collection="true" name="Trade Payment Frequency"/>
+                <output bomType="java.lang.Double" collection="true" name="Trade Equivalent Monthly Payment Amount"/>
+                <rule defaultRule="false" href="node_5/Trade%20Equivalent%20Monthly%20Payment%20Amount.drl" kind="BusinessRule" name="Trade Equivalent Monthly Payment Amount"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_5_ii" name="Trade Equivalent Monthly Payment Amount" typeRef="java.lang.Double[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_1"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_6" name="Existing Loan To Be Paid In Full Stipulation Required">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Customer" collection="true" name="Customer"/>
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Qualified$NotQualified" collection="true" name="Debt Manual Edits Qualified"/>
+                <output bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Required$NotRequired" collection="true" name="Existing Loan To Be Paid In Full Stipulation Required"/>
+                <rule defaultRule="false" href="node_6/Existing%20Loan%20To%20Be%20Paid%20In%20Full%20Stipulation%20Required.dmt" kind="DecisionTable" name="Existing Loan To Be Paid In Full Stipulation Required"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_6_ii" name="Existing Loan To Be Paid In Full Stipulation Required" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.Required$NotRequired[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_3"/>
+        </informationRequirement>
+    </decision>
 </definitions>
 </definition>
 </com.ibm.rules.studio.model.decisionmodel:DecisionModel>

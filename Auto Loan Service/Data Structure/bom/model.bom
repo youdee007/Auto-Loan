@@ -437,8 +437,8 @@ class CreditBureauReportFunctions
         static bankruptcy,
         static collections,
         static consumerProposal,
-        static notCollections,
         static notBankruptcy,
+        static notCollections,
         static notConsumerProposal,
         static notRepossession,
         static repossession
@@ -877,6 +877,24 @@ class ExternalCreditScore
                 #prototype;
     ExternalCreditScore()
                 #dataio.default;
+}
+
+class Insolvency
+        extends java.lang.Enum
+        property ads.typeId "19"
+        property com.fasterxml.jackson.annotation.JsonTypeName "Insolvency"
+        #de.generated
+{
+    domain {static activeInsolvency, static dischargeInsolvency, static noInsolvency}
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.Insolvency activeInsolvency
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Active Insolvency";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.Insolvency dischargeInsolvency
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Discharge Insolvency";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.Insolvency noInsolvency
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "No Insolvency";
 }
 
 class PreviousDecision

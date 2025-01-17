@@ -473,6 +473,12 @@ agull.auto_loan_demo.auto_loan_service.datastructure.ExternalCreditScore.payment
 agull.auto_loan_demo.auto_loan_service.datastructure.ExternalCreditScore.recommendation#phrase.action = set the recommendation of {this} to {recommendation}
 agull.auto_loan_demo.auto_loan_service.datastructure.ExternalCreditScore.recommendation#phrase.navigation = {recommendation} of {this}
 
+# agull.auto_loan_demo.auto_loan_service.datastructure.Insolvency
+agull.auto_loan_demo.auto_loan_service.datastructure.Insolvency#concept.label = Insolvency
+agull.auto_loan_demo.auto_loan_service.datastructure.Insolvency.activeInsolvency#instance.label = Active Insolvency
+agull.auto_loan_demo.auto_loan_service.datastructure.Insolvency.dischargeInsolvency#instance.label = Discharge Insolvency
+agull.auto_loan_demo.auto_loan_service.datastructure.Insolvency.noInsolvency#instance.label = No Insolvency
+
 # agull.auto_loan_demo.auto_loan_service.datastructure.PreviousDecision
 agull.auto_loan_demo.auto_loan_service.datastructure.PreviousDecision#concept.label = Previous Decision
 agull.auto_loan_demo.auto_loan_service.datastructure.PreviousDecision.PreviousDecision(double,double,double,double,java.time.LocalDate,java.lang.String,double,double,double,java.lang.String,java.lang.String,double)#phrase.navigation = a new {Previous Decision} where {0, applicant1Income} {1, applicant2Income} {2, applicationID} {3, bureauDataID} {4, decDateTime} {5, decStatus} {6, dtInterfaceID} {7, id} {8, interestRate} {9, subsidiaryCreditUnion} {10, tier} {11, totalMthPay}
