@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Application Credit Risk Tier</name>
+  <uuid>7689d158-aacc-4ccd-8df8-8d154f0af9b4</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[definitions 
+	
+	set 'a Customer' to a Customer in Customer ; 
+    if the customerType of 'a Customer' is "Primary"
+    then set decision to decision; ]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

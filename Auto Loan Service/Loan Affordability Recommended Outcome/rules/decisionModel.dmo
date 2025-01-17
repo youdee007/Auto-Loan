@@ -93,11 +93,57 @@
             <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
                 <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Customer" collection="true" name="Customer"/>
                 <output bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Tier" collection="true" name="Applicant Credit Risk Tier"/>
+                <rule defaultRule="false" href="node_7/Applicant%20Credit%20Risk%20Tier.dmt" kind="DecisionTable" name="Applicant Credit Risk Tier"/>
             </ruleset>
         </extensionElements>
         <variable id="node_7_ii" name="Applicant Credit Risk Tier" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.Tier[]"/>
         <informationRequirement>
             <requiredInput href="#node_6"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_8" name="Application Credit Risk Tier">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Customer" collection="true" name="Customer"/>
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Tier" collection="true" name="Applicant Credit Risk Tier"/>
+                <output bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Tier" collection="false" name="Application Credit Risk Tier"/>
+                <rule defaultRule="false" href="node_8/Application%20Credit%20Risk%20Tier.drl" kind="BusinessRule" name="Application Credit Risk Tier"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_8_ii" name="Application Credit Risk Tier" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.Tier"/>
+        <informationRequirement>
+            <requiredInput href="#node_6"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_7"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_9" name="Decision 9">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline" collection="false" name="Tier A PTI LTV Recommended Outcome"/>
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline" collection="false" name="Tier B PTI LTV Recommended Outcome"/>
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline" collection="false" name="Tier C PTI LTV Recommended Outcome"/>
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline" collection="false" name="Tier D PTI LTV Recommended Outcome"/>
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline" collection="false" name="Tier E PTI LTV Recommended Outcome"/>
+                <output bomType="java.lang.String" collection="false" name="Decision 9"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_9_ii" name="Decision 9" typeRef="java.lang.String"/>
+        <informationRequirement>
+            <requiredInput href="#node_1"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_3"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_4"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_5"/>
         </informationRequirement>
     </decision>
 </definitions>
