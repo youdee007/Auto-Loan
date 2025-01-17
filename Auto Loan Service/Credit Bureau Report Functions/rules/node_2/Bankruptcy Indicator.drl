@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Bankruptcy Indicator</name>
+  <uuid>65c696c2-2ca5-460b-b4d9-0250567c1557</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[ if 
+	'Applicant Bankruptcy Date List' are defined then 
+	set decision to true ;
+     
+else 
+	set decision to false ; ]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

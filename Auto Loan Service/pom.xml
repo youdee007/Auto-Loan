@@ -65,6 +65,7 @@
     <modules>
         <module>.decisionservice</module>
         <module>Application Pre Bureau Eligibility</module>
+        <module>Credit Bureau Report Functions</module>
         <module>Data Structure</module>
         <module>Loan Affordability Recommended Outcome</module>
         <module>TDSR-Total Credit Bureau Monthly Debt Obligation</module>
