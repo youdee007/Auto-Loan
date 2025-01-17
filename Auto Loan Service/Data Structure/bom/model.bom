@@ -426,6 +426,49 @@ class CreditBureauReport
                 #dataio.default;
 }
 
+class CreditBureauReportFunctions
+        extends java.lang.Enum
+        property ads.typeId "18"
+        property com.fasterxml.jackson.annotation.JsonTypeName "CreditBureauReportFunctions"
+        #de.generated
+{
+    domain 
+    {
+        static bankruptcy,
+        static collections,
+        static consumerProposal,
+        static notCollections,
+        static notBankruptcy,
+        static notConsumerProposal,
+        static notRepossession,
+        static repossession
+    }
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReportFunctions bankruptcy
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Bankruptcy";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReportFunctions collections
+                property ads.attributeId "7"
+                property com.fasterxml.jackson.annotation.JsonProperty "Collections";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReportFunctions consumerProposal
+                property ads.attributeId "5"
+                property com.fasterxml.jackson.annotation.JsonProperty "ConsumerProposal";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReportFunctions notBankruptcy
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "NotBankruptcy";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReportFunctions notCollections
+                property ads.attributeId "8"
+                property com.fasterxml.jackson.annotation.JsonProperty "NotCollections";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReportFunctions notConsumerProposal
+                property ads.attributeId "6"
+                property com.fasterxml.jackson.annotation.JsonProperty "NotConsumerProposal";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReportFunctions notRepossession
+                property ads.attributeId "4"
+                property com.fasterxml.jackson.annotation.JsonProperty "NotRepossession";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReportFunctions repossession
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "Repossession";
+}
+
 class Customer
         property ads.typeId "4"
         property com.fasterxml.jackson.annotation.JsonTypeName "Customer"

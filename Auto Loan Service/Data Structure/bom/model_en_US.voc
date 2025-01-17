@@ -249,6 +249,17 @@ agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReport.transUni
 agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReport.transUnionReport#phrase.clearer = clear the TransUnion Report of {this}
 agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReport.transUnionReport#phrase.navigation = {TransUnion Report} of {this}
 
+# agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReportFunctions
+agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReportFunctions#concept.label = Credit Bureau Report Functions
+agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReportFunctions.bankruptcy#instance.label = Bankruptcy
+agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReportFunctions.collections#instance.label = Collections
+agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReportFunctions.consumerProposal#instance.label = Consumer Proposal
+agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReportFunctions.notBankruptcy#instance.label = Not Bankruptcy
+agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReportFunctions.notCollections#instance.label = Not Collections
+agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReportFunctions.notConsumerProposal#instance.label = Not Consumer Proposal
+agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReportFunctions.notRepossession#instance.label = Not Repossession
+agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReportFunctions.repossession#instance.label = Repossession
+
 # agull.auto_loan_demo.auto_loan_service.datastructure.Customer
 agull.auto_loan_demo.auto_loan_service.datastructure.Customer#concept.label = Customer
 agull.auto_loan_demo.auto_loan_service.datastructure.Customer.Customer(double,agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReport,double,double,java.lang.String,java.time.LocalDate,java.util.List,double,java.lang.String,java.lang.String,double,java.lang.String,java.util.List,double,java.lang.String,java.lang.String,double,java.lang.String,double,double,double,java.lang.String,java.lang.String,java.lang.String,double,java.lang.String,java.lang.String,java.lang.String,double,java.lang.String,java.lang.String,java.lang.String,double,double)#phrase.navigation = a new {Customer} where {0, applicationID} {1, Credit Bureau Report} {2, customScore} {3, customerScore} {4, customerType} {5, dateOfBirth} {6, Debt} {7, empMonths} {8, empStatus} {9, empType} {10, empYears} {11, employerName} {12, External Credit Score} {13, grossIncome} {14, grossIncomeFrq} {15, id} {16, incomeMonth} {17, incomeType} {18, insolvAmt} {19, maxPTI} {20, maxTDSRatio} {21, occupation} {22, otherDescription} {23, otherFrq} {24, otherIncomeAmt} {25, otherIncomeType} {26, province} {27, relationCode} {28, sequenceNumber} {29, sin} {30, state} {31, streetNumber} {32, tdsIncome} {33, totalHouseAutOblig}
