@@ -514,6 +514,19 @@ agull.auto_loan_demo.auto_loan_service.datastructure.Tier.tierC#instance.label =
 agull.auto_loan_demo.auto_loan_service.datastructure.Tier.tierD#instance.label = Tier D
 agull.auto_loan_demo.auto_loan_service.datastructure.Tier.tierE#instance.label = Tier E
 
+# agull.auto_loan_demo.auto_loan_service.datastructure.TradeType
+agull.auto_loan_demo.auto_loan_service.datastructure.TradeType#concept.label = Trade Type
+agull.auto_loan_demo.auto_loan_service.datastructure.TradeType.HELOC#instance.label = HELOC
+agull.auto_loan_demo.auto_loan_service.datastructure.TradeType.creditCard#instance.label = Credit Card
+agull.auto_loan_demo.auto_loan_service.datastructure.TradeType.installmentDebt#instance.label = Installment Debt
+agull.auto_loan_demo.auto_loan_service.datastructure.TradeType.mortgage#instance.label = Mortgage
+agull.auto_loan_demo.auto_loan_service.datastructure.TradeType.oTrade$NonTelco#instance.label = O Trade - Non Telco
+agull.auto_loan_demo.auto_loan_service.datastructure.TradeType.oTrade$Telco#instance.label = O Trade - Telco
+agull.auto_loan_demo.auto_loan_service.datastructure.TradeType.securedLineOfCredit#instance.label = Secured Line of Credit
+agull.auto_loan_demo.auto_loan_service.datastructure.TradeType.studentLineOfCredit#instance.label = Student Line of Credit
+agull.auto_loan_demo.auto_loan_service.datastructure.TradeType.studentLoan#instance.label = Student Loan
+agull.auto_loan_demo.auto_loan_service.datastructure.TradeType.unsecuredLineOfCredit#instance.label = Unsecured Line of Credit
+
 # agull.auto_loan_demo.auto_loan_service.datastructure.TranUnionReport
 agull.auto_loan_demo.auto_loan_service.datastructure.TranUnionReport#concept.label = TranUnion Report
 agull.auto_loan_demo.auto_loan_service.datastructure.TranUnionReport.TranUnionReport(java.lang.String,java.lang.String,double)#phrase.navigation = a new {TranUnion Report} where {0, tradeFrequencyOfPayment} {1, tradeIndustryCode} {2, tradePmtAmt}

@@ -27,6 +27,11 @@
             <version>LATEST-SNAPSHOT</version>
         </dependency>
         <dependency>
+            <groupId>agull.auto_loan_demo.auto_loan_service</groupId>
+            <artifactId>TDSR-TotalCreditBureauMonthlyDebtObligation</artifactId>
+            <version>LATEST-SNAPSHOT</version>
+        </dependency>
+        <dependency>
             <groupId>com.ibm.decision</groupId>
             <artifactId>engine-compact-runtime</artifactId>
             <version>${engine-compact-runtime.version}</version>
@@ -82,6 +87,9 @@
 
 
 
+
+
+
 <build>
         <resources>
             <resource>
@@ -127,6 +135,15 @@
                                 <artifactItem>
                                     <groupId>agull.auto_loan_demo.auto_loan_service</groupId>
                                     <artifactId>loanAffordabilityRecommendedOutcome</artifactId>
+                                    <version>LATEST-SNAPSHOT</version>
+                                    <type>jar</type>
+                                    <overWrite>false</overWrite>
+                                    <includes>**/*.class</includes>
+                                    <outputDirectory>${project.build.directory}/classes</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>agull.auto_loan_demo.auto_loan_service</groupId>
+                                    <artifactId>TDSR-TotalCreditBureauMonthlyDebtObligation</artifactId>
                                     <version>LATEST-SNAPSHOT</version>
                                     <type>jar</type>
                                     <overWrite>false</overWrite>

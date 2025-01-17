@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" rulesetName="operation" targetRuleProjectName="TDSR-Total Credit Bureau Monthly Debt Obligation">
+  <name>TDSR_Total_Credit_Bureau_Monthly_Debt_Obligation</name>
+  <uuid>ad89364a-2b50-4184-8d7f-61a578c5211a</uuid>
+  <decisionModel href="../rules/decisionModel.dmo#6aa79187-b3d0-45ee-8000-2d24131919ee"/>
+  <targetRuleProject href="../../TDSR-Total%20Credit%20Bureau%20Monthly%20Debt%20Obligation#c356c6fe-589a-4fab-bd53-4c03d7aa954e"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>

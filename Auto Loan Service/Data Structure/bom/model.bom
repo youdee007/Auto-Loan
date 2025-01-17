@@ -933,6 +933,57 @@ class Tier
                 property com.fasterxml.jackson.annotation.JsonProperty "Tier E";
 }
 
+class TradeType
+        extends java.lang.Enum
+        property ads.typeId "15"
+        property com.fasterxml.jackson.annotation.JsonTypeName "TradeType"
+        #de.generated
+{
+    domain 
+    {
+        static HELOC,
+        static creditCard,
+        static installmentDebt,
+        static mortgage,
+        static oTrade$NonTelco,
+        static oTrade$Telco,
+        static securedLineOfCredit,
+        static studentLineOfCredit,
+        static studentLoan,
+        static unsecuredLineOfCredit
+    }
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.TradeType HELOC
+                property ads.attributeId "4"
+                property com.fasterxml.jackson.annotation.JsonProperty "HELOC";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.TradeType creditCard
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Credit Card";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.TradeType installmentDebt
+                property ads.attributeId "7"
+                property com.fasterxml.jackson.annotation.JsonProperty "Installment Debt";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.TradeType mortgage
+                property ads.attributeId "8"
+                property com.fasterxml.jackson.annotation.JsonProperty "Mortgage";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.TradeType oTrade$NonTelco
+                property ads.attributeId "10"
+                property com.fasterxml.jackson.annotation.JsonProperty "O Trade - Non Telco";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.TradeType oTrade$Telco
+                property ads.attributeId "9"
+                property com.fasterxml.jackson.annotation.JsonProperty "O Trade - Telco";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.TradeType securedLineOfCredit
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "SecuredLineOfCredit";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.TradeType studentLineOfCredit
+                property ads.attributeId "5"
+                property com.fasterxml.jackson.annotation.JsonProperty "Student Line Of Credit";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.TradeType studentLoan
+                property ads.attributeId "6"
+                property com.fasterxml.jackson.annotation.JsonProperty "Student Loan";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.TradeType unsecuredLineOfCredit
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Unsecured Line Of Credit";
+}
+
 class TranUnionReport
         property ads.typeId "9"
         property com.fasterxml.jackson.annotation.JsonTypeName "TranUnionReport"
