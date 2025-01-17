@@ -101,6 +101,53 @@
             <requiredInput href="#node_3"/>
         </informationRequirement>
     </decision>
+    <decision id="node_7" name="Bankruptcy Insolvency Indicator">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Customer" collection="true" name="Customer"/>
+                <output bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Insolvency" collection="true" name="Bankruptcy Insolvency Indicator"/>
+                <rule defaultRule="false" href="node_7/Bankruptcy%20Insolvency%20Indicator.dmt" kind="DecisionTable" name="Bankruptcy Insolvency Indicator"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_7_ii" name="Bankruptcy Insolvency Indicator" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.Insolvency[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_8" name="Subject To Trade In Stipulation Required">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Customer" collection="true" name="Customer"/>
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Qualified$NotQualified" collection="true" name="Debt Manual Edits Qualified"/>
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Insolvency" collection="true" name="Bankruptcy Insolvency Indicator"/>
+                <output bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Required$NotRequired" collection="true" name="Subject To Trade In Stipulation Required"/>
+                <rule defaultRule="false" href="node_8/Subject%20To%20Trade%20In%20Stipulation%20Required.dmt" kind="DecisionTable" name="Subject To Trade In Stipulation Required"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_8_ii" name="Subject To Trade In Stipulation Required" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.Required$NotRequired[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_3"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_7"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_9" name="TDSR Trade Obligation Factor">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.TradeType" collection="true" name="Trade Type"/>
+                <output bomType="java.lang.Double" collection="true" name="TDSR Trade Obligation Factor"/>
+                <rule defaultRule="false" href="node_9/TDSR%20Trade%20Obligation%20Factor.dmt" kind="DecisionTable" name="TDSR Trade Obligation Factor"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_9_ii" name="TDSR Trade Obligation Factor" typeRef="java.lang.Double[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+    </decision>
 </definitions>
 </definition>
 </com.ibm.rules.studio.model.decisionmodel:DecisionModel>
