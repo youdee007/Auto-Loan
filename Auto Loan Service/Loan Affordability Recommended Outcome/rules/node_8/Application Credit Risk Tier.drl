@@ -4,8 +4,10 @@
   <uuid>7689d158-aacc-4ccd-8df8-8d154f0af9b4</uuid>
   <locale>en_US</locale>
   <definition><![CDATA[definitions 
-	
-	set 'a Customer' to a Customer in Customer ; 
-    if the customerType of 'a Customer' is "Primary"
-    then set decision to decision; ]]></definition>
+    set 'variable2' to a Tier  in 'Applicant Credit Risk Tier' ;
+    then 
+	for each Customer in Customer , 
+	where the customerType of each Customer is "Primary" , : 
+	- set decision to variable2;
+]]></definition>
 </ilog.rules.studio.model.brl:ActionRule>

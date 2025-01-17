@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Total Debt Service Ratio Auto Approve Acceptability</name>
+  <uuid>32558abd-67db-477b-877c-c0da484c8a97</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[ definitions 
+	set 'an Application' to  Application  ; 
+if
+	the tds of 'an Application' ≤ 'Total Debt Service Ratio Threshold'
+then
+	set decision to Acceptable ;
+    
+else 
+	set decision to Not Acceptable ; ]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

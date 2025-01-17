@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Tier E PTI LTV Recommended Outcome</name>
+  <uuid>698cc73e-4c2a-40c7-ad59-bb68d7434250</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[if
+	'Application Credit Risk Tier' is Tier E 
+then
+	set decision to 'Tier E PTI LTV Recommended Outcome' ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>
