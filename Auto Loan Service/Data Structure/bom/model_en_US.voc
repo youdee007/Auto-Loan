@@ -506,6 +506,11 @@ agull.auto_loan_demo.auto_loan_service.datastructure.PreviousDecision.totalMthPa
 agull.auto_loan_demo.auto_loan_service.datastructure.PreviousDecision.totalMthPay#phrase.navigation = {totalMthPay} of {this}
 agull.auto_loan_demo.auto_loan_service.datastructure.PreviousDecision.totalMthPay#phrase.subtraction_setter = subtract {totalMthPay} from the totalMthPay of {this}
 
+# agull.auto_loan_demo.auto_loan_service.datastructure.Qualified$NotQualified
+agull.auto_loan_demo.auto_loan_service.datastructure.Qualified$NotQualified#concept.label = Qualified/Not Qualified
+agull.auto_loan_demo.auto_loan_service.datastructure.Qualified$NotQualified.notQualified#instance.label = Not Qualified
+agull.auto_loan_demo.auto_loan_service.datastructure.Qualified$NotQualified.qualified#instance.label = Qualified
+
 # agull.auto_loan_demo.auto_loan_service.datastructure.Tier
 agull.auto_loan_demo.auto_loan_service.datastructure.Tier#concept.label = Tier
 agull.auto_loan_demo.auto_loan_service.datastructure.Tier.tierA#instance.label = Tier A

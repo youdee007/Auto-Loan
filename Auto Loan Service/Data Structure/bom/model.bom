@@ -909,6 +909,21 @@ class PreviousDecision
                 #dataio.default;
 }
 
+class Qualified$NotQualified
+        extends java.lang.Enum
+        property ads.typeId "16"
+        property com.fasterxml.jackson.annotation.JsonTypeName "Qualified/NotQualified"
+        #de.generated
+{
+    domain {static notQualified, static qualified}
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.Qualified$NotQualified notQualified
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Not Qualified";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.Qualified$NotQualified qualified
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Qualified";
+}
+
 class Tier
         extends java.lang.Enum
         property ads.typeId "14"

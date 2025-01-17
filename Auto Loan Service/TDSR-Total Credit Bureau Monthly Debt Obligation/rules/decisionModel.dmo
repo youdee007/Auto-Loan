@@ -28,6 +28,19 @@
         </extensionElements>
         <variable id="node_0_ii" name="Customer" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.Customer[]"/>
     </inputData>
+    <decision id="node_2" name="Trade Type">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Customer" collection="true" name="Customer"/>
+                <output bomType="agull.auto_loan_demo.auto_loan_service.datastructure.TradeType" collection="true" name="Trade Type"/>
+                <rule defaultRule="false" href="node_2/Trade%20Type.dmt" kind="DecisionTable" name="Trade Type"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_2_ii" name="Trade Type" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.TradeType[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+    </decision>
 </definitions>
 </definition>
 </com.ibm.rules.studio.model.decisionmodel:DecisionModel>
