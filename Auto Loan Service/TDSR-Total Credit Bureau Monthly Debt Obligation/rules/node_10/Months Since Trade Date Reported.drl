@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Months Since Trade Date Reported</name>
+  <uuid>1e5f06d9-6817-47cb-8c15-62a1f94bef6f</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[definitions 
+	set 'aCustomer' to a Customer in Customer ; 
+	set 'aDebt' to a Debt in the Debts of aCustomer ; 
+    
+	set 'variable1' to the number of years between the createdOn of Application and the dateReported of aDebt ;  
+    then 
+	add variable1 to decision ; ]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

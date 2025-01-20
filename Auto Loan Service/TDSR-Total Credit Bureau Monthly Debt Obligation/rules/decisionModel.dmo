@@ -148,6 +148,186 @@
             <requiredInput href="#node_2"/>
         </informationRequirement>
     </decision>
+    <decision id="node_10" name="Months Since Trade Date Reported">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Customer" collection="true" name="Customer"/>
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Application" collection="false" name="Application"/>
+                <output bomType="java.lang.Double" collection="true" name="Months Since Trade Date Reported"/>
+                <rule defaultRule="false" href="node_10/Months%20Since%20Trade%20Date%20Reported.drl" kind="BusinessRule" name="Months Since Trade Date Reported"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_10_ii" name="Months Since Trade Date Reported" typeRef="java.lang.Double[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_11"/>
+        </informationRequirement>
+    </decision>
+    <inputData id="node_11" name="Application">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Application" collection="false" name="Application"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_11_ii" name="Application" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.Application"/>
+    </inputData>
+    <decision id="node_12" name="Active Debt">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Customer" collection="true" name="Customer"/>
+                <input bomType="java.lang.Double" collection="true" name="Months Since Trade Date Reported"/>
+                <output bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Active$InActive" collection="true" name="Active Debt"/>
+                <rule defaultRule="false" href="node_12/Active%20Debt.dmt" kind="DecisionTable" name="Active Debt"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_12_ii" name="Active Debt" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.Active$InActive[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_10"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_13" name="Installment Trade Monthly Debt Obligation">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Customer" collection="true" name="Customer"/>
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.TradeType" collection="true" name="Trade Type"/>
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Qualified$NotQualified" collection="true" name="Debt Manual Edits Qualified"/>
+                <input bomType="java.lang.Double" collection="true" name="Installment Debt Monthly Payments Remaining from Balance Amount"/>
+                <input bomType="java.lang.Double" collection="true" name="Trade Equivalent Monthly Payment Amount"/>
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Active$InActive" collection="true" name="Active Debt"/>
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Required$NotRequired" collection="true" name="Existing Loan To Be Paid In Full Stipulation Required"/>
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Application" collection="false" name="Application"/>
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Required$NotRequired" collection="true" name="Subject To Trade In Stipulation Required"/>
+                <input bomType="java.lang.Double" collection="true" name="TDSR Trade Obligation Factor"/>
+                <output bomType="java.lang.Double" collection="true" name="Installment Trade Monthly Debt Obligation"/>
+                <rule defaultRule="false" href="node_13/Installment%20Trade%20Monthly%20Debt%20Obligation.dmt" kind="DecisionTable" name="Installment Trade Monthly Debt Obligation"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_13_ii" name="Installment Trade Monthly Debt Obligation" typeRef="java.lang.Double[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_3"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_4"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_5"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_6"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_12"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_11"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_8"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_9"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_14" name="TDSR Balance Obligation Monthly Payment Amount">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Customer" collection="true" name="Customer"/>
+                <input bomType="java.lang.Double" collection="true" name="TDSR Trade Obligation Factor"/>
+                <output bomType="java.lang.Double" collection="true" name="TDSR Balance Obligation Monthly Payment Amount"/>
+                <rule defaultRule="false" href="node_14/TDSR%20Balance%20Obligation%20Monthly%20Payment%20Amount.drl" kind="BusinessRule" name="TDSR Balance Obligation Monthly Payment Amount"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_14_ii" name="TDSR Balance Obligation Monthly Payment Amount" typeRef="java.lang.Double[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_9"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_15" name="Revolving Trade Monthly Debt Obligation">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Customer" collection="true" name="Customer"/>
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.TradeType" collection="true" name="Trade Type"/>
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Qualified$NotQualified" collection="true" name="Debt Manual Edits Qualified"/>
+                <input bomType="java.lang.Double" collection="true" name="TDSR Balance Obligation Monthly Payment Amount"/>
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Active$InActive" collection="true" name="Active Debt"/>
+                <output bomType="java.lang.Double" collection="true" name="Revolving Trade Monthly Debt Obligation"/>
+                <rule defaultRule="false" href="node_15/Revolving%20Trade%20Monthly%20Debt%20Obligation.dmt" kind="DecisionTable" name="Revolving Trade Monthly Debt Obligation"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_15_ii" name="Revolving Trade Monthly Debt Obligation" typeRef="java.lang.Double[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_3"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_14"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_12"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_16" name="Total Installment Monthly Debt Obligation">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.Double" collection="true" name="Installment Trade Monthly Debt Obligation"/>
+                <output bomType="java.lang.Double" collection="false" name="Total Installment Monthly Debt Obligation"/>
+                <rule defaultRule="false" href="node_16/Total%20Installment%20Monthly%20Debt%20Obligation.drl" kind="BusinessRule" name="Total Installment Monthly Debt Obligation"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_16_ii" name="Total Installment Monthly Debt Obligation" typeRef="java.lang.Double"/>
+        <informationRequirement>
+            <requiredInput href="#node_13"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_17" name="Total Revolving Monthly Debt Obligation">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.Double" collection="true" name="Revolving Trade Monthly Debt Obligation"/>
+                <output bomType="java.lang.Double" collection="false" name="Total Revolving Monthly Debt Obligation"/>
+                <rule defaultRule="false" href="node_17/Total%20Revolving%20Monthly%20Debt%20Obligation.drl" kind="BusinessRule" name="Total Revolving Monthly Debt Obligation"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_17_ii" name="Total Revolving Monthly Debt Obligation" typeRef="java.lang.Double"/>
+        <informationRequirement>
+            <requiredInput href="#node_15"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_18" name="Total Credit Bureau Monthly Debt Obligation">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.Double" collection="false" name="Total Revolving Monthly Debt Obligation"/>
+                <input bomType="java.lang.Double" collection="false" name="Total Installment Monthly Debt Obligation"/>
+                <output bomType="java.lang.Double" collection="false" name="Total Credit Bureau Monthly Debt Obligation"/>
+                <rule defaultRule="false" href="node_18/Total%20Credit%20Bureau%20Monthly%20Debt%20Obligation.drl" kind="BusinessRule" name="Total Credit Bureau Monthly Debt Obligation"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_18_ii" name="Total Credit Bureau Monthly Debt Obligation" typeRef="java.lang.Double"/>
+        <informationRequirement>
+            <requiredInput href="#node_17"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_16"/>
+        </informationRequirement>
+    </decision>
 </definitions>
 </definition>
 </com.ibm.rules.studio.model.decisionmodel:DecisionModel>

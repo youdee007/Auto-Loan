@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>TDSR Balance Obligation Monthly Payment Amount</name>
+  <uuid>9d4896d9-2e49-4892-8a01-1e6e44b72fac</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[definitions 
+	set 'aCustomer' to a Customer in Customer ; 
+     
+	set 'aDebt' to a Debt in the Debts of aCustomer ; 
+    
+	set 'aTDSRTradeObligation' to a number in 'TDSR Trade Obligation Factor' ; 
+    
+    then 
+	add (the balAmt of aDebt * aTDSRTradeObligation ) to decision ; ]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>
