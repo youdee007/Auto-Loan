@@ -12,6 +12,12 @@ agull.auto_loan_demo.auto_loan_service.datastructure.AccountNetCharacteristics.d
 agull.auto_loan_demo.auto_loan_service.datastructure.AccountNetCharacteristics.dateOfMostRecentBankruptcyReportedDate#phrase.action = set the dateOfMostRecentBankruptcyReportedDate of {this} to {dateOfMostRecentBankruptcyReportedDate}
 agull.auto_loan_demo.auto_loan_service.datastructure.AccountNetCharacteristics.dateOfMostRecentBankruptcyReportedDate#phrase.navigation = {dateOfMostRecentBankruptcyReportedDate} of {this}
 
+# agull.auto_loan_demo.auto_loan_service.datastructure.Active$InActive
+agull.auto_loan_demo.auto_loan_service.datastructure.Active$InActive#concept.documentation = 
+agull.auto_loan_demo.auto_loan_service.datastructure.Active$InActive#concept.label = Active/InActive
+agull.auto_loan_demo.auto_loan_service.datastructure.Active$InActive.active#instance.label = Active
+agull.auto_loan_demo.auto_loan_service.datastructure.Active$InActive.inActive#instance.label = InActive
+
 # agull.auto_loan_demo.auto_loan_service.datastructure.Application
 agull.auto_loan_demo.auto_loan_service.datastructure.Application#concept.label = Application
 agull.auto_loan_demo.auto_loan_service.datastructure.Application.Application(boolean,boolean,double,java.lang.String,java.time.LocalDate,java.lang.String,boolean,java.lang.String,java.lang.String,double,java.lang.String,double,double,java.lang.String,double,java.time.LocalDate,java.lang.String,java.lang.String,java.lang.String,double,double,double,double,double,double,double,double,double,java.lang.String,double,double,double)#phrase.navigation = a new {Application} where {0, borrowerAdded} {1, borrowerRemoved} {2, combinedTDSR} {3, createdBy} {4, createdOn} {5, customerProvince} {6, dealerBlacklistIndicator} {7, dealerID} {8, dealerName} {9, id} {10, incomeStatus} {11, interestRate} {12, ltv} {13, productType} {14, pti} {15, requestDate} {16, riskTierCode} {17, shoppingCustomerFlag} {18, source} {19, submittedIncome} {20, tds} {21, tdsExpenses} {22, tdsIncome} {23, verifiedMonthlyIncome} {24, warrantyMonths} {25, worksheetAmount} {26, worksheetBuyRate} {27, worksheetExtendedWarranty} {28, worksheetOptionalAHInsurance} {29, worksheetOptionalLifeInsurance} {30, worksheetTerm} {31, worksheetTotalMthPay}
