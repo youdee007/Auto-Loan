@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Count Number Of Qualifying New Tradelines In the Last 6 Months</name>
+  <uuid>33666aae-8a97-4f65-b087-468a6dc23cf6</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[if
+	'Number Of Qualifying New Tradelines In the Last 6 Months' are defined 
+then
+	set decision to the number of elements in 'Number Of Qualifying New Tradelines In the Last 6 Months' ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Six Month Date Threshold</name>
+  <uuid>c6c5d46d-61ab-4cc1-a6e0-01526a4b3f59</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[set decision to the date of the createdOn of Application - 6 months; ]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

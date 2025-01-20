@@ -13,6 +13,11 @@
     <dependencies>
         <dependency>
             <groupId>agull.auto_loan_demo.auto_loan_service</groupId>
+            <artifactId>applicantCreditHistoryRecommendedOutcome</artifactId>
+            <version>LATEST-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>agull.auto_loan_demo.auto_loan_service</groupId>
             <artifactId>applicationPreBureauEligibility</artifactId>
             <version>LATEST-SNAPSHOT</version>
         </dependency>
@@ -102,6 +107,9 @@
 
 
 
+
+
+
 <build>
         <resources>
             <resource>
@@ -126,6 +134,15 @@
                         </goals>
                         <configuration>
                             <artifactItems>
+                                <artifactItem>
+                                    <groupId>agull.auto_loan_demo.auto_loan_service</groupId>
+                                    <artifactId>applicantCreditHistoryRecommendedOutcome</artifactId>
+                                    <version>LATEST-SNAPSHOT</version>
+                                    <type>jar</type>
+                                    <overWrite>false</overWrite>
+                                    <includes>**/*.class</includes>
+                                    <outputDirectory>${project.build.directory}/classes</outputDirectory>
+                                </artifactItem>
                                 <artifactItem>
                                     <groupId>agull.auto_loan_demo.auto_loan_service</groupId>
                                     <artifactId>applicationPreBureauEligibility</artifactId>

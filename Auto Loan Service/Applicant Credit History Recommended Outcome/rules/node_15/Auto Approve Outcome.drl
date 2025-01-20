@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Auto Approve Outcome</name>
+  <uuid>4a1dbf8d-5ed3-4025-9b49-e26fbc5c8632</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[definitions 
+	set 'an Applicant Credit History Recommended Outcome' to an Auto Approve/Manual Review/Auto Decline in 'Applicant Credit History Recommended Outcome' ;
+    if 'an Applicant Credit History Recommended Outcome' is one of { Auto Approve } then 
+	set decision to Auto Approve;
+]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

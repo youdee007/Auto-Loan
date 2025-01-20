@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionmodel:DecisionModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionmodel="http://com.ibm.rules.studio/model/decisionmodel.ecore">
+  <name>decisionModel</name>
+  <uuid>ef6e10d0-2850-4fff-9def-82f6467a4e68</uuid>
+  <locale>en_US</locale>
+  <definition><definitions xmlns="http://www.omg.org/spec/DMN/20180521/MODEL/" id="decisions" name="diagram" namespace="">
+    <extensionElements>
+        <locale xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" id="en_US"/>
+    </extensionElements>
+    <inputData id="node_0" name="Customer">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Customer" collection="true" name="Customer"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_0_ii" name="Customer" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.Customer[]"/>
+    </inputData>
+    <decision id="node_1" name="Qualifying Debt Date List">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Customer" collection="true" name="Customer"/>
+                <output bomType="java.time.LocalDate" collection="true" name="Qualifying Debt Date List"/>
+                <rule defaultRule="false" href="node_1/Qualifying%20Debt%20Date%20List.drl" kind="BusinessRule" name="Qualifying Debt Date List"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_1_ii" name="Qualifying Debt Date List" typeRef="java.time.LocalDate[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_2" name="Oldest Qualifying Tradeline Date">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.time.LocalDate" collection="true" name="Qualifying Debt Date List"/>
+                <output bomType="java.time.LocalDate" collection="false" name="Oldest Qualifying Tradeline Date"/>
+                <rule defaultRule="false" href="node_2/Oldest%20Qualifying%20Tradeline%20Date.drl" kind="BusinessRule" name="Oldest Qualifying Tradeline Date"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_2_ii" name="Oldest Qualifying Tradeline Date" typeRef="java.time.LocalDate"/>
+        <informationRequirement>
+            <requiredInput href="#node_1"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_3" name="Number of Qualifying Tradelines">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.time.LocalDate" collection="true" name="Qualifying Debt Date List"/>
+                <output bomType="java.lang.Double" collection="false" name="Number of Qualifying Tradelines"/>
+                <rule defaultRule="false" href="node_3/Number%20of%20Qualifying%20Tradelines.drl" kind="BusinessRule" name="Number of Qualifying Tradelines"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_3_ii" name="Number of Qualifying Tradelines" typeRef="java.lang.Double"/>
+        <informationRequirement>
+            <requiredInput href="#node_1"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_4" name="Age of Oldest Qualifying Tradeline">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.time.LocalDate" collection="false" name="Oldest Qualifying Tradeline Date"/>
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Application" collection="false" name="Application"/>
+                <output bomType="java.lang.Double" collection="false" name="Age of Oldest Qualifying Tradeline"/>
+                <rule defaultRule="false" href="node_4/Age%20of%20Oldest%20Qualifying%20Tradeline.drl" kind="BusinessRule" name="Age of Oldest Qualifying Tradeline"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_4_ii" name="Age of Oldest Qualifying Tradeline" typeRef="java.lang.Double"/>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_5"/>
+        </informationRequirement>
+    </decision>
+    <inputData id="node_5" name="Application">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Application" collection="false" name="Application"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_5_ii" name="Application" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.Application"/>
+    </inputData>
+    <decision id="node_6" name="Bureau Thickness">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.Double" collection="false" name="Number of Qualifying Tradelines"/>
+                <input bomType="java.lang.Double" collection="false" name="Age of Oldest Qualifying Tradeline"/>
+                <output bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Thick$Thin" collection="false" name="Bureau Thickness"/>
+                <rule defaultRule="false" href="node_6/Bureau%20Thickness.dmt" kind="DecisionTable" name="Bureau Thickness"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_6_ii" name="Bureau Thickness" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.Thick$Thin"/>
+        <informationRequirement>
+            <requiredInput href="#node_3"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_4"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_7" name="Six Month Date Threshold">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Application" collection="false" name="Application"/>
+                <output bomType="java.time.LocalDate" collection="false" name="Six Month Date Threshold"/>
+                <rule defaultRule="false" href="node_7/Six%20Month%20Date%20Threshold.drl" kind="BusinessRule" name="Six Month Date Threshold"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_7_ii" name="Six Month Date Threshold" typeRef="java.time.LocalDate"/>
+        <informationRequirement>
+            <requiredInput href="#node_5"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_8" name="Number Of Qualifying New Tradelines In the Last 6 Months">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.time.LocalDate" collection="true" name="Qualifying Debt Date List"/>
+                <input bomType="java.time.LocalDate" collection="false" name="Six Month Date Threshold"/>
+                <output bomType="java.time.LocalDate" collection="true" name="Number Of Qualifying New Tradelines In the Last 6 Months"/>
+                <rule defaultRule="false" href="node_8/Number%20Of%20Qualifying%20New%20Tradelines%20In%20the%20Last%206%20Months.drl" kind="BusinessRule" name="Number Of Qualifying New Tradelines In the Last 6 Months"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_8_ii" name="Number Of Qualifying New Tradelines In the Last 6 Months" typeRef="java.time.LocalDate[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_1"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_7"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_9" name="Applicant Debt Negative Items">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Customer" collection="true" name="Customer"/>
+                <output bomType="agull.auto_loan_demo.auto_loan_service.datastructure.ApplicantDebtNegativeItems" collection="true" name="Applicant Debt Negative Items"/>
+                <rule defaultRule="false" href="node_9/Applicant%20Debt%20Negative%20Items.dmt" kind="DecisionTable" name="Applicant Debt Negative Items"/>
+                <rule defaultRule="true" href="node_9/output-default-setting.drl" kind="BusinessRule" name="output-default-setting"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_9_ii" name="Applicant Debt Negative Items" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.ApplicantDebtNegativeItems[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_10" name="Applicant Debt Late Payment Types">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.ApplicantDebtNegativeItems" collection="true" name="Applicant Debt Negative Items"/>
+                <output bomType="agull.auto_loan_demo.auto_loan_service.datastructure.ApplicantDebtLatePaymentTypes" collection="true" name="Applicant Debt Late Payment Types"/>
+                <rule defaultRule="false" href="node_10/Applicant%20Debt%20Late%20Payment%20Types.dmt" kind="DecisionTable" name="Applicant Debt Late Payment Types"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_10_ii" name="Applicant Debt Late Payment Types" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.ApplicantDebtLatePaymentTypes[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_9"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_11" name="Applicant Debt Problem Outcome">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.Double" collection="false" name="Count Number Of Qualifying New Tradelines In the Last 6 Months"/>
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline" collection="false" name="Credit Bureau Major Derogatory Outcome"/>
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.ApplicantDebtLatePaymentTypes" collection="true" name="Applicant Debt Late Payment Types"/>
+                <output bomType="agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline" collection="true" name="Applicant Debt Problem Outcome"/>
+                <rule defaultRule="false" href="node_11/Applicant%20Debt%20Problem%20Outcome.dmt" kind="DecisionTable" name="Applicant Debt Problem Outcome"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_11_ii" name="Applicant Debt Problem Outcome" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_16"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_13"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_10"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_13" name="Credit Bureau Major Derogatory Outcome">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Customer" collection="true" name="Customer"/>
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Application" collection="false" name="Application"/>
+                <output bomType="agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline" collection="false" name="Credit Bureau Major Derogatory Outcome"/>
+                <rule defaultRule="false" href="node_13/Credit%20Bureau%20Major%20Derogatory%20Outcome.dmt" kind="DecisionTable" name="Credit Bureau Major Derogatory Outcome"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_13_ii" name="Credit Bureau Major Derogatory Outcome" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_5"/>
+        </informationRequirement>
+        <knowledgeRequirement>
+            <requiredKnowledge href="#node_12"/>
+        </knowledgeRequirement>
+    </decision>
+    <decision id="node_14" name="Applicant Credit History Recommended Outcome">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Thick$Thin" collection="false" name="Bureau Thickness"/>
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline" collection="true" name="Applicant Debt Problem Outcome"/>
+                <output bomType="agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline" collection="true" name="Applicant Credit History Recommended Outcome"/>
+                <rule defaultRule="false" href="node_14/Applicant%20Credit%20History%20Recommended%20Outcome.dmt" kind="DecisionTable" name="Applicant Credit History Recommended Outcome"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_14_ii" name="Applicant Credit History Recommended Outcome" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_6"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_11"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_15" name="Application Credit History Recommended Outcome">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline" collection="true" name="Applicant Credit History Recommended Outcome"/>
+                <output bomType="agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline" collection="false" name="Application Credit History Recommended Outcome"/>
+                <rule defaultRule="false" href="node_15/Auto%20Approve%20Outcome.drl" kind="BusinessRule" name="Auto Approve Outcome"/>
+                <rule defaultRule="false" href="node_15/Auto%20Decline%20Outcome.drl" kind="BusinessRule" name="Auto Decline Outcome"/>
+                <rule defaultRule="false" href="node_15/Manual%20Review%20Outcome.drl" kind="BusinessRule" name="Manual Review Outcome"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_15_ii" name="Application Credit History Recommended Outcome" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline"/>
+        <informationRequirement>
+            <requiredInput href="#node_14"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_16" name="Count Number Of Qualifying New Tradelines In the Last 6 Months">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.time.LocalDate" collection="true" name="Number Of Qualifying New Tradelines In the Last 6 Months"/>
+                <output bomType="java.lang.Double" collection="false" name="Count Number Of Qualifying New Tradelines In the Last 6 Months"/>
+                <rule defaultRule="false" href="node_16/Count%20Number%20Of%20Qualifying%20New%20Tradelines%20In%20the%20Last%206%20Months.drl" kind="BusinessRule" name="Count Number Of Qualifying New Tradelines In the Last 6 Months"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_16_ii" name="Count Number Of Qualifying New Tradelines In the Last 6 Months" typeRef="java.lang.Double"/>
+        <informationRequirement>
+            <requiredInput href="#node_8"/>
+        </informationRequirement>
+    </decision>
+    <businessKnowledgeModel id="node_12" name="Credit Bureau Report Functions">
+        <extensionElements>
+            <properties xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <property name="ads.designer.bkKind"><![CDATA[decision]]></property>
+            </properties>
+        </extensionElements>
+        <variable name="Credit Bureau Report Functions" typeRef="agull.auto_loan_demo.auto_loan_service.creditbureaureportfunctions.Credit_Bureau_Report_FunctionsOutput"/>
+        <encapsulatedLogic typeRef="agull.auto_loan_demo.auto_loan_service.creditbureaureportfunctions.Credit_Bureau_Report_FunctionsOutput">
+            <formalParameter name="customer" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.Customer[]"/>
+            <formalParameter name="application" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.Application"/>
+            <context>
+                <contextEntry>
+                    <variable name="class"/>
+                    <literalExpression>
+                        <text>"agull.auto_loan_demo.auto_loan_service.creditbureaureportfunctions.Credit_Bureau_Report_Functions"</text>
+                    </literalExpression>
+                </contextEntry>
+                <contextEntry>
+                    <variable name="method signature"/>
+                    <literalExpression>
+                        <text>"run(java.util.List,agull.auto_loan_demo.auto_loan_service.datastructure.Application)"</text>
+                    </literalExpression>
+                </contextEntry>
+            </context>
+        </encapsulatedLogic>
+    </businessKnowledgeModel>
+</definitions>
+</definition>
+</com.ibm.rules.studio.model.decisionmodel:DecisionModel>

@@ -54,6 +54,60 @@ class Active$InActive
                 property com.fasterxml.jackson.annotation.JsonProperty "InActive";
 }
 
+class ApplicantDebtLatePaymentTypes
+        extends java.lang.Enum
+        property ads.typeId "23"
+        property com.fasterxml.jackson.annotation.JsonTypeName "ApplicantDebtLatePaymentTypes"
+        #de.generated
+{
+    domain {static majorDerogatory, static majorLatePayment, static minorLatePayment, static noDebtProblem}
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.ApplicantDebtLatePaymentTypes majorDerogatory
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "Major Derogatory";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.ApplicantDebtLatePaymentTypes majorLatePayment
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Major Late Payment";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.ApplicantDebtLatePaymentTypes minorLatePayment
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Minor Late Payment";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.ApplicantDebtLatePaymentTypes noDebtProblem
+                property ads.attributeId "4"
+                property com.fasterxml.jackson.annotation.JsonProperty "No Debt Problem";
+}
+
+class ApplicantDebtNegativeItems
+        extends java.lang.Enum
+        property ads.typeId "22"
+        property com.fasterxml.jackson.annotation.JsonTypeName "ApplicantDebtNegativeItems"
+        #de.generated
+{
+    domain {static $0DaysLateDebt, static $0DaysLateDebt1, static $0DaysLateDebt2, static $20DaysLateDebt, static badDebt, static consolidated, static @null, static repossession}
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.ApplicantDebtNegativeItems $0DaysLateDebt
+                property ads.attributeId "5"
+                property com.fasterxml.jackson.annotation.JsonProperty "90 Days Late Debt";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.ApplicantDebtNegativeItems $0DaysLateDebt1
+                property ads.attributeId "6"
+                property com.fasterxml.jackson.annotation.JsonProperty "60DaysLateDebt";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.ApplicantDebtNegativeItems $0DaysLateDebt2
+                property ads.attributeId "7"
+                property com.fasterxml.jackson.annotation.JsonProperty "30 Days Late Debt";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.ApplicantDebtNegativeItems $20DaysLateDebt
+                property ads.attributeId "4"
+                property com.fasterxml.jackson.annotation.JsonProperty "120 Days Late Debt";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.ApplicantDebtNegativeItems badDebt
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Bad Debt";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.ApplicantDebtNegativeItems consolidated
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "Consolidated";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.ApplicantDebtNegativeItems @null
+                property ads.attributeId "8"
+                property com.fasterxml.jackson.annotation.JsonProperty "null";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.ApplicantDebtNegativeItems repossession
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Repossession";
+}
+
 class Application
         property ads.typeId "1"
         property com.fasterxml.jackson.annotation.JsonTypeName "Application"
@@ -75,7 +129,7 @@ class Application
                 property ads.attributeId "14"
                 property com.fasterxml.jackson.annotation.JsonProperty "createdBy"
                 #update;
-    java.time.LocalDate createdOn
+    java.time.ZonedDateTime createdOn
                 property ads.attributeId "25"
                 property com.fasterxml.jackson.annotation.JsonProperty "createdOn"
                 #update;
@@ -191,7 +245,7 @@ class Application
         boolean borrowerRemoved, 
         double combinedTDSR, 
         string createdBy, 
-        java.time.LocalDate createdOn, 
+        java.time.ZonedDateTime createdOn, 
         string customerProvince, 
         boolean dealerBlacklistIndicator, 
         string dealerID, 
@@ -326,7 +380,7 @@ class AutoApprove$ManualReview$AutoDecline
         property com.fasterxml.jackson.annotation.JsonTypeName "Auto Approve/Manual Review/Auto Decline"
         #de.generated
 {
-    domain {static autoApprove, static autoDecline, static manualReview}
+    domain {static autoApprove, static autoDecline, static manualReview, static noDebtProblem, static noDerogatoryIssue}
     static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline autoApprove
                 property ads.attributeId "3"
                 property com.fasterxml.jackson.annotation.JsonProperty "Auto Approve";
@@ -336,6 +390,12 @@ class AutoApprove$ManualReview$AutoDecline
     static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline manualReview
                 property ads.attributeId "1"
                 property com.fasterxml.jackson.annotation.JsonProperty "Manual Review";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline noDebtProblem
+                property ads.attributeId "5"
+                property com.fasterxml.jackson.annotation.JsonProperty "No Debt Problem";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline noDerogatoryIssue
+                property ads.attributeId "4"
+                property com.fasterxml.jackson.annotation.JsonProperty "No Derogatory Issue";
 }
 
 class CreditBureauReport
@@ -1013,6 +1073,21 @@ class Required$NotRequired
     static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.Required$NotRequired required
                 property ads.attributeId "1"
                 property com.fasterxml.jackson.annotation.JsonProperty "Required";
+}
+
+class Thick$Thin
+        extends java.lang.Enum
+        property ads.typeId "21"
+        property com.fasterxml.jackson.annotation.JsonTypeName "Thick/Thin"
+        #de.generated
+{
+    domain {static thick, static thin}
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.Thick$Thin thick
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Thick";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.Thick$Thin thin
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Thin";
 }
 
 class Tier

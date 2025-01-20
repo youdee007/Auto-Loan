@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Qualifying Debt Date List</name>
+  <uuid>ed2d55a8-9b2a-4a96-af01-cae7fe1b11fb</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[definitions 
+	set 'a Customer' to a Customer in Customer ; 
+	set 'a Debt' to a Debt in the Debts of 'a Customer' ;
+    
+if 
+	the actType of 'a Debt' is one of { "Revolving", "Mortgage", "Installment" } then 
+	add the dateOpened of 'a Debt' to decision; 
+    
+else 
+	set decision to null ; 
+    
+    ]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

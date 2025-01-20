@@ -64,6 +64,7 @@
     </dependencyManagement>
     <modules>
         <module>.decisionservice</module>
+        <module>Applicant Credit History Recommended Outcome</module>
         <module>Application Pre Bureau Eligibility</module>
         <module>Credit Bureau Report Functions</module>
         <module>Data Structure</module>

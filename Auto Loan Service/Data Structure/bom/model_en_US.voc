@@ -18,9 +18,27 @@ agull.auto_loan_demo.auto_loan_service.datastructure.Active$InActive#concept.lab
 agull.auto_loan_demo.auto_loan_service.datastructure.Active$InActive.active#instance.label = Active
 agull.auto_loan_demo.auto_loan_service.datastructure.Active$InActive.inActive#instance.label = InActive
 
+# agull.auto_loan_demo.auto_loan_service.datastructure.ApplicantDebtLatePaymentTypes
+agull.auto_loan_demo.auto_loan_service.datastructure.ApplicantDebtLatePaymentTypes#concept.label = Applicant Debt Late Payment Types
+agull.auto_loan_demo.auto_loan_service.datastructure.ApplicantDebtLatePaymentTypes.majorDerogatory#instance.label = Major Derogatory
+agull.auto_loan_demo.auto_loan_service.datastructure.ApplicantDebtLatePaymentTypes.majorLatePayment#instance.label = Major Late Payment
+agull.auto_loan_demo.auto_loan_service.datastructure.ApplicantDebtLatePaymentTypes.minorLatePayment#instance.label = Minor Late Payment
+agull.auto_loan_demo.auto_loan_service.datastructure.ApplicantDebtLatePaymentTypes.noDebtProblem#instance.label = No Debt Problem
+
+# agull.auto_loan_demo.auto_loan_service.datastructure.ApplicantDebtNegativeItems
+agull.auto_loan_demo.auto_loan_service.datastructure.ApplicantDebtNegativeItems#concept.label = Applicant Debt Negative Items
+agull.auto_loan_demo.auto_loan_service.datastructure.ApplicantDebtNegativeItems.$0DaysLateDebt#instance.label = 90 Days Late Debt
+agull.auto_loan_demo.auto_loan_service.datastructure.ApplicantDebtNegativeItems.$0DaysLateDebt1#instance.label = 60 Days Late Debt
+agull.auto_loan_demo.auto_loan_service.datastructure.ApplicantDebtNegativeItems.$0DaysLateDebt2#instance.label = 30 Days Late Debt
+agull.auto_loan_demo.auto_loan_service.datastructure.ApplicantDebtNegativeItems.$20DaysLateDebt#instance.label = 120 Days Late Debt
+agull.auto_loan_demo.auto_loan_service.datastructure.ApplicantDebtNegativeItems.badDebt#instance.label = Bad Debt
+agull.auto_loan_demo.auto_loan_service.datastructure.ApplicantDebtNegativeItems.consolidated#instance.label = Consolidated
+agull.auto_loan_demo.auto_loan_service.datastructure.ApplicantDebtNegativeItems.null#instance.label = null
+agull.auto_loan_demo.auto_loan_service.datastructure.ApplicantDebtNegativeItems.repossession#instance.label = Repossession
+
 # agull.auto_loan_demo.auto_loan_service.datastructure.Application
 agull.auto_loan_demo.auto_loan_service.datastructure.Application#concept.label = Application
-agull.auto_loan_demo.auto_loan_service.datastructure.Application.Application(boolean,boolean,double,java.lang.String,java.time.LocalDate,java.lang.String,boolean,java.lang.String,java.lang.String,double,java.lang.String,double,double,java.lang.String,double,java.time.LocalDate,java.lang.String,java.lang.String,java.lang.String,double,double,double,double,double,double,double,double,double,java.lang.String,double,double,double)#phrase.navigation = a new {Application} where {0, borrowerAdded} {1, borrowerRemoved} {2, combinedTDSR} {3, createdBy} {4, createdOn} {5, customerProvince} {6, dealerBlacklistIndicator} {7, dealerID} {8, dealerName} {9, id} {10, incomeStatus} {11, interestRate} {12, ltv} {13, productType} {14, pti} {15, requestDate} {16, riskTierCode} {17, shoppingCustomerFlag} {18, source} {19, submittedIncome} {20, tds} {21, tdsExpenses} {22, tdsIncome} {23, verifiedMonthlyIncome} {24, warrantyMonths} {25, worksheetAmount} {26, worksheetBuyRate} {27, worksheetExtendedWarranty} {28, worksheetOptionalAHInsurance} {29, worksheetOptionalLifeInsurance} {30, worksheetTerm} {31, worksheetTotalMthPay}
+agull.auto_loan_demo.auto_loan_service.datastructure.Application.Application(boolean,boolean,double,java.lang.String,java.time.ZonedDateTime,java.lang.String,boolean,java.lang.String,java.lang.String,double,java.lang.String,double,double,java.lang.String,double,java.time.LocalDate,java.lang.String,java.lang.String,java.lang.String,double,double,double,double,double,double,double,double,double,java.lang.String,double,double,double)#phrase.navigation = a new {Application} where {0, borrowerAdded} {1, borrowerRemoved} {2, combinedTDSR} {3, createdBy} {4, createdOn} {5, customerProvince} {6, dealerBlacklistIndicator} {7, dealerID} {8, dealerName} {9, id} {10, incomeStatus} {11, interestRate} {12, ltv} {13, productType} {14, pti} {15, requestDate} {16, riskTierCode} {17, shoppingCustomerFlag} {18, source} {19, submittedIncome} {20, tds} {21, tdsExpenses} {22, tdsIncome} {23, verifiedMonthlyIncome} {24, warrantyMonths} {25, worksheetAmount} {26, worksheetBuyRate} {27, worksheetExtendedWarranty} {28, worksheetOptionalAHInsurance} {29, worksheetOptionalLifeInsurance} {30, worksheetTerm} {31, worksheetTotalMthPay}
 agull.auto_loan_demo.auto_loan_service.datastructure.Application.borrowerAdded#phrase.action[0] = {this} gets borrowerAdded only if {borrowerAdded}
 agull.auto_loan_demo.auto_loan_service.datastructure.Application.borrowerAdded#phrase.action[1] = make it {borrowerAdded} that {this} is borrowerAdded
 agull.auto_loan_demo.auto_loan_service.datastructure.Application.borrowerAdded#phrase.action[1].deprecated = true
@@ -192,6 +210,8 @@ agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$Au
 agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline.autoDecline#instance.label = Auto Decline
 agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline.manualReview#instance.documentation = 
 agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline.manualReview#instance.label = Manual Review
+agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline.noDebtProblem#instance.label = No Debt Problem
+agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline.noDerogatoryIssue#instance.label = No Derogatory Issue
 
 # agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReport
 agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReport#concept.label = Credit Bureau Report
@@ -538,6 +558,11 @@ agull.auto_loan_demo.auto_loan_service.datastructure.Qualified$NotQualified.qual
 agull.auto_loan_demo.auto_loan_service.datastructure.Required$NotRequired#concept.label = Required/Not Required
 agull.auto_loan_demo.auto_loan_service.datastructure.Required$NotRequired.notRequired#instance.label = Not Required
 agull.auto_loan_demo.auto_loan_service.datastructure.Required$NotRequired.required#instance.label = Required
+
+# agull.auto_loan_demo.auto_loan_service.datastructure.Thick$Thin
+agull.auto_loan_demo.auto_loan_service.datastructure.Thick$Thin#concept.label = Thick/Thin
+agull.auto_loan_demo.auto_loan_service.datastructure.Thick$Thin.thick#instance.label = Thick
+agull.auto_loan_demo.auto_loan_service.datastructure.Thick$Thin.thin#instance.label = Thin
 
 # agull.auto_loan_demo.auto_loan_service.datastructure.Tier
 agull.auto_loan_demo.auto_loan_service.datastructure.Tier#concept.label = Tier

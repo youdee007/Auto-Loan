@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Age of Oldest Qualifying Tradeline</name>
+  <uuid>79cdabb9-f185-4fb0-90a1-6958996981c6</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[definitions 
+	set 'variable1' to the number of years between the requestDate of Application and 'Oldest Qualifying Tradeline Date' ; 
+     then 
+	set decision to variable1 ; ]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

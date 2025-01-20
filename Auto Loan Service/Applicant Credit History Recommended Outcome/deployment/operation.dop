@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" rulesetName="operation" targetRuleProjectName="Applicant Credit History Recommended Outcome">
+  <name>Applicant_Credit_History_Recommended_Outcome</name>
+  <uuid>e40d5004-63ac-4dca-9497-db39bc2976c9</uuid>
+  <decisionModel href="../rules/decisionModel.dmo#ef6e10d0-2850-4fff-9def-82f6467a4e68"/>
+  <targetRuleProject href="../../Applicant%20Credit%20History%20Recommended%20Outcome#dc504ce4-ed4e-45e4-b9d3-33217ec9d486"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>
