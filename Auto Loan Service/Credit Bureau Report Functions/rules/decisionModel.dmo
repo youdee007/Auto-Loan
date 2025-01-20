@@ -120,6 +120,7 @@
                 <input bomType="java.time.LocalDate" collection="true" name="Applicant Repossession Date List"/>
                 <input bomType="java.lang.Boolean" collection="false" name="Repossession Indicator"/>
                 <output bomType="java.lang.Double" collection="false" name="Months Since Most Recent Repossession"/>
+                <rule defaultRule="false" href="node_8/Months%20Since%20Most%20Recent%20Repossession.drl" kind="BusinessRule" name="Months Since Most Recent Repossession"/>
             </ruleset>
         </extensionElements>
         <variable id="node_8_ii" name="Months Since Most Recent Repossession" typeRef="java.lang.Double"/>
@@ -131,6 +132,151 @@
         </informationRequirement>
         <informationRequirement>
             <requiredInput href="#node_7"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_9" name="Applicant Repossessions Indicator">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.Boolean" collection="false" name="Repossession Indicator"/>
+                <input bomType="java.lang.Double" collection="false" name="Months Since Most Recent Repossession"/>
+                <output bomType="agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReportFunctions" collection="false" name="Applicant Repossessions Indicator"/>
+                <rule defaultRule="false" href="node_9/Applicant%20Repossessions%20Indicator.dmt" kind="DecisionTable" name="Applicant Repossessions Indicator"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_9_ii" name="Applicant Repossessions Indicator" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReportFunctions"/>
+        <informationRequirement>
+            <requiredInput href="#node_7"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_8"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_10" name="Applicant Consumer Proposal Date List">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Customer" collection="true" name="Customer"/>
+                <output bomType="java.time.LocalDate" collection="true" name="Applicant Consumer Proposal Date List"/>
+                <rule defaultRule="false" href="node_10/Applicant%20Consumer%20Proposal%20Date%20List.dmt" kind="DecisionTable" name="Applicant Consumer Proposal Date List"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_10_ii" name="Applicant Consumer Proposal Date List" typeRef="java.time.LocalDate[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_11" name="Consumer Proposal Indicator">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.time.LocalDate" collection="true" name="Applicant Consumer Proposal Date List"/>
+                <output bomType="java.lang.Boolean" collection="false" name="Consumer Proposal Indicator"/>
+                <rule defaultRule="false" href="node_11/Consumer%20Proposal%20Indicator.drl" kind="BusinessRule" name="Consumer Proposal Indicator"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_11_ii" name="Consumer Proposal Indicator" typeRef="java.lang.Boolean"/>
+        <informationRequirement>
+            <requiredInput href="#node_10"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_12" name="Months Since Most Recent Consumer Proposal">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Application" collection="false" name="Application"/>
+                <input bomType="java.lang.Boolean" collection="false" name="Consumer Proposal Indicator"/>
+                <input bomType="java.time.LocalDate" collection="true" name="Applicant Consumer Proposal Date List"/>
+                <output bomType="java.lang.Double" collection="false" name="Months Since Most Recent Consumer Proposal"/>
+                <rule defaultRule="false" href="node_12/Months%20Since%20Most%20Recent%20Consumer%20Proposal.drl" kind="BusinessRule" name="Months Since Most Recent Consumer Proposal"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_12_ii" name="Months Since Most Recent Consumer Proposal" typeRef="java.lang.Double"/>
+        <informationRequirement>
+            <requiredInput href="#node_5"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_11"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_10"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_13" name="Applicant Consumer Proposal Indicator">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.Double" collection="false" name="Months Since Most Recent Consumer Proposal"/>
+                <input bomType="java.lang.Boolean" collection="false" name="Consumer Proposal Indicator"/>
+                <output bomType="agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReportFunctions" collection="false" name="Applicant Consumer Proposal Indicator"/>
+                <rule defaultRule="false" href="node_13/Applicant%20Consumer%20Proposal%20Indicator.dmt" kind="DecisionTable" name="Applicant Consumer Proposal Indicator"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_13_ii" name="Applicant Consumer Proposal Indicator" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReportFunctions"/>
+        <informationRequirement>
+            <requiredInput href="#node_12"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_11"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_14" name="Applicant Collection Date List">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Customer" collection="true" name="Customer"/>
+                <output bomType="java.time.LocalDate" collection="true" name="Applicant Collection Date List"/>
+                <rule defaultRule="false" href="node_14/Applicant%20Collection%20Date%20List.dmt" kind="DecisionTable" name="Applicant Collection Date List"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_14_ii" name="Applicant Collection Date List" typeRef="java.time.LocalDate[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_15" name="Collection Indicator">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.time.LocalDate" collection="true" name="Applicant Collection Date List"/>
+                <output bomType="java.lang.Boolean" collection="false" name="Collection Indicator"/>
+                <rule defaultRule="false" href="node_15/Collection%20Indicator.drl" kind="BusinessRule" name="Collection Indicator"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_15_ii" name="Collection Indicator" typeRef="java.lang.Boolean"/>
+        <informationRequirement>
+            <requiredInput href="#node_14"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_16" name="Months Since Most Recent Collection">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.Boolean" collection="false" name="Collection Indicator"/>
+                <input bomType="java.time.LocalDate" collection="true" name="Applicant Collection Date List"/>
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Application" collection="false" name="Application"/>
+                <output bomType="java.lang.Double" collection="false" name="Months Since Most Recent Collection"/>
+                <rule defaultRule="false" href="node_16/Months%20Since%20Most%20Recent%20Collection.drl" kind="BusinessRule" name="Months Since Most Recent Collection"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_16_ii" name="Months Since Most Recent Collection" typeRef="java.lang.Double"/>
+        <informationRequirement>
+            <requiredInput href="#node_15"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_14"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_5"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_17" name="Applicant Collections Indicator">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.Double" collection="false" name="Months Since Most Recent Collection"/>
+                <input bomType="java.lang.Boolean" collection="false" name="Collection Indicator"/>
+                <output bomType="agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReportFunctions" collection="false" name="Applicant Collections Indicator"/>
+                <rule defaultRule="false" href="node_17/Applicant%20Collections%20Indicator.dmt" kind="DecisionTable" name="Applicant Collections Indicator"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_17_ii" name="Applicant Collections Indicator" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReportFunctions"/>
+        <informationRequirement>
+            <requiredInput href="#node_16"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_15"/>
         </informationRequirement>
     </decision>
 </definitions>

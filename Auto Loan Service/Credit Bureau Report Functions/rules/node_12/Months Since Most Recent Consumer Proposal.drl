@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Months Since Most Recent Consumer Proposal</name>
+  <uuid>dc35408d-c923-4859-a506-36532ae94232</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[definitions 
+	set 'an Applicant Consumer Proposal Date List' to  a date  in 'Applicant Consumer Proposal Date List' , sorted in ascending order ;
+    set 'variable1' to the number of years between the requestDate of Application and 'an Applicant Consumer Proposal Date List' ; 
+if
+	'Consumer Proposal Indicator' is true and  variable1 is defined 
+then
+	 set decision to variable1;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>
