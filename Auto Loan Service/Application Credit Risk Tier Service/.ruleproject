@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ilog.rules.studio.model.base:RuleProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore" xmlns:ilog.rules.studio.model.bom="http://ilog.rules.studio/model/bom.ecore" xmlns:ilog.rules.studio.model.query="http://ilog.rules.studio/model/query.ecore" xmlns:ilog.rules.studio.model.xom="http://ilog.rules.studio/model/xom.ecore" buildMode="DecisionEngine" isADecisionService="true" projectKind="DecisionModel" projectVersion="2.0.0">
-  <name>Loan Affordability Recommended Outcome</name>
-  <uuid>686991db-7cb6-4c8d-bcf8-4afd635ccba3</uuid>
+  <name>Application Credit Risk Tier Service</name>
+  <uuid>041972ff-a685-4e35-ba00-d29f9dd4397c</uuid>
   <outputLocation>output</outputLocation>
   <categories>any</categories>
   <paths xsi:type="ilog.rules.studio.model.xom:XOMPath" pathID="XOM">
     <entries xsi:type="ilog.rules.studio.model.xom:LibraryXOMPathEntry" name="org.eclipse.jdt.launching.JRE_CONTAINER" url="file:org.eclipse.jdt.launching.JRE_CONTAINER" kind="LIBRARY"/>
   </paths>
   <paths xsi:type="ilog.rules.studio.model.bom:BOMPath" pathID="BOM">
-    <entries xsi:type="ilog.rules.studio.model.bom:DecisionLibraryBOMEntry" name="agull.auto_loan_demo.auto_loan_service:dataStructure#LATEST-SNAPSHOT" packageId="agull.auto_loan_demo.auto_loan_service:dataStructure" version="LATEST-SNAPSHOT"/>
-    <entries xsi:type="ilog.rules.studio.model.bom:DecisionLibraryBOMEntry" name="agull.auto_loan_demo.auto_loan_service:applicationCreditRiskTierService#LATEST-SNAPSHOT" packageId="agull.auto_loan_demo.auto_loan_service:applicationCreditRiskTierService" version="LATEST-SNAPSHOT"/>
+    <entries xsi:type="ilog.rules.studio.model.bom:DecisionLibraryBOMEntry" name="Data Structure" packageId="agull.auto_loan_demo.auto_loan_service:dataStructure" version="LATEST-SNAPSHOT"/>
   </paths>
   <modelFolders xsi:type="ilog.rules.studio.model.base:SourceFolder">
     <name>rules</name>
@@ -32,5 +31,5 @@
   <modelFolders xsi:type="com.ibm.rules.studio.model.decisionservice:OperationFolder">
     <name>deployment</name>
   </modelFolders>
-  <documentation><![CDATA[Loan Affordability Recommended Outcome]]></documentation>
+  <documentation><![CDATA[Application Credit Risk Tier Service]]></documentation>
 </ilog.rules.studio.model.base:RuleProject>

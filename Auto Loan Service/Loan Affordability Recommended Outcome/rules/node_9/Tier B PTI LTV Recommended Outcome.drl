@@ -3,8 +3,11 @@
   <name>Tier B PTI LTV Recommended Outcome</name>
   <uuid>22c09cf2-7f9a-4b94-8ef0-629f6df55cee</uuid>
   <locale>en_US</locale>
-  <definition><![CDATA[if
-	'Application Credit Risk Tier' is Tier B 
+  <definition><![CDATA[definitions
+set 'a credit risk tier' to the application credit risk tier service computed from
+		Customer being Customer ;
+if
+	'a credit risk tier' is Tier B 
 then
 	set decision to 'Tier B PTI LTV Recommended Outcome' ;]]></definition>
 </ilog.rules.studio.model.brl:ActionRule>

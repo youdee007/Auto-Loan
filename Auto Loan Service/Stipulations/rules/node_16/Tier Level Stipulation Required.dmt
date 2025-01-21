@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ilog.rules.studio.model.dt:DecisionTable xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.dt="http://ilog.rules.studio/model/dt.ecore">
-  <name>Applicant Credit Risk Tier</name>
-  <uuid>9e3e71cc-3728-497e-9c3a-ff68a005b86f</uuid>
+  <name>Tier Level Stipulation Required</name>
+  <uuid>bc088a71-d0f3-4070-99be-7d0db9e5931a</uuid>
   <locale>en_US</locale>
   <definition><DT xmlns="http://schemas.ilog.com/Rules/7.0/DecisionTable" Version="7.0">
     <Body>
@@ -11,30 +11,21 @@
         </Properties>
         <Preconditions>
             <Text><![CDATA[ definitions 
-	set 'a Customer' to a Customer in Customer ;
-  ]]></Text>
+ set 'a credit risk tier' to the application credit risk tier service computed from
+		Customer being Customer ;]]></Text>
         </Preconditions>
         <Structure>
             <ConditionDefinitions>
                 <ConditionDefinition Id="C0">
-                    <Properties>
-                        <Property Name="Check.Gap" Type="xs:boolean"><![CDATA[false]]></Property>
-                        <Property Name="Check.Overlap" Type="xs:boolean"><![CDATA[true]]></Property>
-                    </Properties>
                     <ExpressionDefinition>
-                        <Text><![CDATA[the creditScore of the Credit Bureau Report of 'a Customer' is <a number> ]]></Text>
-                    </ExpressionDefinition>
-                </ConditionDefinition>
-                <ConditionDefinition Id="C2">
-                    <ExpressionDefinition>
-                        <Text><![CDATA[the customerScore of 'a Customer' is one of <numbers> ]]></Text>
+                        <Text><![CDATA['a credit risk tier' is <a Tier> ]]></Text>
                     </ExpressionDefinition>
                 </ConditionDefinition>
             </ConditionDefinitions>
             <ActionDefinitions>
                 <ActionDefinition Id="A0">
                     <ExpressionDefinition>
-                        <Text><![CDATA[add <a Tier> to decision]]></Text>
+                        <Text><![CDATA[set decision to <a Tier>]]></Text>
                     </ExpressionDefinition>
                 </ActionDefinition>
             </ActionDefinitions>
@@ -43,9 +34,7 @@
             <Partition DefId="C0">
                 <Condition>
                     <Expression>
-                        <Text><![CDATA[<a number> is between <min> and <max>]]></Text>
-                        <Param><![CDATA[780]]></Param>
-                        <Param><![CDATA[900]]></Param>
+                        <Param><![CDATA[Tier A]]></Param>
                     </Expression>
                     <ActionSet>
                         <Action DefId="A0">
@@ -57,9 +46,7 @@
                 </Condition>
                 <Condition>
                     <Expression>
-                        <Text><![CDATA[<a number> is at least <min> and less than <max>]]></Text>
-                        <Param><![CDATA[720]]></Param>
-                        <Param><![CDATA[780]]></Param>
+                        <Param><![CDATA[Tier B]]></Param>
                     </Expression>
                     <ActionSet>
                         <Action DefId="A0">
@@ -71,9 +58,7 @@
                 </Condition>
                 <Condition>
                     <Expression>
-                        <Text><![CDATA[<a number> is at least <min> and less than <max>]]></Text>
-                        <Param><![CDATA[660]]></Param>
-                        <Param><![CDATA[720]]></Param>
+                        <Param><![CDATA[Tier C]]></Param>
                     </Expression>
                     <ActionSet>
                         <Action DefId="A0">
@@ -85,9 +70,7 @@
                 </Condition>
                 <Condition>
                     <Expression>
-                        <Text><![CDATA[<a number> is at least <min> and less than <max>]]></Text>
-                        <Param><![CDATA[620]]></Param>
-                        <Param><![CDATA[660]]></Param>
+                        <Param><![CDATA[Tier D]]></Param>
                     </Expression>
                     <ActionSet>
                         <Action DefId="A0">
@@ -99,9 +82,7 @@
                 </Condition>
                 <Condition>
                     <Expression>
-                        <Text><![CDATA[<a number> is at least <min> and less than <max>]]></Text>
-                        <Param><![CDATA[0]]></Param>
-                        <Param><![CDATA[620]]></Param>
+                        <Param><![CDATA[Tier E]]></Param>
                     </Expression>
                     <ActionSet>
                         <Action DefId="A0">
@@ -116,11 +97,9 @@
     </Body>
     <Resources DefaultLocale="en_US">
         <ResourceSet Locale="en_US">
-            <Data Name="Definitions(C0)#HeaderText"><![CDATA[Credit Score]]></Data>
-            <Data Name="Definitions(A0)#Width"><![CDATA[206]]></Data>
-            <Data Name="Definitions(C2)#HeaderText"><![CDATA[Custom Score]]></Data>
+            <Data Name="Definitions(C0)#HeaderText"><![CDATA[Application Credit Risk Tier ]]></Data>
             <Data Name="Definitions(C0)[0]#HeaderText"><![CDATA[a number]]></Data>
-            <Data Name="Definitions(A0)#HeaderText"><![CDATA[Applicant Credit Risk Tier]]></Data>
+            <Data Name="Definitions(A0)#HeaderText"><![CDATA[Tier Level Stipulation Required]]></Data>
         </ResourceSet>
     </Resources>
 </DT>

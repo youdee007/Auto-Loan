@@ -8,7 +8,8 @@
     <entries xsi:type="ilog.rules.studio.model.xom:LibraryXOMPathEntry" name="org.eclipse.jdt.launching.JRE_CONTAINER" url="file:org.eclipse.jdt.launching.JRE_CONTAINER" kind="LIBRARY"/>
   </paths>
   <paths xsi:type="ilog.rules.studio.model.bom:BOMPath" pathID="BOM">
-    <entries xsi:type="ilog.rules.studio.model.bom:DecisionLibraryBOMEntry" name="Data Structure" packageId="agull.auto_loan_demo.auto_loan_service:dataStructure" version="LATEST-SNAPSHOT"/>
+    <entries xsi:type="ilog.rules.studio.model.bom:DecisionLibraryBOMEntry" name="agull.auto_loan_demo.auto_loan_service:dataStructure#LATEST-SNAPSHOT" packageId="agull.auto_loan_demo.auto_loan_service:dataStructure" version="LATEST-SNAPSHOT"/>
+    <entries xsi:type="ilog.rules.studio.model.bom:DecisionLibraryBOMEntry" name="agull.auto_loan_demo.auto_loan_service:applicationCreditRiskTierService#LATEST-SNAPSHOT" packageId="agull.auto_loan_demo.auto_loan_service:applicationCreditRiskTierService" version="LATEST-SNAPSHOT"/>
   </paths>
   <modelFolders xsi:type="ilog.rules.studio.model.base:SourceFolder">
     <name>rules</name>

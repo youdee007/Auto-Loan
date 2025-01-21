@@ -36,6 +36,15 @@ agull.auto_loan_demo.auto_loan_service.datastructure.ApplicantDebtNegativeItems.
 agull.auto_loan_demo.auto_loan_service.datastructure.ApplicantDebtNegativeItems.null#instance.label = null
 agull.auto_loan_demo.auto_loan_service.datastructure.ApplicantDebtNegativeItems.repossession#instance.label = Repossession
 
+# agull.auto_loan_demo.auto_loan_service.datastructure.ApplicantLevelStipulations
+agull.auto_loan_demo.auto_loan_service.datastructure.ApplicantLevelStipulations#concept.label = Applicant Level Stipulations
+agull.auto_loan_demo.auto_loan_service.datastructure.ApplicantLevelStipulations.ApplicantLevelStipulations(java.lang.String,agull.auto_loan_demo.auto_loan_service.datastructure.Stipulations)#phrase.navigation = a new {Applicant Level Stipulations} where {0, Message} {1, Output}
+agull.auto_loan_demo.auto_loan_service.datastructure.ApplicantLevelStipulations.message#phrase.action = set the Message of {this} to {Message}
+agull.auto_loan_demo.auto_loan_service.datastructure.ApplicantLevelStipulations.message#phrase.navigation = {Message} of {this}
+agull.auto_loan_demo.auto_loan_service.datastructure.ApplicantLevelStipulations.output#phrase.action = set the Output of {this} to {Output}
+agull.auto_loan_demo.auto_loan_service.datastructure.ApplicantLevelStipulations.output#phrase.clearer = clear the Output of {this}
+agull.auto_loan_demo.auto_loan_service.datastructure.ApplicantLevelStipulations.output#phrase.navigation = {Output} of {this}
+
 # agull.auto_loan_demo.auto_loan_service.datastructure.Application
 agull.auto_loan_demo.auto_loan_service.datastructure.Application#concept.label = Application
 agull.auto_loan_demo.auto_loan_service.datastructure.Application.Application(boolean,boolean,double,java.lang.String,java.time.ZonedDateTime,java.lang.String,boolean,java.lang.String,java.lang.String,double,java.lang.String,double,double,java.lang.String,double,java.time.LocalDate,java.lang.String,java.lang.String,java.lang.String,double,double,double,double,double,double,double,double,double,java.lang.String,double,double,double)#phrase.navigation = a new {Application} where {0, borrowerAdded} {1, borrowerRemoved} {2, combinedTDSR} {3, createdBy} {4, createdOn} {5, customerProvince} {6, dealerBlacklistIndicator} {7, dealerID} {8, dealerName} {9, id} {10, incomeStatus} {11, interestRate} {12, ltv} {13, productType} {14, pti} {15, requestDate} {16, riskTierCode} {17, shoppingCustomerFlag} {18, source} {19, submittedIncome} {20, tds} {21, tdsExpenses} {22, tdsIncome} {23, verifiedMonthlyIncome} {24, warrantyMonths} {25, worksheetAmount} {26, worksheetBuyRate} {27, worksheetExtendedWarranty} {28, worksheetOptionalAHInsurance} {29, worksheetOptionalLifeInsurance} {30, worksheetTerm} {31, worksheetTotalMthPay}
@@ -152,6 +161,15 @@ agull.auto_loan_demo.auto_loan_service.datastructure.Application.worksheetTotalM
 agull.auto_loan_demo.auto_loan_service.datastructure.Application.worksheetTotalMthPay#phrase.addition_setter = add {worksheetTotalMthPay} to the worksheetTotalMthPay of {this}
 agull.auto_loan_demo.auto_loan_service.datastructure.Application.worksheetTotalMthPay#phrase.navigation = {worksheetTotalMthPay} of {this}
 agull.auto_loan_demo.auto_loan_service.datastructure.Application.worksheetTotalMthPay#phrase.subtraction_setter = subtract {worksheetTotalMthPay} from the worksheetTotalMthPay of {this}
+
+# agull.auto_loan_demo.auto_loan_service.datastructure.ApplicationLevelStipulaton
+agull.auto_loan_demo.auto_loan_service.datastructure.ApplicationLevelStipulaton#concept.label = Application Level Stipulaton
+agull.auto_loan_demo.auto_loan_service.datastructure.ApplicationLevelStipulaton.ApplicationLevelStipulaton(java.lang.String,agull.auto_loan_demo.auto_loan_service.datastructure.Stipulations)#phrase.navigation = a new {Application Level Stipulaton} where {0, Message} {1, Output}
+agull.auto_loan_demo.auto_loan_service.datastructure.ApplicationLevelStipulaton.message#phrase.action = set the Message of {this} to {Message}
+agull.auto_loan_demo.auto_loan_service.datastructure.ApplicationLevelStipulaton.message#phrase.navigation = {Message} of {this}
+agull.auto_loan_demo.auto_loan_service.datastructure.ApplicationLevelStipulaton.output#phrase.action = set the Output of {this} to {Output}
+agull.auto_loan_demo.auto_loan_service.datastructure.ApplicationLevelStipulaton.output#phrase.clearer = clear the Output of {this}
+agull.auto_loan_demo.auto_loan_service.datastructure.ApplicationLevelStipulaton.output#phrase.navigation = {Output} of {this}
 
 # agull.auto_loan_demo.auto_loan_service.datastructure.Asset
 agull.auto_loan_demo.auto_loan_service.datastructure.Asset#concept.label = Asset

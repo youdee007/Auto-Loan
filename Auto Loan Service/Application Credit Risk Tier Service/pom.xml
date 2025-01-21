@@ -8,7 +8,7 @@
     </parent>
 
     <groupId>agull.auto_loan_demo.auto_loan_service</groupId>
-    <artifactId>loanAffordabilityRecommendedOutcome</artifactId>
+    <artifactId>applicationCreditRiskTierService</artifactId>
     <version>LATEST-SNAPSHOT</version>
 
     <build>
@@ -26,10 +26,10 @@
                 <configuration>
                     <deployments>
                         <deployment>
-                            <name>Loan_Affordability_Recommended_Outcome</name>
+                            <name>Application_Credit_Risk_Tier_Service</name>
                         </deployment>
                     </deployments>
-                <packageName>agull.auto_loan_demo.auto_loan_service.loanaffordabilityrecommendedoutcome</packageName>
+                <packageName>agull.auto_loan_demo.auto_loan_service.applicationcreditrisktierservice</packageName>
                 </configuration>
             </plugin>
         </plugins>
@@ -39,11 +39,6 @@
         <dependency>
             <groupId>agull.auto_loan_demo.auto_loan_service</groupId>
             <artifactId>dataStructure</artifactId>
-            <version>LATEST-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>agull.auto_loan_demo.auto_loan_service</groupId>
-            <artifactId>applicationCreditRiskTierService</artifactId>
             <version>LATEST-SNAPSHOT</version>
         </dependency>
         <dependency>

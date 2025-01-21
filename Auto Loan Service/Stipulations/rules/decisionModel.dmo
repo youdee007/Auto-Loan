@@ -172,14 +172,86 @@
         <extensionElements>
             <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
                 <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Acceptable$NotAcceptable" collection="false" name="Applicant Submitted Income Acceptability"/>
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Application" collection="false" name="Application"/>
                 <output bomType="agull.auto_loan_demo.auto_loan_service.datastructure.IncomeVerificationList" collection="false" name="Income Verification"/>
+                <rule defaultRule="false" href="node_13/Income%20Verification.dmt" kind="DecisionTable" name="Income Verification"/>
             </ruleset>
         </extensionElements>
         <variable id="node_13_ii" name="Income Verification" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.IncomeVerificationList"/>
         <informationRequirement>
             <requiredInput href="#node_12"/>
         </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_11"/>
+        </informationRequirement>
     </decision>
+    <decision id="node_14" name="Applicant Level Stipulations">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.IncomeVerificationList" collection="false" name="Income Verification"/>
+                <output bomType="agull.auto_loan_demo.auto_loan_service.datastructure.ApplicantLevelStipulations" collection="false" name="Applicant Level Stipulations"/>
+                <rule defaultRule="false" href="node_14/Applicant%20Level%20Stipulations.dmt" kind="DecisionTable" name="Applicant Level Stipulations"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_14_ii" name="Applicant Level Stipulations" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.ApplicantLevelStipulations"/>
+        <informationRequirement>
+            <requiredInput href="#node_13"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_16" name="Tier Level Stipulation Required">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Customer" collection="true" name="Customer"/>
+                <output bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Tier" collection="false" name="Tier Level Stipulation Required"/>
+                <rule defaultRule="false" href="node_16/Tier%20Level%20Stipulation%20Required.dmt" kind="DecisionTable" name="Tier Level Stipulation Required"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_16_ii" name="Tier Level Stipulation Required" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.Tier"/>
+        <informationRequirement>
+            <requiredInput href="#node_5"/>
+        </informationRequirement>
+        <knowledgeRequirement>
+            <requiredKnowledge href="#node_15"/>
+        </knowledgeRequirement>
+    </decision>
+    <decision id="node_17" name="Application Level Stipulaton">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Tier" collection="false" name="Tier Level Stipulation Required"/>
+                <output bomType="agull.auto_loan_demo.auto_loan_service.datastructure.ApplicationLevelStipulaton" collection="false" name="Application Level Stipulaton"/>
+                <rule defaultRule="false" href="node_17/Application%20Level%20Stipulaton.dmt" kind="DecisionTable" name="Application Level Stipulaton"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_17_ii" name="Application Level Stipulaton" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.ApplicationLevelStipulaton"/>
+        <informationRequirement>
+            <requiredInput href="#node_16"/>
+        </informationRequirement>
+    </decision>
+    <businessKnowledgeModel id="node_15" name="Application Credit Risk Tier Service">
+        <extensionElements>
+            <properties xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <property name="ads.designer.bkKind"><![CDATA[decision]]></property>
+            </properties>
+        </extensionElements>
+        <variable name="Application Credit Risk Tier Service" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.Tier"/>
+        <encapsulatedLogic typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.Tier">
+            <formalParameter name="customer" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.Customer[]"/>
+            <context>
+                <contextEntry>
+                    <variable name="class"/>
+                    <literalExpression>
+                        <text>"agull.auto_loan_demo.auto_loan_service.applicationcreditrisktierservice.Application_Credit_Risk_Tier_Service"</text>
+                    </literalExpression>
+                </contextEntry>
+                <contextEntry>
+                    <variable name="method signature"/>
+                    <literalExpression>
+                        <text>"run(java.util.List)"</text>
+                    </literalExpression>
+                </contextEntry>
+            </context>
+        </encapsulatedLogic>
+    </businessKnowledgeModel>
 </definitions>
 </definition>
 </com.ibm.rules.studio.model.decisionmodel:DecisionModel>

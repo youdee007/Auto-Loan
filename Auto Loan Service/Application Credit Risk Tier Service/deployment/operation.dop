@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" rulesetName="operation" targetRuleProjectName="Application Credit Risk Tier Service">
+  <name>Application_Credit_Risk_Tier_Service</name>
+  <uuid>9d38b8c6-d0a3-48f8-9401-0ec6c3df7104</uuid>
+  <decisionModel href="../rules/decisionModel.dmo#cda80ad2-4a9c-441f-a141-0d8ac394e459"/>
+  <targetRuleProject href="../../Application%20Credit%20Risk%20Tier%20Service#041972ff-a685-4e35-ba00-d29f9dd4397c"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>

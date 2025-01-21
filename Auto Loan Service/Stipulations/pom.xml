@@ -42,6 +42,11 @@
             <version>LATEST-SNAPSHOT</version>
         </dependency>
         <dependency>
+            <groupId>agull.auto_loan_demo.auto_loan_service</groupId>
+            <artifactId>applicationCreditRiskTierService</artifactId>
+            <version>LATEST-SNAPSHOT</version>
+        </dependency>
+        <dependency>
             <groupId>com.ibm.decision</groupId>
             <artifactId>engine-compact-runtime</artifactId>
         </dependency>

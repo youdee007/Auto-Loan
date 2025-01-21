@@ -108,6 +108,28 @@ class ApplicantDebtNegativeItems
                 property com.fasterxml.jackson.annotation.JsonProperty "Repossession";
 }
 
+class ApplicantLevelStipulations
+        property ads.typeId "28"
+        property com.fasterxml.jackson.annotation.JsonTypeName "ApplicantLevelStipulations"
+        #de.generated
+{
+    string message
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Message"
+                #update;
+    agull.auto_loan_demo.auto_loan_service.datastructure.Stipulations output
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Output"
+                #update;
+    ApplicantLevelStipulations(string message, agull.auto_loan_demo.auto_loan_service.datastructure.Stipulations output)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    ApplicantLevelStipulations()
+                #dataio.default;
+}
+
 class Application
         property ads.typeId "1"
         property com.fasterxml.jackson.annotation.JsonTypeName "Application"
@@ -278,6 +300,28 @@ class Application
                 property groups "BALA"
                 #prototype;
     Application()
+                #dataio.default;
+}
+
+class ApplicationLevelStipulaton
+        property ads.typeId "29"
+        property com.fasterxml.jackson.annotation.JsonTypeName "ApplicationLevelStipulaton"
+        #de.generated
+{
+    string message
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Message"
+                #update;
+    agull.auto_loan_demo.auto_loan_service.datastructure.Stipulations output
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Output"
+                #update;
+    ApplicationLevelStipulaton(string message, agull.auto_loan_demo.auto_loan_service.datastructure.Stipulations output)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    ApplicationLevelStipulaton()
                 #dataio.default;
 }
 

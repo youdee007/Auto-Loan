@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionmodel:DecisionModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionmodel="http://com.ibm.rules.studio/model/decisionmodel.ecore">
+  <name>decisionModel</name>
+  <uuid>cda80ad2-4a9c-441f-a141-0d8ac394e459</uuid>
+  <locale>en_US</locale>
+  <definition><definitions xmlns="http://www.omg.org/spec/DMN/20180521/MODEL/" id="decisions" name="diagram" namespace="">
+    <extensionElements>
+        <locale xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" id="en_US"/>
+    </extensionElements>
+    <inputData id="node_0" name="Customer">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Customer" collection="true" name="Customer"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_0_ii" name="Customer" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.Customer[]"/>
+    </inputData>
+    <decision id="node_1" name="Applicant Credit Risk Tier">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Customer" collection="true" name="Customer"/>
+                <output bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Tier" collection="true" name="Applicant Credit Risk Tier"/>
+                <rule defaultRule="false" href="node_1/Applicant%20Credit%20Risk%20Tier.dmt" kind="DecisionTable" name="Applicant Credit Risk Tier"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_1_ii" name="Applicant Credit Risk Tier" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.Tier[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_2" name="Application Credit Risk Tier">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Customer" collection="true" name="Customer"/>
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Tier" collection="true" name="Applicant Credit Risk Tier"/>
+                <output bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Tier" collection="false" name="Application Credit Risk Tier"/>
+                <rule defaultRule="false" href="node_2/Application%20Credit%20Risk%20Tier.drl" kind="BusinessRule" name="Application Credit Risk Tier"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_2_ii" name="Application Credit Risk Tier" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.Tier"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_1"/>
+        </informationRequirement>
+    </decision>
+</definitions>
+</definition>
+</com.ibm.rules.studio.model.decisionmodel:DecisionModel>

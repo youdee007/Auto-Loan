@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.dt:DecisionTable xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.dt="http://ilog.rules.studio/model/dt.ecore">
+  <name>Income Verification</name>
+  <uuid>db64d420-ddab-4cbe-ad92-77eb02cec4ed</uuid>
+  <locale>en_US</locale>
+  <definition><DT xmlns="http://schemas.ilog.com/Rules/7.0/DecisionTable" Version="7.0">
+    <Body>
+        <Properties>
+            <Property Name="UI.MediaType"><![CDATA[Web]]></Property>
+            <Property Name="UI.RenderBoolean" Type="xs:boolean"><![CDATA[true]]></Property>
+        </Properties>
+        <Structure>
+            <ConditionDefinitions>
+                <ConditionDefinition Id="C0">
+                    <ExpressionDefinition>
+                        <Text><![CDATA['Applicant Submitted Income Acceptability' is <an Acceptable/Not Acceptable>]]></Text>
+                    </ExpressionDefinition>
+                </ConditionDefinition>
+                <ConditionDefinition Id="C1">
+                    <ExpressionDefinition>
+                        <Text><![CDATA[the incomeStatus of Application is <a string>]]></Text>
+                    </ExpressionDefinition>
+                </ConditionDefinition>
+                <ConditionDefinition Id="C2">
+                    <ExpressionDefinition>
+                        <Text><![CDATA[the worksheetAmount of Application is <a number> ]]></Text>
+                    </ExpressionDefinition>
+                </ConditionDefinition>
+                <ConditionDefinition Id="C3">
+                    <ExpressionDefinition>
+                        <Text><![CDATA[the riskTierCode of Application is <a string>]]></Text>
+                    </ExpressionDefinition>
+                </ConditionDefinition>
+            </ConditionDefinitions>
+            <ActionDefinitions>
+                <ActionDefinition Id="A0">
+                    <ExpressionDefinition>
+                        <Text><![CDATA[set decision to <an Income Verification List>]]></Text>
+                    </ExpressionDefinition>
+                </ActionDefinition>
+            </ActionDefinitions>
+        </Structure>
+        <Contents>
+            <Partition DefId="C0">
+                <Condition>
+                    <Expression>
+                        <Param><![CDATA[Acceptable]]></Param>
+                    </Expression>
+                    <Partition DefId="C1">
+                        <Condition>
+                            <Expression>
+                                <Param><![CDATA["Approved"]]></Param>
+                            </Expression>
+                            <Partition DefId="C3">
+                                <Condition>
+                                    <Expression>
+                                        <Text><![CDATA[<an object> is one of <objects>]]></Text>
+                                        <Param><![CDATA[{ "Tier A", "Tier B" }]]></Param>
+                                    </Expression>
+                                    <ActionSet>
+                                        <Action DefId="A0">
+                                            <Expression>
+                                                <Param><![CDATA[Income Verification Completed]]></Param>
+                                            </Expression>
+                                        </Action>
+                                    </ActionSet>
+                                </Condition>
+                            </Partition>
+                        </Condition>
+                    </Partition>
+                </Condition>
+                <Condition>
+                    <Expression>
+                        <Param><![CDATA[Not Acceptable]]></Param>
+                    </Expression>
+                    <Partition DefId="C1">
+                        <Condition>
+                            <Expression>
+                                <Text><![CDATA[<an object> is one of <objects>]]></Text>
+                                <Param><![CDATA[{ "Waived", "Declined" }]]></Param>
+                            </Expression>
+                            <Partition DefId="C2">
+                                <Condition>
+                                    <Expression>
+                                        <Text><![CDATA[<a number> is at least <a number>]]></Text>
+                                        <Param><![CDATA[30000]]></Param>
+                                    </Expression>
+                                    <Partition DefId="C3">
+                                        <Condition>
+                                            <Expression>
+                                                <Text><![CDATA[<an object> is one of <objects>]]></Text>
+                                                <Param><![CDATA[{ "Tier C", "Tier D", "Tier E" }]]></Param>
+                                            </Expression>
+                                            <ActionSet>
+                                                <Action DefId="A0">
+                                                    <Expression>
+                                                        <Param><![CDATA[Flinks Income Verification Link]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                            </ActionSet>
+                                        </Condition>
+                                    </Partition>
+                                </Condition>
+                            </Partition>
+                        </Condition>
+                    </Partition>
+                </Condition>
+            </Partition>
+        </Contents>
+    </Body>
+    <Resources DefaultLocale="en_US">
+        <ResourceSet Locale="en_US">
+            <Data Name="Definitions(C2)[0]#HeaderText"><![CDATA[min]]></Data>
+            <Data Name="Definitions(C0)#HeaderText"><![CDATA[Applicant Submitted Income Acceptability]]></Data>
+            <Data Name="Definitions(C1)#HeaderText"><![CDATA[Income Status]]></Data>
+            <Data Name="Definitions(C2)#HeaderText"><![CDATA[Worksheet Amount]]></Data>
+            <Data Name="Definitions(C3)#HeaderText"><![CDATA[RiskTier Code]]></Data>
+            <Data Name="Definitions(A0)#HeaderText"><![CDATA[Income Verification]]></Data>
+        </ResourceSet>
+    </Resources>
+</DT>
+</definition>
+</ilog.rules.studio.model.dt:DecisionTable>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ilog.rules.studio.model.dt:DecisionTable xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.dt="http://ilog.rules.studio/model/dt.ecore">
-  <name>Total Debt Service Ratio Threshold</name>
-  <uuid>faba4944-949b-41ae-a984-2f4e190c4dde</uuid>
+  <name>Applicant Level Stipulations</name>
+  <uuid>8dacd212-022d-4642-ba4e-8866d5fedf8d</uuid>
   <locale>en_US</locale>
   <definition><DT xmlns="http://schemas.ilog.com/Rules/7.0/DecisionTable" Version="7.0">
     <Body>
@@ -9,23 +9,20 @@
             <Property Name="UI.MediaType"><![CDATA[Web]]></Property>
             <Property Name="UI.RenderBoolean" Type="xs:boolean"><![CDATA[true]]></Property>
         </Properties>
-        <Preconditions>
-            <Text><![CDATA[definitions
-set 'a credit risk tier' to the application credit risk tier service computed from
-		Customer being Customer ;]]></Text>
-        </Preconditions>
         <Structure>
             <ConditionDefinitions>
                 <ConditionDefinition Id="C0">
                     <ExpressionDefinition>
-                        <Text><![CDATA['a credit risk tier' is <a Tier> ]]></Text>
+                        <Text><![CDATA['Income Verification' is <an Income Verification List>]]></Text>
                     </ExpressionDefinition>
                 </ConditionDefinition>
             </ConditionDefinitions>
             <ActionDefinitions>
                 <ActionDefinition Id="A0">
                     <ExpressionDefinition>
-                        <Text><![CDATA[set decision to <a number>]]></Text>
+                        <Text><![CDATA[set decision to a new Applicant Level Stipulations where
+	the Message is <Message> , 
+	the Output is <Output>]]></Text>
                     </ExpressionDefinition>
                 </ActionDefinition>
             </ActionDefinitions>
@@ -34,38 +31,26 @@ set 'a credit risk tier' to the application credit risk tier service computed fr
             <Partition DefId="C0">
                 <Condition>
                     <Expression>
-                        <Text><![CDATA[<an object> is one of <objects>]]></Text>
-                        <Param><![CDATA[{ Tier A , Tier B }]]></Param>
+                        <Param><![CDATA[Flinks Income Verification Link]]></Param>
                     </Expression>
                     <ActionSet>
                         <Action DefId="A0">
                             <Expression>
-                                <Param><![CDATA[60]]></Param>
+                                <Param><![CDATA["Flinks: Please provide this link to your client in order to expedite income verification: https://thislink.com/  Further documents may be required"]]></Param>
+                                <Param><![CDATA[PA10 - Income Verification Link]]></Param>
                             </Expression>
                         </Action>
                     </ActionSet>
                 </Condition>
                 <Condition>
                     <Expression>
-                        <Param><![CDATA[Tier C]]></Param>
+                        <Param><![CDATA[Income Verification Completed]]></Param>
                     </Expression>
                     <ActionSet>
                         <Action DefId="A0">
                             <Expression>
-                                <Param><![CDATA[40]]></Param>
-                            </Expression>
-                        </Action>
-                    </ActionSet>
-                </Condition>
-                <Condition>
-                    <Expression>
-                        <Text><![CDATA[<an object> is one of <objects>]]></Text>
-                        <Param><![CDATA[{ Tier D , Tier E }]]></Param>
-                    </Expression>
-                    <ActionSet>
-                        <Action DefId="A0">
-                            <Expression>
-                                <Param><![CDATA[0]]></Param>
+                                <Param><![CDATA["Income Verification Completed. We are pleased to inform you that confirmation of income has been completed, please review the approval incase changes were required as a result of the verification."]]></Param>
+                                <Param><![CDATA[PA11 - Income Verification Completed]]></Param>
                             </Expression>
                         </Action>
                     </ActionSet>
@@ -75,9 +60,9 @@ set 'a credit risk tier' to the application credit risk tier service computed fr
     </Body>
     <Resources DefaultLocale="en_US">
         <ResourceSet Locale="en_US">
-            <Data Name="Definitions(C0)#HeaderText"><![CDATA[Application Credit Risk Tier]]></Data>
-            <Data Name="Definitions(C0)[0]#HeaderText"><![CDATA[a Tier]]></Data>
-            <Data Name="Definitions(A0)#HeaderText"><![CDATA[Total Debt Service Ratio Threshold]]></Data>
+            <Data Name="Definitions(C0)#HeaderText"><![CDATA[Income Verification]]></Data>
+            <Data Name="Definitions(A0)#Width"><![CDATA[469]]></Data>
+            <Data Name="Definitions(A0)#HeaderText"><![CDATA[Applicant Level Stipulations]]></Data>
         </ResourceSet>
     </Resources>
 </DT>
