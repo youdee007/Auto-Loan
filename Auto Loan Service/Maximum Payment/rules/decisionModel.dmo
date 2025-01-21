@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionmodel:DecisionModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionmodel="http://com.ibm.rules.studio/model/decisionmodel.ecore">
+  <name>decisionModel</name>
+  <uuid>9e791f0c-10b1-4c27-9b3e-40201b0e5fa1</uuid>
+  <locale>en_US</locale>
+  <definition><definitions xmlns="http://www.omg.org/spec/DMN/20180521/MODEL/" id="decisions" name="diagram" namespace="">
+    <extensionElements>
+        <locale xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" id="en_US"/>
+    </extensionElements>
+    <inputData id="node_0" name="Customer">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Customer" collection="true" name="Customer"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_0_ii" name="Customer" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.Customer[]"/>
+    </inputData>
+    <decision id="node_1" name="Total Open Monthly Mortgage Payment Amount">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Customer" collection="true" name="Customer"/>
+                <output bomType="java.lang.Double" collection="false" name="Total Open Monthly Mortgage Payment Amount"/>
+                <rule defaultRule="false" href="node_1/Total%20Open%20Monthly%20Mortgage%20Payment%20Amount.drl" kind="BusinessRule" name="Total Open Monthly Mortgage Payment Amount"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_1_ii" name="Total Open Monthly Mortgage Payment Amount" typeRef="java.lang.Double"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+    </decision>
+    <inputData id="node_2" name="Application">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Application" collection="false" name="Application"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_2_ii" name="Application" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.Application"/>
+    </inputData>
+    <decision id="node_3" name="Credit Risk Tier Maximum Total Debt Service Ratio">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Application" collection="false" name="Application"/>
+                <output bomType="java.lang.Double" collection="false" name="Credit Risk Tier Maximum Total Debt Service Ratio"/>
+                <rule defaultRule="false" href="node_3/Credit%20Risk%20Tier%20Maximum%20Total%20Debt%20Service%20Ratio.dmt" kind="DecisionTable" name="Credit Risk Tier Maximum Total Debt Service Ratio"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_3_ii" name="Credit Risk Tier Maximum Total Debt Service Ratio" typeRef="java.lang.Double"/>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_4" name="Credit Risk Tier Maximum Payment to Income Ratio">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Application" collection="false" name="Application"/>
+                <output bomType="java.lang.Double" collection="false" name="Credit Risk Tier Maximum Payment to Income Ratio"/>
+                <rule defaultRule="false" href="node_4/Credit%20Risk%20Tier%20Maximum%20Payment%20to%20Income%20Ratio.dmt" kind="DecisionTable" name="Credit Risk Tier Maximum Payment to Income Ratio"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_4_ii" name="Credit Risk Tier Maximum Payment to Income Ratio" typeRef="java.lang.Double"/>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_6" name="Application Monthly Rent Amount">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Customer" collection="true" name="Customer"/>
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Application" collection="false" name="Application"/>
+                <output bomType="java.lang.Double" collection="true" name="Application Monthly Rent Amount"/>
+                <rule defaultRule="false" href="node_6/Application%20Monthly%20Rent%20Amount.dmt" kind="DecisionTable" name="Application Monthly Rent Amount"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_6_ii" name="Application Monthly Rent Amount" typeRef="java.lang.Double[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+        <knowledgeRequirement>
+            <requiredKnowledge href="#node_7"/>
+        </knowledgeRequirement>
+    </decision>
+    <businessKnowledgeModel id="node_7" name="TDSR-Total Credit Bureau Monthly Debt Obligation">
+        <extensionElements>
+            <properties xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <property name="ads.designer.bkKind"><![CDATA[decision]]></property>
+            </properties>
+        </extensionElements>
+        <variable name="TDSR-Total Credit Bureau Monthly Debt Obligation" typeRef="java.lang.Double"/>
+        <encapsulatedLogic typeRef="java.lang.Double">
+            <formalParameter name="customer" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.Customer[]"/>
+            <formalParameter name="application" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.Application"/>
+            <context>
+                <contextEntry>
+                    <variable name="class"/>
+                    <literalExpression>
+                        <text>"agull.auto_loan_demo.auto_loan_service.tdsr_totalcreditbureaumonthlydebtobligation.TDSR_Total_Credit_Bureau_Monthly_Debt_Obligation"</text>
+                    </literalExpression>
+                </contextEntry>
+                <contextEntry>
+                    <variable name="method signature"/>
+                    <literalExpression>
+                        <text>"run(java.util.List,agull.auto_loan_demo.auto_loan_service.datastructure.Application)"</text>
+                    </literalExpression>
+                </contextEntry>
+            </context>
+        </encapsulatedLogic>
+    </businessKnowledgeModel>
+</definitions>
+</definition>
+</com.ibm.rules.studio.model.decisionmodel:DecisionModel>
