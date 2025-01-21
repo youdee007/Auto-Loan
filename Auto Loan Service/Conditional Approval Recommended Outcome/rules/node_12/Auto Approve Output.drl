@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Auto Approve Output</name>
+  <uuid>694e5b7e-8ad9-4bb2-81a5-d28c2c6c4653</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[if
+	'Conditional Approval Maximum Amount to Finance' ≤ 'Amount to Finance Auto Approve Threshold' 
+then
+	set decision to Auto Approve ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

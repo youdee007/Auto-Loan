@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Manual Review Output</name>
+  <uuid>36843453-6364-4d32-ba1f-888a5720c701</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[if
+	'Conditional Approval Maximum Amount to Finance' ≤  'Amount to Finance Manual Review Threshold' 
+	and 'Conditional Approval Maximum Amount to Finance' > 'Amount to Finance Auto Approve Threshold'
+then
+	set decision to Manual Review ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

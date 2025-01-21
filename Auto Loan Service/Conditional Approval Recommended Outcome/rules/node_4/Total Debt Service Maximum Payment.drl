@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Total Debt Service Maximum Payment</name>
+  <uuid>d91962fe-a433-459f-a35c-90da4fa02a16</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[set decision to ('Maximum Total Debt Service Ratio' * the tdsIncome of Application)/100 - the tdsExpenses of Application ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

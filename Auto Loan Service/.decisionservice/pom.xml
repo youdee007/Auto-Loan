@@ -33,6 +33,11 @@
         </dependency>
         <dependency>
             <groupId>agull.auto_loan_demo.auto_loan_service</groupId>
+            <artifactId>conditionalApprovalRecommendedOutcome</artifactId>
+            <version>LATEST-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>agull.auto_loan_demo.auto_loan_service</groupId>
             <artifactId>creditBureauReportFunctions</artifactId>
             <version>LATEST-SNAPSHOT</version>
         </dependency>
@@ -146,6 +151,12 @@
 
 
 
+
+
+
+
+
+
 <build>
         <resources>
             <resource>
@@ -200,6 +211,15 @@
                                 <artifactItem>
                                     <groupId>agull.auto_loan_demo.auto_loan_service</groupId>
                                     <artifactId>autoLoanApplicationRecommendedOutcome</artifactId>
+                                    <version>LATEST-SNAPSHOT</version>
+                                    <type>jar</type>
+                                    <overWrite>false</overWrite>
+                                    <includes>**/*.class</includes>
+                                    <outputDirectory>${project.build.directory}/classes</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>agull.auto_loan_demo.auto_loan_service</groupId>
+                                    <artifactId>conditionalApprovalRecommendedOutcome</artifactId>
                                     <version>LATEST-SNAPSHOT</version>
                                     <type>jar</type>
                                     <overWrite>false</overWrite>

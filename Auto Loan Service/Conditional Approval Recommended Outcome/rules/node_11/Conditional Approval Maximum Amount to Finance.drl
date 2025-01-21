@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Conditional Approval Maximum Amount to Finance</name>
+  <uuid>c2662c49-c769-4ab7-bcb7-ba08ce040e1d</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[set decision to 'Conditional Approval Maximum Payment' * 'Amortization Threshold In Months' ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

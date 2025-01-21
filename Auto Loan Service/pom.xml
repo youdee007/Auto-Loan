@@ -68,6 +68,7 @@
         <module>Application Credit Risk Tier Service</module>
         <module>Application Pre Bureau Eligibility</module>
         <module>Auto Loan Application Recommended Outcome</module>
+        <module>Conditional Approval Recommended Outcome</module>
         <module>Credit Bureau Report Functions</module>
         <module>Data Structure</module>
         <module>Loan Affordability Recommended Outcome</module>

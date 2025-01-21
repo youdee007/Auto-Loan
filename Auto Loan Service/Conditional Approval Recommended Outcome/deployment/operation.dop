@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" rulesetName="operation" targetRuleProjectName="Conditional Approval Recommended Outcome">
+  <name>Conditional_Approval_Recommended_Outcome</name>
+  <uuid>dd26a8c5-4913-42f3-bf9b-97f1555bf4a4</uuid>
+  <decisionModel href="../rules/decisionModel.dmo#acb785f6-7d9d-484f-a1ab-5ac7e7b6251f"/>
+  <targetRuleProject href="../../Conditional%20Approval%20Recommended%20Outcome#8b85af2a-9771-46bb-b148-077be63fffde"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>
