@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Sum Of Total Open Monthly Mortgage Payment Amount</name>
+  <uuid>3053e187-bee2-40ef-9bad-74bfbb737279</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[set decision to the sum of 'Total Open Monthly Mortgage Payment Amount' ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Total Manually Added Monthly Debt Obligation</name>
+  <uuid>2544ead9-5b4c-4aa7-a7b5-5584c2ca6b48</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[set decision to the sum of 'Total Manually Added Monthly Debt Obligation List' ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

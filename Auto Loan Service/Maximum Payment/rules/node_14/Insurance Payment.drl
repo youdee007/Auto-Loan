@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Insurance Payment</name>
+  <uuid>b86018d6-95b5-4065-a2ef-f4946666b8a2</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[if
+	'Insurance Payment List' contain 75
+then
+	set decision to 75 ;
+    
+else 
+	set decision to 0 ; ]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

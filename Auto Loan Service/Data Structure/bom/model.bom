@@ -1020,6 +1020,21 @@ class ExternalCreditScore
                 #dataio.default;
 }
 
+class HousingPaymentType
+        extends java.lang.Enum
+        property ads.typeId "31"
+        property com.fasterxml.jackson.annotation.JsonTypeName "HousingPaymentType"
+        #de.generated
+{
+    domain {static mortgage, static rent}
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.HousingPaymentType mortgage
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Mortgage";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.HousingPaymentType rent
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Rent";
+}
+
 class IncomeVerificationList
         extends java.lang.Enum
         property ads.typeId "27"

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Total Monthly Debt Payment Obligation</name>
+  <uuid>d09dc37b-d0e7-430d-85b2-992c4332532f</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[//definitions 
+//set 'a total credit bureau' to the TDSR total credit bureau monthly debt obligation computed from
+	//	Customer being Customer , 
+		//Application being Application ; 
+
+//if 
+//	'a total credit bureau' is defined
+  //  then 
+	//set decision to the sum of <expr> ; 
+ ]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

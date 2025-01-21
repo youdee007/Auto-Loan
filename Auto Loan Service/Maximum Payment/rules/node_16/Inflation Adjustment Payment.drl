@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Inflation Adjustment Payment</name>
+  <uuid>22263d7b-ea0d-4920-a1c6-998e51fc8c12</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[if
+	'Inflation Adjustment Payment List' contain 75
+then
+	set decision to 75;
+    
+else 
+	set decision to 0 ; ]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

@@ -524,6 +524,11 @@ agull.auto_loan_demo.auto_loan_service.datastructure.ExternalCreditScore.payment
 agull.auto_loan_demo.auto_loan_service.datastructure.ExternalCreditScore.recommendation#phrase.action = set the recommendation of {this} to {recommendation}
 agull.auto_loan_demo.auto_loan_service.datastructure.ExternalCreditScore.recommendation#phrase.navigation = {recommendation} of {this}
 
+# agull.auto_loan_demo.auto_loan_service.datastructure.HousingPaymentType
+agull.auto_loan_demo.auto_loan_service.datastructure.HousingPaymentType#concept.label = Housing Payment Type
+agull.auto_loan_demo.auto_loan_service.datastructure.HousingPaymentType.mortgage#instance.label = Mortgage
+agull.auto_loan_demo.auto_loan_service.datastructure.HousingPaymentType.rent#instance.label = Rent
+
 # agull.auto_loan_demo.auto_loan_service.datastructure.IncomeVerificationList
 agull.auto_loan_demo.auto_loan_service.datastructure.IncomeVerificationList#concept.label = Income Verification List
 agull.auto_loan_demo.auto_loan_service.datastructure.IncomeVerificationList.flinksIncomeVerificationLink#instance.label = Flinks Income Verification Link
