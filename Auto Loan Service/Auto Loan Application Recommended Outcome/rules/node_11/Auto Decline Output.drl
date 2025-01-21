@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Auto Decline Output</name>
+  <uuid>efb6a72b-9ec9-4d09-b4fc-0f5e0a614d5d</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[if
+	the worksheetAmount of Application > 'Amount to Finance Manual Review Threshold'
+then
+	set decision to a new Amount to Finance Recommended Outcome where
+		the Message is "Amount to Finance Exceeds Maximum Amount" , 
+		the Output is Auto Decline ;
+        ]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

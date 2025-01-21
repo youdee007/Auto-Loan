@@ -122,11 +122,11 @@
         <extensionElements>
             <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
                 <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Eligible$NotEligible" collection="true" name="Applicant Eligibility"/>
-                <output bomType="java.lang.String" collection="false" name="Application PreBureau Eligibility"/>
+                <output bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Eligible$NotEligible" collection="false" name="Application PreBureau Eligibility"/>
                 <rule defaultRule="false" href="node_8/Application%20PreBureau%20Eligibility.drl" kind="BusinessRule" name="Application PreBureau Eligibility"/>
             </ruleset>
         </extensionElements>
-        <variable id="node_8_ii" name="Application PreBureau Eligibility" typeRef="java.lang.String"/>
+        <variable id="node_8_ii" name="Application PreBureau Eligibility" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.Eligible$NotEligible"/>
         <informationRequirement>
             <requiredInput href="#node_7"/>
         </informationRequirement>

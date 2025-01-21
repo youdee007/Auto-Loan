@@ -18,6 +18,15 @@ agull.auto_loan_demo.auto_loan_service.datastructure.Active$InActive#concept.lab
 agull.auto_loan_demo.auto_loan_service.datastructure.Active$InActive.active#instance.label = Active
 agull.auto_loan_demo.auto_loan_service.datastructure.Active$InActive.inActive#instance.label = InActive
 
+# agull.auto_loan_demo.auto_loan_service.datastructure.AmountToFinanceRecommendedOutcome
+agull.auto_loan_demo.auto_loan_service.datastructure.AmountToFinanceRecommendedOutcome#concept.label = Amount to Finance Recommended Outcome
+agull.auto_loan_demo.auto_loan_service.datastructure.AmountToFinanceRecommendedOutcome.AmountToFinanceRecommendedOutcome(java.lang.String,agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline)#phrase.navigation = a new {Amount to Finance Recommended Outcome} where {0, Message} {1, Output}
+agull.auto_loan_demo.auto_loan_service.datastructure.AmountToFinanceRecommendedOutcome.message#phrase.action = set the Message of {this} to {Message}
+agull.auto_loan_demo.auto_loan_service.datastructure.AmountToFinanceRecommendedOutcome.message#phrase.navigation = {Message} of {this}
+agull.auto_loan_demo.auto_loan_service.datastructure.AmountToFinanceRecommendedOutcome.output#phrase.action = set the Output of {this} to {Output}
+agull.auto_loan_demo.auto_loan_service.datastructure.AmountToFinanceRecommendedOutcome.output#phrase.clearer = clear the Output of {this}
+agull.auto_loan_demo.auto_loan_service.datastructure.AmountToFinanceRecommendedOutcome.output#phrase.navigation = {Output} of {this}
+
 # agull.auto_loan_demo.auto_loan_service.datastructure.ApplicantDebtLatePaymentTypes
 agull.auto_loan_demo.auto_loan_service.datastructure.ApplicantDebtLatePaymentTypes#concept.label = Applicant Debt Late Payment Types
 agull.auto_loan_demo.auto_loan_service.datastructure.ApplicantDebtLatePaymentTypes.majorDerogatory#instance.label = Major Derogatory
@@ -173,7 +182,7 @@ agull.auto_loan_demo.auto_loan_service.datastructure.ApplicationLevelStipulaton.
 
 # agull.auto_loan_demo.auto_loan_service.datastructure.Asset
 agull.auto_loan_demo.auto_loan_service.datastructure.Asset#concept.label = Asset
-agull.auto_loan_demo.auto_loan_service.datastructure.Asset.Asset(java.lang.String,double,java.lang.String,double,double,java.lang.String,java.lang.String,double,java.lang.String,double,java.lang.String,double,java.lang.String,java.lang.String,java.lang.String,double)#phrase.navigation = a new {Asset} where {0, adds} {1, adjustedMSRP} {2, bodyStyle} {3, bookValue} {4, cashSalePrice} {5, condition} {6, description} {7, id} {8, make} {9, mileage} {10, model} {11, sequenceNumber} {12, series} {13, vehiclePrimaryUse} {14, vin} {15, year}
+agull.auto_loan_demo.auto_loan_service.datastructure.Asset.Asset(java.lang.String,double,java.lang.String,double,double,java.lang.String,java.lang.String,double,java.lang.String,double,java.lang.String,double,java.lang.String,java.lang.String,java.lang.String,java.time.LocalDate)#phrase.navigation = a new {Asset} where {0, adds} {1, adjustedMSRP} {2, bodyStyle} {3, bookValue} {4, cashSalePrice} {5, condition} {6, description} {7, id} {8, make} {9, mileage} {10, model} {11, sequenceNumber} {12, series} {13, vehiclePrimaryUse} {14, vin} {15, year}
 agull.auto_loan_demo.auto_loan_service.datastructure.Asset.adds#phrase.action = set the adds of {this} to {adds}
 agull.auto_loan_demo.auto_loan_service.datastructure.Asset.adds#phrase.navigation = {adds} of {this}
 agull.auto_loan_demo.auto_loan_service.datastructure.Asset.adjustedMSRP#phrase.action = set the adjustedMSRP of {this} to {adjustedMSRP}
@@ -217,9 +226,7 @@ agull.auto_loan_demo.auto_loan_service.datastructure.Asset.vehiclePrimaryUse#phr
 agull.auto_loan_demo.auto_loan_service.datastructure.Asset.vin#phrase.action = set the vin of {this} to {vin}
 agull.auto_loan_demo.auto_loan_service.datastructure.Asset.vin#phrase.navigation = {vin} of {this}
 agull.auto_loan_demo.auto_loan_service.datastructure.Asset.year#phrase.action = set the year of {this} to {year}
-agull.auto_loan_demo.auto_loan_service.datastructure.Asset.year#phrase.addition_setter = add {year} to the year of {this}
 agull.auto_loan_demo.auto_loan_service.datastructure.Asset.year#phrase.navigation = {year} of {this}
-agull.auto_loan_demo.auto_loan_service.datastructure.Asset.year#phrase.subtraction_setter = subtract {year} from the year of {this}
 
 # agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline
 agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline#concept.documentation = Auto Approve/Manual Review/Auto Decline

@@ -43,7 +43,22 @@
         </dependency>
         <dependency>
             <groupId>agull.auto_loan_demo.auto_loan_service</groupId>
+            <artifactId>applicationCreditRiskTierService</artifactId>
+            <version>LATEST-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>agull.auto_loan_demo.auto_loan_service</groupId>
             <artifactId>loanAffordabilityRecommendedOutcome</artifactId>
+            <version>LATEST-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>agull.auto_loan_demo.auto_loan_service</groupId>
+            <artifactId>applicantCreditHistoryRecommendedOutcome</artifactId>
+            <version>LATEST-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>agull.auto_loan_demo.auto_loan_service</groupId>
+            <artifactId>applicationPreBureauEligibility</artifactId>
             <version>LATEST-SNAPSHOT</version>
         </dependency>
         <dependency>

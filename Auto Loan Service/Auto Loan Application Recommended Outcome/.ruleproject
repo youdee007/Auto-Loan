@@ -9,7 +9,10 @@
   </paths>
   <paths xsi:type="ilog.rules.studio.model.bom:BOMPath" pathID="BOM">
     <entries xsi:type="ilog.rules.studio.model.bom:DecisionLibraryBOMEntry" name="agull.auto_loan_demo.auto_loan_service:dataStructure#LATEST-SNAPSHOT" packageId="agull.auto_loan_demo.auto_loan_service:dataStructure" version="LATEST-SNAPSHOT"/>
+    <entries xsi:type="ilog.rules.studio.model.bom:DecisionLibraryBOMEntry" name="agull.auto_loan_demo.auto_loan_service:applicationCreditRiskTierService#LATEST-SNAPSHOT" packageId="agull.auto_loan_demo.auto_loan_service:applicationCreditRiskTierService" version="LATEST-SNAPSHOT"/>
     <entries xsi:type="ilog.rules.studio.model.bom:DecisionLibraryBOMEntry" name="agull.auto_loan_demo.auto_loan_service:loanAffordabilityRecommendedOutcome#LATEST-SNAPSHOT" packageId="agull.auto_loan_demo.auto_loan_service:loanAffordabilityRecommendedOutcome" version="LATEST-SNAPSHOT"/>
+    <entries xsi:type="ilog.rules.studio.model.bom:DecisionLibraryBOMEntry" name="agull.auto_loan_demo.auto_loan_service:applicantCreditHistoryRecommendedOutcome#LATEST-SNAPSHOT" packageId="agull.auto_loan_demo.auto_loan_service:applicantCreditHistoryRecommendedOutcome" version="LATEST-SNAPSHOT"/>
+    <entries xsi:type="ilog.rules.studio.model.bom:DecisionLibraryBOMEntry" name="agull.auto_loan_demo.auto_loan_service:applicationPreBureauEligibility#LATEST-SNAPSHOT" packageId="agull.auto_loan_demo.auto_loan_service:applicationPreBureauEligibility" version="LATEST-SNAPSHOT"/>
   </paths>
   <modelFolders xsi:type="ilog.rules.studio.model.base:SourceFolder">
     <name>rules</name>

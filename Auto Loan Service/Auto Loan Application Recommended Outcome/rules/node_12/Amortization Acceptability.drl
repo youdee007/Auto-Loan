@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Amortization Acceptability</name>
+  <uuid>6f376626-081f-4bca-98a3-3bc2da69a9d4</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[if
+	the worksheetTerm of Application ≤ 'Amortization Threshold In Months' 
+then
+	set decision to Acceptable ;
+     
+else 
+	set decision to Not Acceptable ; 
+    ]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

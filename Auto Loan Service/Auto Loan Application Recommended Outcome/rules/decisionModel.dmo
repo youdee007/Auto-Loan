@@ -18,7 +18,6 @@
     <decision id="node_1" name="Asset Age Threshold">
         <extensionElements>
             <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
-                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Application" collection="false" name="Application"/>
                 <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Customer" collection="true" name="Customer"/>
                 <output bomType="java.lang.Double" collection="false" name="Asset Age Threshold"/>
                 <rule defaultRule="false" href="node_1/Asset%20Age%20Threshold.dmt" kind="DecisionTable" name="Asset Age Threshold"/>
@@ -26,13 +25,10 @@
         </extensionElements>
         <variable id="node_1_ii" name="Asset Age Threshold" typeRef="java.lang.Double"/>
         <informationRequirement>
-            <requiredInput href="#node_0"/>
-        </informationRequirement>
-        <informationRequirement>
             <requiredInput href="#node_2"/>
         </informationRequirement>
         <knowledgeRequirement>
-            <requiredKnowledge href="#node_3"/>
+            <requiredKnowledge href="#node_7"/>
         </knowledgeRequirement>
     </decision>
     <inputData id="node_2" name="Customer">
@@ -48,11 +44,11 @@
             <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
                 <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Application" collection="false" name="Application"/>
                 <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Asset" collection="false" name="Asset"/>
-                <output bomType="java.lang.String" collection="false" name="Asset Age"/>
+                <output bomType="java.lang.Double" collection="false" name="Asset Age"/>
                 <rule defaultRule="false" href="node_4/Asset%20Age.drl" kind="BusinessRule" name="Asset Age"/>
             </ruleset>
         </extensionElements>
-        <variable id="node_4_ii" name="Asset Age" typeRef="java.lang.String"/>
+        <variable id="node_4_ii" name="Asset Age" typeRef="java.lang.Double"/>
         <informationRequirement>
             <requiredInput href="#node_0"/>
         </informationRequirement>
@@ -81,7 +77,192 @@
             <requiredInput href="#node_0"/>
         </informationRequirement>
     </decision>
-    <businessKnowledgeModel id="node_3" name="Loan Affordability Recommended Outcome">
+    <decision id="node_8" name="Amortization Threshold In Months">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Customer" collection="true" name="Customer"/>
+                <output bomType="java.lang.Double" collection="false" name="Amortization Threshold In Months"/>
+                <rule defaultRule="false" href="node_8/Amortization%20Threshold%20In%20Months.dmt" kind="DecisionTable" name="Amortization Threshold In Months"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_8_ii" name="Amortization Threshold In Months" typeRef="java.lang.Double"/>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+        <knowledgeRequirement>
+            <requiredKnowledge href="#node_7"/>
+        </knowledgeRequirement>
+    </decision>
+    <decision id="node_9" name="Amount to Finance Manual Review Threshold">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Customer" collection="true" name="Customer"/>
+                <output bomType="java.lang.Double" collection="false" name="Amount to Finance Manual Review Threshold"/>
+                <rule defaultRule="false" href="node_9/Amount%20to%20Finance%20Manual%20Review%20Threshold.dmt" kind="DecisionTable" name="Amount to Finance Manual Review Threshold"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_9_ii" name="Amount to Finance Manual Review Threshold" typeRef="java.lang.Double"/>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+        <knowledgeRequirement>
+            <requiredKnowledge href="#node_7"/>
+        </knowledgeRequirement>
+    </decision>
+    <decision id="node_10" name="Amount to Finance Auto Approve Threshold">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Customer" collection="true" name="Customer"/>
+                <output bomType="java.lang.Double" collection="false" name="Amount to Finance Auto Approve Threshold"/>
+                <rule defaultRule="false" href="node_10/Amount%20to%20Finance%20Auto%20Approve%20Threshold.dmt" kind="DecisionTable" name="Amount to Finance Auto Approve Threshold"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_10_ii" name="Amount to Finance Auto Approve Threshold" typeRef="java.lang.Double"/>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+        <knowledgeRequirement>
+            <requiredKnowledge href="#node_7"/>
+        </knowledgeRequirement>
+    </decision>
+    <decision id="node_11" name="Amount to Finance Recommended Outcome">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Application" collection="false" name="Application"/>
+                <input bomType="java.lang.Double" collection="false" name="Amount to Finance Auto Approve Threshold"/>
+                <input bomType="java.lang.Double" collection="false" name="Amount to Finance Manual Review Threshold"/>
+                <output bomType="agull.auto_loan_demo.auto_loan_service.datastructure.AmountToFinanceRecommendedOutcome" collection="false" name="Amount to Finance Recommended Outcome"/>
+                <rule defaultRule="false" href="node_11/Auto%20Decline%20Output.drl" kind="BusinessRule" name="Auto Decline Output"/>
+                <rule defaultRule="false" href="node_11/Manual%20Review%20Output.drl" kind="BusinessRule" name="Manual Review Output"/>
+                <rule defaultRule="false" href="node_11/Auto%20Approve%20Output.drl" kind="BusinessRule" name="Auto Approve Output"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_11_ii" name="Amount to Finance Recommended Outcome" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.AmountToFinanceRecommendedOutcome"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_10"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_9"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_12" name="Amortization Acceptability">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Application" collection="false" name="Application"/>
+                <input bomType="java.lang.Double" collection="false" name="Amortization Threshold In Months"/>
+                <output bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Acceptable$NotAcceptable" collection="false" name="Amortization Acceptability"/>
+                <rule defaultRule="false" href="node_12/Amortization%20Acceptability.drl" kind="BusinessRule" name="Amortization Acceptability"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_12_ii" name="Amortization Acceptability" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.Acceptable$NotAcceptable"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_8"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_13" name="Application Loan Structure Recommended Outcome">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Acceptable$NotAcceptable" collection="false" name="Amortization Acceptability"/>
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.AmountToFinanceRecommendedOutcome" collection="false" name="Amount to Finance Recommended Outcome"/>
+                <output bomType="agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline" collection="false" name="Application Loan Structure Recommended Outcome"/>
+                <rule defaultRule="false" href="node_13/Application%20Loan%20Structure%20Recommended%20Outcome.dmt" kind="DecisionTable" name="Application Loan Structure Recommended Outcome"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_13_ii" name="Application Loan Structure Recommended Outcome" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline"/>
+        <informationRequirement>
+            <requiredInput href="#node_12"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_11"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_14" name="Asset Eligibility">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.Double" collection="false" name="Asset Age Threshold"/>
+                <input bomType="java.lang.Double" collection="false" name="Asset Age"/>
+                <output bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Eligible$NotEligible" collection="false" name="Asset Eligibility"/>
+                <rule defaultRule="false" href="node_14/Asset%20Eligibility.drl" kind="BusinessRule" name="Asset Eligibility"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_14_ii" name="Asset Eligibility" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.Eligible$NotEligible"/>
+        <informationRequirement>
+            <requiredInput href="#node_1"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_4"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_18" name="Auto Loan Application Recommended Outcome">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Application" collection="false" name="Application"/>
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Customer" collection="true" name="Customer"/>
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Eligible$NotEligible" collection="false" name="Asset Eligibility"/>
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline" collection="false" name="Application Loan Structure Recommended Outcome"/>
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Acceptable$NotAcceptable" collection="false" name="Dealer Acceptability Outcome"/>
+                <output bomType="agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline" collection="false" name="Auto Loan Application Recommended Outcome"/>
+                <rule defaultRule="false" href="node_18/Auto%20Loan%20Application%20Recommended%20Outcome.dmt" kind="DecisionTable" name="Auto Loan Application Recommended Outcome"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_18_ii" name="Auto Loan Application Recommended Outcome" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_14"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_13"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_6"/>
+        </informationRequirement>
+        <knowledgeRequirement>
+            <requiredKnowledge href="#node_19"/>
+        </knowledgeRequirement>
+        <knowledgeRequirement>
+            <requiredKnowledge href="#node_16"/>
+        </knowledgeRequirement>
+        <knowledgeRequirement>
+            <requiredKnowledge href="#node_15"/>
+        </knowledgeRequirement>
+    </decision>
+    <businessKnowledgeModel id="node_7" name="Application Credit Risk Tier Service">
+        <extensionElements>
+            <properties xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <property name="ads.designer.bkKind"><![CDATA[decision]]></property>
+            </properties>
+        </extensionElements>
+        <variable name="Application Credit Risk Tier Service" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.Tier"/>
+        <encapsulatedLogic typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.Tier">
+            <formalParameter name="customer" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.Customer[]"/>
+            <context>
+                <contextEntry>
+                    <variable name="class"/>
+                    <literalExpression>
+                        <text>"agull.auto_loan_demo.auto_loan_service.applicationcreditrisktierservice.Application_Credit_Risk_Tier_Service"</text>
+                    </literalExpression>
+                </contextEntry>
+                <contextEntry>
+                    <variable name="method signature"/>
+                    <literalExpression>
+                        <text>"run(java.util.List)"</text>
+                    </literalExpression>
+                </contextEntry>
+            </context>
+        </encapsulatedLogic>
+    </businessKnowledgeModel>
+    <businessKnowledgeModel id="node_15" name="Loan Affordability Recommended Outcome">
         <extensionElements>
             <properties xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
                 <property name="ads.designer.bkKind"><![CDATA[decision]]></property>
@@ -96,6 +277,58 @@
                     <variable name="class"/>
                     <literalExpression>
                         <text>"agull.auto_loan_demo.auto_loan_service.loanaffordabilityrecommendedoutcome.Loan_Affordability_Recommended_Outcome"</text>
+                    </literalExpression>
+                </contextEntry>
+                <contextEntry>
+                    <variable name="method signature"/>
+                    <literalExpression>
+                        <text>"run(agull.auto_loan_demo.auto_loan_service.datastructure.Application,java.util.List)"</text>
+                    </literalExpression>
+                </contextEntry>
+            </context>
+        </encapsulatedLogic>
+    </businessKnowledgeModel>
+    <businessKnowledgeModel id="node_16" name="Applicant Credit History Recommended Outcome">
+        <extensionElements>
+            <properties xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <property name="ads.designer.bkKind"><![CDATA[decision]]></property>
+            </properties>
+        </extensionElements>
+        <variable name="Applicant Credit History Recommended Outcome" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline"/>
+        <encapsulatedLogic typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline">
+            <formalParameter name="customer" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.Customer[]"/>
+            <formalParameter name="application" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.Application"/>
+            <context>
+                <contextEntry>
+                    <variable name="class"/>
+                    <literalExpression>
+                        <text>"agull.auto_loan_demo.auto_loan_service.applicantcredithistoryrecommendedoutcome.Applicant_Credit_History_Recommended_Outcome"</text>
+                    </literalExpression>
+                </contextEntry>
+                <contextEntry>
+                    <variable name="method signature"/>
+                    <literalExpression>
+                        <text>"run(java.util.List,agull.auto_loan_demo.auto_loan_service.datastructure.Application)"</text>
+                    </literalExpression>
+                </contextEntry>
+            </context>
+        </encapsulatedLogic>
+    </businessKnowledgeModel>
+    <businessKnowledgeModel id="node_19" name="Application Pre Bureau Eligibility">
+        <extensionElements>
+            <properties xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <property name="ads.designer.bkKind"><![CDATA[decision]]></property>
+            </properties>
+        </extensionElements>
+        <variable name="Application Pre Bureau Eligibility" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.Eligible$NotEligible"/>
+        <encapsulatedLogic typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.Eligible$NotEligible">
+            <formalParameter name="application" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.Application"/>
+            <formalParameter name="customer" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.Customer[]"/>
+            <context>
+                <contextEntry>
+                    <variable name="class"/>
+                    <literalExpression>
+                        <text>"agull.auto_loan_demo.auto_loan_service.applicationprebureaueligibility.Application_Pre_Bureau_Eligibility"</text>
                     </literalExpression>
                 </contextEntry>
                 <contextEntry>

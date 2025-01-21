@@ -54,6 +54,28 @@ class Active$InActive
                 property com.fasterxml.jackson.annotation.JsonProperty "InActive";
 }
 
+class AmountToFinanceRecommendedOutcome
+        property ads.typeId "30"
+        property com.fasterxml.jackson.annotation.JsonTypeName "AmountToFinanceRecommendedOutcome"
+        #de.generated
+{
+    string message
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Message"
+                #update;
+    agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline output
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Output"
+                #update;
+    AmountToFinanceRecommendedOutcome(string message, agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline output)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    AmountToFinanceRecommendedOutcome()
+                #dataio.default;
+}
+
 class ApplicantDebtLatePaymentTypes
         extends java.lang.Enum
         property ads.typeId "23"
@@ -390,7 +412,7 @@ class Asset
                 property ads.attributeId "5"
                 property com.fasterxml.jackson.annotation.JsonProperty "vin"
                 #update;
-    double year
+    java.time.LocalDate year
                 property ads.attributeId "12"
                 property com.fasterxml.jackson.annotation.JsonProperty "year"
                 #update;
@@ -409,7 +431,7 @@ class Asset
         string series, 
         string vehiclePrimaryUse, 
         string vin, 
-        double year)
+        java.time.LocalDate year)
                 #autoExpand
                 #beanConstructor
                 property groups "BALA"

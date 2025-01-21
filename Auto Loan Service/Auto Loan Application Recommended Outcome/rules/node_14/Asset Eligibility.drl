@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
-  <name>Asset Age</name>
-  <uuid>e69477e5-56fd-4fc0-a755-bb1ee9fc29b5</uuid>
+  <name>Asset Eligibility</name>
+  <uuid>f22bd6b9-3067-42c3-8d8e-d1d8b95924f8</uuid>
   <locale>en_US</locale>
-  <definition><![CDATA[set decision to the number of years between the requestDate of Application and the year of Asset; ]]></definition>
+  <definition><![CDATA[if
+	'Asset Age' ≤ 'Asset Age Threshold'
+then
+	set decision to Eligible ;
+    
+else 
+	set decision to Not Eligible ; ]]></definition>
 </ilog.rules.studio.model.brl:ActionRule>

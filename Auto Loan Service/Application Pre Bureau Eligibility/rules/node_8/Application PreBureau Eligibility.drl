@@ -8,8 +8,8 @@
 if
 	'an Applicant Eligibility' is one of { Not Eligible } 
 then
-	set decision to "Not Eligible" ;
+	set decision to  Not Eligible ;
      
 else 
- set decision to "Eligible" ;]]></definition>
+ set decision to  Eligible ;]]></definition>
 </ilog.rules.studio.model.brl:ActionRule>

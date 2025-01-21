@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ilog.rules.studio.model.dt:DecisionTable xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.dt="http://ilog.rules.studio/model/dt.ecore">
-  <name>Asset Age Threshold</name>
-  <uuid>d7adfbab-5270-4c80-bf9f-03240b8eca39</uuid>
+  <name>Amount to Finance Auto Approve Threshold</name>
+  <uuid>b6361c54-45b2-4ff2-a5a0-a05569729e9f</uuid>
   <locale>en_US</locale>
   <definition><DT xmlns="http://schemas.ilog.com/Rules/7.0/DecisionTable" Version="7.0">
     <Body>
@@ -35,12 +35,48 @@ set 'a credit risk tier' to the application credit risk tier service computed fr
                 <Condition>
                     <Expression>
                         <Text><![CDATA[<an object> is one of <objects>]]></Text>
-                        <Param><![CDATA[{ Tier A , Tier B , Tier C , Tier D , Tier E }]]></Param>
+                        <Param><![CDATA[{ Tier A , Tier B }]]></Param>
                     </Expression>
                     <ActionSet>
                         <Action DefId="A0">
                             <Expression>
-                                <Param><![CDATA[6]]></Param>
+                                <Param><![CDATA[100000]]></Param>
+                            </Expression>
+                        </Action>
+                    </ActionSet>
+                </Condition>
+                <Condition>
+                    <Expression>
+                        <Param><![CDATA[Tier C]]></Param>
+                    </Expression>
+                    <ActionSet>
+                        <Action DefId="A0">
+                            <Expression>
+                                <Param><![CDATA[75000]]></Param>
+                            </Expression>
+                        </Action>
+                    </ActionSet>
+                </Condition>
+                <Condition>
+                    <Expression>
+                        <Param><![CDATA[Tier D]]></Param>
+                    </Expression>
+                    <ActionSet>
+                        <Action DefId="A0">
+                            <Expression>
+                                <Param><![CDATA[50000]]></Param>
+                            </Expression>
+                        </Action>
+                    </ActionSet>
+                </Condition>
+                <Condition>
+                    <Expression>
+                        <Param><![CDATA[Tier E]]></Param>
+                    </Expression>
+                    <ActionSet>
+                        <Action DefId="A0">
+                            <Expression>
+                                <Param><![CDATA[25000]]></Param>
                             </Expression>
                         </Action>
                     </ActionSet>
@@ -51,9 +87,10 @@ set 'a credit risk tier' to the application credit risk tier service computed fr
     <Resources DefaultLocale="en_US">
         <ResourceSet Locale="en_US">
             <Data Name="Definitions(C0)#HeaderText"><![CDATA[Application Credit Risk Tier]]></Data>
-            <Data Name="Definitions(C0)[0]#HeaderText"><![CDATA[an Application]]></Data>
-            <Data Name="Definitions(A0)#HeaderText"><![CDATA[Asset Age Threshold]]></Data>
-            <Data Name="Definitions(C0)#Width"><![CDATA[315]]></Data>
+            <Data Name="Definitions(A0)#Width"><![CDATA[276]]></Data>
+            <Data Name="Definitions(C0)[0]#HeaderText"><![CDATA[a number]]></Data>
+            <Data Name="Definitions(A0)#HeaderText"><![CDATA[Amount to Finance Auto Approve Threshold]]></Data>
+            <Data Name="Definitions(C0)#Width"><![CDATA[275]]></Data>
         </ResourceSet>
     </Resources>
 </DT>

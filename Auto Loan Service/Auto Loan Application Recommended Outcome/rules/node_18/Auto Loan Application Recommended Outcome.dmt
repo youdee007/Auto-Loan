@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.dt:DecisionTable xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.dt="http://ilog.rules.studio/model/dt.ecore">
+  <name>Auto Loan Application Recommended Outcome</name>
+  <uuid>0021196f-d39d-4e22-8773-682f695ae13e</uuid>
+  <locale>en_US</locale>
+  <definition><DT xmlns="http://schemas.ilog.com/Rules/7.0/DecisionTable" Version="7.0">
+    <Body>
+        <Properties>
+            <Property Name="UI.MediaType"><![CDATA[Web]]></Property>
+            <Property Name="UI.RenderBoolean" Type="xs:boolean"><![CDATA[true]]></Property>
+        </Properties>
+        <Preconditions>
+            <Text><![CDATA[definitions 
+	set 'a loan affordability' to the loan affordability recommended outcome computed from
+		Application being Application , 
+		Customer being Customer ;
+        
+	set 'an applicant credit history' to the applicant credit history recommended outcome computed from
+		Customer being Customer , 
+		Application being Application ;
+        
+	set 'an application pre bureau' to the application pre bureau eligibility computed from
+		Application being Application , 
+		Customer being Customer ;]]></Text>
+        </Preconditions>
+        <Structure>
+            <ConditionDefinitions>
+                <ConditionDefinition Id="C6">
+                    <Properties>
+                        <Property Name="Check.Gap" Type="xs:boolean"><![CDATA[false]]></Property>
+                        <Property Name="Check.Overlap" Type="xs:boolean"><![CDATA[false]]></Property>
+                    </Properties>
+                    <ExpressionDefinition>
+                        <Text><![CDATA['an application pre bureau' is <an Eligible/Not Eligible> ]]></Text>
+                    </ExpressionDefinition>
+                </ConditionDefinition>
+                <ConditionDefinition Id="C5">
+                    <Properties>
+                        <Property Name="Check.Gap" Type="xs:boolean"><![CDATA[false]]></Property>
+                        <Property Name="Check.Overlap" Type="xs:boolean"><![CDATA[true]]></Property>
+                    </Properties>
+                    <ExpressionDefinition>
+                        <Text><![CDATA['an applicant credit history' is <an Auto Approve/Manual Review/Auto Decline> ]]></Text>
+                    </ExpressionDefinition>
+                </ConditionDefinition>
+                <ConditionDefinition Id="C4">
+                    <Properties>
+                        <Property Name="Check.Gap" Type="xs:boolean"><![CDATA[false]]></Property>
+                        <Property Name="Check.Overlap" Type="xs:boolean"><![CDATA[true]]></Property>
+                    </Properties>
+                    <ExpressionDefinition>
+                        <Text><![CDATA[ 'a loan affordability' is <an Auto Approve/Manual Review/Auto Decline> ]]></Text>
+                    </ExpressionDefinition>
+                </ConditionDefinition>
+                <ConditionDefinition Id="C0">
+                    <Properties>
+                        <Property Name="Check.Gap" Type="xs:boolean"><![CDATA[false]]></Property>
+                        <Property Name="Check.Overlap" Type="xs:boolean"><![CDATA[true]]></Property>
+                    </Properties>
+                    <ExpressionDefinition>
+                        <Text><![CDATA['Application Loan Structure Recommended Outcome' is <an Auto Approve/Manual Review/Auto Decline>]]></Text>
+                    </ExpressionDefinition>
+                </ConditionDefinition>
+                <ConditionDefinition Id="C1">
+                    <Properties>
+                        <Property Name="Check.Gap" Type="xs:boolean"><![CDATA[false]]></Property>
+                        <Property Name="Check.Overlap" Type="xs:boolean"><![CDATA[true]]></Property>
+                    </Properties>
+                    <ExpressionDefinition>
+                        <Text><![CDATA['Asset Eligibility' is <an Eligible/Not Eligible>]]></Text>
+                    </ExpressionDefinition>
+                </ConditionDefinition>
+                <ConditionDefinition Id="C2">
+                    <Properties>
+                        <Property Name="Check.Gap" Type="xs:boolean"><![CDATA[false]]></Property>
+                        <Property Name="Check.Overlap" Type="xs:boolean"><![CDATA[true]]></Property>
+                    </Properties>
+                    <ExpressionDefinition>
+                        <Text><![CDATA['Dealer Acceptability Outcome' is <an Acceptable/Not Acceptable>]]></Text>
+                    </ExpressionDefinition>
+                </ConditionDefinition>
+            </ConditionDefinitions>
+            <ActionDefinitions>
+                <ActionDefinition Id="A0">
+                    <ExpressionDefinition>
+                        <Text><![CDATA[set decision to <an Auto Approve/Manual Review/Auto Decline>]]></Text>
+                    </ExpressionDefinition>
+                </ActionDefinition>
+            </ActionDefinitions>
+        </Structure>
+        <Contents>
+            <Partition DefId="C6">
+                <Condition>
+                    <Expression>
+                        <Param><![CDATA[Eligible]]></Param>
+                    </Expression>
+                    <Partition DefId="C5">
+                        <Condition>
+                            <Expression>
+                                <Param><![CDATA[Auto Approve]]></Param>
+                            </Expression>
+                            <Partition DefId="C4">
+                                <Condition>
+                                    <Expression>
+                                        <Param><![CDATA[Auto Approve]]></Param>
+                                    </Expression>
+                                    <Partition DefId="C0">
+                                        <Condition>
+                                            <Expression>
+                                                <Param><![CDATA[Auto Approve]]></Param>
+                                            </Expression>
+                                            <Partition DefId="C1">
+                                                <Condition>
+                                                    <Expression>
+                                                        <Param><![CDATA[Eligible]]></Param>
+                                                    </Expression>
+                                                    <Partition DefId="C2">
+                                                        <Condition>
+                                                            <Expression>
+                                                                <Param><![CDATA[Acceptable]]></Param>
+                                                            </Expression>
+                                                            <ActionSet>
+                                                                <Action DefId="A0">
+                                                                    <Expression>
+                                                                        <Param><![CDATA[Auto Approve]]></Param>
+                                                                    </Expression>
+                                                                </Action>
+                                                            </ActionSet>
+                                                        </Condition>
+                                                    </Partition>
+                                                </Condition>
+                                            </Partition>
+                                        </Condition>
+                                    </Partition>
+                                </Condition>
+                            </Partition>
+                        </Condition>
+                    </Partition>
+                </Condition>
+                <Condition>
+                    <Expression>
+                        <Param><![CDATA[Eligible]]></Param>
+                    </Expression>
+                    <Partition DefId="C5">
+                        <Condition>
+                            <Expression>
+                                <Param><![CDATA[Auto Approve]]></Param>
+                            </Expression>
+                            <Partition DefId="C4">
+                                <Condition>
+                                    <Expression>
+                                        <Param><![CDATA[Auto Approve]]></Param>
+                                    </Expression>
+                                    <Partition DefId="C0">
+                                        <Condition>
+                                            <Expression>
+                                                <Param><![CDATA[Auto Approve]]></Param>
+                                            </Expression>
+                                            <Partition DefId="C1">
+                                                <Condition>
+                                                    <Expression>
+                                                        <Param><![CDATA[Eligible]]></Param>
+                                                    </Expression>
+                                                    <Partition DefId="C2">
+                                                        <Condition>
+                                                            <Expression>
+                                                                <Param><![CDATA[Not Acceptable]]></Param>
+                                                            </Expression>
+                                                            <ActionSet>
+                                                                <Action DefId="A0">
+                                                                    <Expression>
+                                                                        <Param><![CDATA[Manual Review]]></Param>
+                                                                    </Expression>
+                                                                </Action>
+                                                            </ActionSet>
+                                                        </Condition>
+                                                    </Partition>
+                                                </Condition>
+                                            </Partition>
+                                        </Condition>
+                                    </Partition>
+                                </Condition>
+                            </Partition>
+                        </Condition>
+                    </Partition>
+                </Condition>
+                <Condition>
+                    <Expression>
+                        <Param><![CDATA[Not Eligible]]></Param>
+                    </Expression>
+                    <ActionSet>
+                        <Action DefId="A0">
+                            <Expression>
+                                <Param><![CDATA[Auto Decline]]></Param>
+                            </Expression>
+                        </Action>
+                    </ActionSet>
+                </Condition>
+                <Condition>
+                    <Expression/>
+                    <Partition DefId="C5">
+                        <Condition>
+                            <Expression>
+                                <Param><![CDATA[Auto Decline]]></Param>
+                            </Expression>
+                            <ActionSet>
+                                <Action DefId="A0">
+                                    <Expression>
+                                        <Param><![CDATA[Auto Decline]]></Param>
+                                    </Expression>
+                                </Action>
+                            </ActionSet>
+                        </Condition>
+                    </Partition>
+                </Condition>
+                <Condition>
+                    <Expression/>
+                    <Partition DefId="C4">
+                        <Condition>
+                            <Expression>
+                                <Param><![CDATA[Auto Decline]]></Param>
+                            </Expression>
+                            <ActionSet>
+                                <Action DefId="A0">
+                                    <Expression>
+                                        <Param><![CDATA[Auto Decline]]></Param>
+                                    </Expression>
+                                </Action>
+                            </ActionSet>
+                        </Condition>
+                    </Partition>
+                </Condition>
+                <Condition>
+                    <Expression/>
+                    <Partition DefId="C0">
+                        <Condition>
+                            <Expression>
+                                <Param><![CDATA[Auto Decline]]></Param>
+                            </Expression>
+                            <ActionSet>
+                                <Action DefId="A0">
+                                    <Expression>
+                                        <Param><![CDATA[Auto Decline]]></Param>
+                                    </Expression>
+                                </Action>
+                            </ActionSet>
+                        </Condition>
+                    </Partition>
+                </Condition>
+                <Condition>
+                    <Expression/>
+                    <Partition DefId="C1">
+                        <Condition>
+                            <Expression>
+                                <Param><![CDATA[Not Eligible]]></Param>
+                            </Expression>
+                            <ActionSet>
+                                <Action DefId="A0">
+                                    <Expression>
+                                        <Param><![CDATA[Auto Decline]]></Param>
+                                    </Expression>
+                                </Action>
+                            </ActionSet>
+                        </Condition>
+                    </Partition>
+                </Condition>
+            </Partition>
+        </Contents>
+    </Body>
+    <Resources DefaultLocale="en_US">
+        <ResourceSet Locale="en_US">
+            <Data Name="Definitions(C6)#HeaderText"><![CDATA[Application PreBureau Eligibility]]></Data>
+            <Data Name="Definitions(C5)#HeaderText"><![CDATA[Application Credit History Recommended Outcome]]></Data>
+            <Data Name="Definitions(C4)#HeaderText"><![CDATA[Loan Affordability Recommended Outcome]]></Data>
+            <Data Name="Definitions(C0)#HeaderText"><![CDATA[Application Loan Structure Recommended Outcome]]></Data>
+            <Data Name="Definitions(C1)#HeaderText"><![CDATA[Asset Eligibility]]></Data>
+            <Data Name="Definitions(C2)#HeaderText"><![CDATA[Dealer Acceptability Outcome]]></Data>
+            <Data Name="Definitions(A0)#HeaderText"><![CDATA[Auto Loan Application Recommended Outcome]]></Data>
+            <Data Name="Definitions(C6)[0]#HeaderText"><![CDATA[an object]]></Data>
+        </ResourceSet>
+    </Resources>
+</DT>
+</definition>
+</ilog.rules.studio.model.dt:DecisionTable>
