@@ -7,7 +7,7 @@
 	set 'aCustomer' to a Customer in Customer ; 
 	set 'aDebt' to a Debt in the Debts of aCustomer ; 
     
-	set 'variable1' to the number of years between the createdOn of Application and the dateReported of aDebt ;  
+	set 'variable1' to the number of years between the createdOn of Application and the dateReported of aDebt;  
     then 
 	add variable1 to decision ; ]]></definition>
 </ilog.rules.studio.model.brl:ActionRule>

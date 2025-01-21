@@ -395,7 +395,7 @@ agull.auto_loan_demo.auto_loan_service.datastructure.Customer.totalHouseAutOblig
 
 # agull.auto_loan_demo.auto_loan_service.datastructure.Debt
 agull.auto_loan_demo.auto_loan_service.datastructure.Debt#concept.label = Debt
-agull.auto_loan_demo.auto_loan_service.datastructure.Debt.Debt(java.lang.String,java.lang.String,double,java.lang.String,java.lang.String,java.time.LocalDate,java.time.LocalDate,double,boolean,java.lang.String,double,java.lang.String,double,java.lang.String,java.lang.String,double,boolean)#phrase.navigation = a new {Debt} where {0, actType} {1, autoLoanType} {2, balAmt} {3, creditorName} {4, currPmt} {5, dateOpened} {6, dateReported} {7, highCredAmt} {8, manuallyAdded} {9, modifiedBy} {10, monthlyPmtAmt} {11, narrativesOrFrequency} {12, origMonthPmtAmt} {13, paymentRate} {14, portfolioType} {15, tradeRating} {16, used}
+agull.auto_loan_demo.auto_loan_service.datastructure.Debt.Debt(java.lang.String,java.lang.String,double,java.lang.String,java.lang.String,java.time.LocalDate,java.time.ZonedDateTime,double,boolean,java.lang.String,double,java.lang.String,double,java.lang.String,java.lang.String,double,boolean)#phrase.navigation = a new {Debt} where {0, actType} {1, autoLoanType} {2, balAmt} {3, creditorName} {4, currPmt} {5, dateOpened} {6, dateReported} {7, highCredAmt} {8, manuallyAdded} {9, modifiedBy} {10, monthlyPmtAmt} {11, narrativesOrFrequency} {12, origMonthPmtAmt} {13, paymentRate} {14, portfolioType} {15, tradeRating} {16, used}
 agull.auto_loan_demo.auto_loan_service.datastructure.Debt.actType#phrase.action = set the actType of {this} to {actType}
 agull.auto_loan_demo.auto_loan_service.datastructure.Debt.actType#phrase.navigation = {actType} of {this}
 agull.auto_loan_demo.auto_loan_service.datastructure.Debt.autoLoanType#phrase.action = set the autoLoanType of {this} to {autoLoanType}
@@ -499,11 +499,25 @@ agull.auto_loan_demo.auto_loan_service.datastructure.ExternalCreditScore.payment
 agull.auto_loan_demo.auto_loan_service.datastructure.ExternalCreditScore.recommendation#phrase.action = set the recommendation of {this} to {recommendation}
 agull.auto_loan_demo.auto_loan_service.datastructure.ExternalCreditScore.recommendation#phrase.navigation = {recommendation} of {this}
 
+# agull.auto_loan_demo.auto_loan_service.datastructure.IncomeVerificationList
+agull.auto_loan_demo.auto_loan_service.datastructure.IncomeVerificationList#concept.label = Income Verification List
+agull.auto_loan_demo.auto_loan_service.datastructure.IncomeVerificationList.flinksIncomeVerificationLink#instance.label = Flinks Income Verification Link
+agull.auto_loan_demo.auto_loan_service.datastructure.IncomeVerificationList.incomeVerificationCompleted#instance.label = Income Verification Completed
+
 # agull.auto_loan_demo.auto_loan_service.datastructure.Insolvency
 agull.auto_loan_demo.auto_loan_service.datastructure.Insolvency#concept.label = Insolvency
 agull.auto_loan_demo.auto_loan_service.datastructure.Insolvency.activeInsolvency#instance.label = Active Insolvency
 agull.auto_loan_demo.auto_loan_service.datastructure.Insolvency.dischargeInsolvency#instance.label = Discharge Insolvency
 agull.auto_loan_demo.auto_loan_service.datastructure.Insolvency.noInsolvency#instance.label = No Insolvency
+
+# agull.auto_loan_demo.auto_loan_service.datastructure.MSRPStipulationRequired
+agull.auto_loan_demo.auto_loan_service.datastructure.MSRPStipulationRequired#concept.label = MSRP Stipulation Required
+agull.auto_loan_demo.auto_loan_service.datastructure.MSRPStipulationRequired.MSRPStipulationRequired(java.lang.String,agull.auto_loan_demo.auto_loan_service.datastructure.Required$NotRequired)#phrase.navigation = a new {MSRP Stipulation Required} where {0, Message} {1, Output}
+agull.auto_loan_demo.auto_loan_service.datastructure.MSRPStipulationRequired.message#phrase.action = set the Message of {this} to {Message}
+agull.auto_loan_demo.auto_loan_service.datastructure.MSRPStipulationRequired.message#phrase.navigation = {Message} of {this}
+agull.auto_loan_demo.auto_loan_service.datastructure.MSRPStipulationRequired.output#phrase.action = set the Output of {this} to {Output}
+agull.auto_loan_demo.auto_loan_service.datastructure.MSRPStipulationRequired.output#phrase.clearer = clear the Output of {this}
+agull.auto_loan_demo.auto_loan_service.datastructure.MSRPStipulationRequired.output#phrase.navigation = {Output} of {this}
 
 # agull.auto_loan_demo.auto_loan_service.datastructure.PreviousDecision
 agull.auto_loan_demo.auto_loan_service.datastructure.PreviousDecision#concept.label = Previous Decision
@@ -559,6 +573,21 @@ agull.auto_loan_demo.auto_loan_service.datastructure.Required$NotRequired#concep
 agull.auto_loan_demo.auto_loan_service.datastructure.Required$NotRequired.notRequired#instance.label = Not Required
 agull.auto_loan_demo.auto_loan_service.datastructure.Required$NotRequired.required#instance.label = Required
 
+# agull.auto_loan_demo.auto_loan_service.datastructure.Stipulations
+agull.auto_loan_demo.auto_loan_service.datastructure.Stipulations#concept.label = Stipulations
+agull.auto_loan_demo.auto_loan_service.datastructure.Stipulations.PA01$VehicleValuation#instance.label = PA01 - Vehicle Valuation
+agull.auto_loan_demo.auto_loan_service.datastructure.Stipulations.PA02$MSRP#instance.label = PA02 - MSRP
+agull.auto_loan_demo.auto_loan_service.datastructure.Stipulations.PA03$ExistingLoanToBePaidInFull#instance.label = PA03 - Existing loan to be paid in full
+agull.auto_loan_demo.auto_loan_service.datastructure.Stipulations.PA04$SubjectToTradeIn#instance.label = PA04 - Subject to Trade in
+agull.auto_loan_demo.auto_loan_service.datastructure.Stipulations.PA05$TierA#instance.label = PA05 - Tier A
+agull.auto_loan_demo.auto_loan_service.datastructure.Stipulations.PA06$TierB#instance.label = PA06 - Tier B
+agull.auto_loan_demo.auto_loan_service.datastructure.Stipulations.PA07$TierC#instance.label = PA07 - Tier C
+agull.auto_loan_demo.auto_loan_service.datastructure.Stipulations.PA08$TierD#instance.label = PA08 - Tier D
+agull.auto_loan_demo.auto_loan_service.datastructure.Stipulations.PA09$TierE#instance.label = PA09 - Tier E
+agull.auto_loan_demo.auto_loan_service.datastructure.Stipulations.PA10$IncomeVerificationLink#instance.label = PA10 - Income Verification Link
+agull.auto_loan_demo.auto_loan_service.datastructure.Stipulations.PA11$IncomeVerificationCompleted#instance.label = PA11 - Income Verification Completed
+agull.auto_loan_demo.auto_loan_service.datastructure.Stipulations.notRequired#instance.label = Not Required
+
 # agull.auto_loan_demo.auto_loan_service.datastructure.Thick$Thin
 agull.auto_loan_demo.auto_loan_service.datastructure.Thick$Thin#concept.label = Thick/Thin
 agull.auto_loan_demo.auto_loan_service.datastructure.Thick$Thin.thick#instance.label = Thick
@@ -596,3 +625,12 @@ agull.auto_loan_demo.auto_loan_service.datastructure.TranUnionReport.tradePmtAmt
 agull.auto_loan_demo.auto_loan_service.datastructure.TranUnionReport.tradePmtAmt#phrase.addition_setter = add {tradePmtAmt} to the tradePmtAmt of {this}
 agull.auto_loan_demo.auto_loan_service.datastructure.TranUnionReport.tradePmtAmt#phrase.navigation = {tradePmtAmt} of {this}
 agull.auto_loan_demo.auto_loan_service.datastructure.TranUnionReport.tradePmtAmt#phrase.subtraction_setter = subtract {tradePmtAmt} from the tradePmtAmt of {this}
+
+# agull.auto_loan_demo.auto_loan_service.datastructure.VehicleValuationStipulationRequired
+agull.auto_loan_demo.auto_loan_service.datastructure.VehicleValuationStipulationRequired#concept.label = Vehicle Valuation Stipulation Required
+agull.auto_loan_demo.auto_loan_service.datastructure.VehicleValuationStipulationRequired.VehicleValuationStipulationRequired(java.lang.String,agull.auto_loan_demo.auto_loan_service.datastructure.Required$NotRequired)#phrase.navigation = a new {Vehicle Valuation Stipulation Required} where {0, Message} {1, Output}
+agull.auto_loan_demo.auto_loan_service.datastructure.VehicleValuationStipulationRequired.message#phrase.action = set the Message of {this} to {Message}
+agull.auto_loan_demo.auto_loan_service.datastructure.VehicleValuationStipulationRequired.message#phrase.navigation = {Message} of {this}
+agull.auto_loan_demo.auto_loan_service.datastructure.VehicleValuationStipulationRequired.output#phrase.action = set the Output of {this} to {Output}
+agull.auto_loan_demo.auto_loan_service.datastructure.VehicleValuationStipulationRequired.output#phrase.clearer = clear the Output of {this}
+agull.auto_loan_demo.auto_loan_service.datastructure.VehicleValuationStipulationRequired.output#phrase.navigation = {Output} of {this}

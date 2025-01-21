@@ -780,7 +780,7 @@ class Debt
                 property ads.attributeId "6"
                 property com.fasterxml.jackson.annotation.JsonProperty "dateOpened"
                 #update;
-    java.time.LocalDate dateReported
+    java.time.ZonedDateTime dateReported
                 property ads.attributeId "15"
                 property com.fasterxml.jackson.annotation.JsonProperty "dateReported"
                 #update;
@@ -830,7 +830,7 @@ class Debt
         string creditorName, 
         string currPmt, 
         java.time.LocalDate dateOpened, 
-        java.time.LocalDate dateReported, 
+        java.time.ZonedDateTime dateReported, 
         double highCredAmt, 
         boolean manuallyAdded, 
         string modifiedBy, 
@@ -954,6 +954,21 @@ class ExternalCreditScore
                 #dataio.default;
 }
 
+class IncomeVerificationList
+        extends java.lang.Enum
+        property ads.typeId "27"
+        property com.fasterxml.jackson.annotation.JsonTypeName "IncomeVerificationList"
+        #de.generated
+{
+    domain {static flinksIncomeVerificationLink, static incomeVerificationCompleted}
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.IncomeVerificationList flinksIncomeVerificationLink
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Flinks Income Verification Link";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.IncomeVerificationList incomeVerificationCompleted
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Income Verification Completed";
+}
+
 class Insolvency
         extends java.lang.Enum
         property ads.typeId "19"
@@ -970,6 +985,28 @@ class Insolvency
     static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.Insolvency noInsolvency
                 property ads.attributeId "3"
                 property com.fasterxml.jackson.annotation.JsonProperty "No Insolvency";
+}
+
+class MSRPStipulationRequired
+        property ads.typeId "25"
+        property com.fasterxml.jackson.annotation.JsonTypeName "MSRPStipulationRequired"
+        #de.generated
+{
+    string message
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Message"
+                #update;
+    agull.auto_loan_demo.auto_loan_service.datastructure.Required$NotRequired output
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Output"
+                #update;
+    MSRPStipulationRequired(string message, agull.auto_loan_demo.auto_loan_service.datastructure.Required$NotRequired output)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    MSRPStipulationRequired()
+                #dataio.default;
 }
 
 class PreviousDecision
@@ -1073,6 +1110,65 @@ class Required$NotRequired
     static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.Required$NotRequired required
                 property ads.attributeId "1"
                 property com.fasterxml.jackson.annotation.JsonProperty "Required";
+}
+
+class Stipulations
+        extends java.lang.Enum
+        property ads.typeId "26"
+        property com.fasterxml.jackson.annotation.JsonTypeName "Stipulations"
+        #de.generated
+{
+    domain 
+    {
+        static PA01$VehicleValuation,
+        static PA02$MSRP,
+        static PA03$ExistingLoanToBePaidInFull,
+        static PA04$SubjectToTradeIn,
+        static PA05$TierA,
+        static PA06$TierB,
+        static PA07$TierC,
+        static PA08$TierD,
+        static PA09$TierE,
+        static PA10$IncomeVerificationLink,
+        static PA11$IncomeVerificationCompleted,
+        static notRequired
+    }
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.Stipulations PA01$VehicleValuation
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "PA01 - Vehicle Valuation";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.Stipulations PA02$MSRP
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "PA02 - MSRP";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.Stipulations PA03$ExistingLoanToBePaidInFull
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "PA03 - Existing Loan To Be Paid In Full";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.Stipulations PA04$SubjectToTradeIn
+                property ads.attributeId "4"
+                property com.fasterxml.jackson.annotation.JsonProperty "PA04 - Subject To Trade In";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.Stipulations PA05$TierA
+                property ads.attributeId "8"
+                property com.fasterxml.jackson.annotation.JsonProperty "PA05 - Tier A";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.Stipulations PA06$TierB
+                property ads.attributeId "9"
+                property com.fasterxml.jackson.annotation.JsonProperty "PA06 - Tier B";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.Stipulations PA07$TierC
+                property ads.attributeId "10"
+                property com.fasterxml.jackson.annotation.JsonProperty "PA07 - Tier C";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.Stipulations PA08$TierD
+                property ads.attributeId "11"
+                property com.fasterxml.jackson.annotation.JsonProperty "PA08 - Tier D";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.Stipulations PA09$TierE
+                property ads.attributeId "12"
+                property com.fasterxml.jackson.annotation.JsonProperty "PA09 - Tier E";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.Stipulations PA10$IncomeVerificationLink
+                property ads.attributeId "6"
+                property com.fasterxml.jackson.annotation.JsonProperty "PA10 - Income Verification Link";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.Stipulations PA11$IncomeVerificationCompleted
+                property ads.attributeId "7"
+                property com.fasterxml.jackson.annotation.JsonProperty "PA11 - Income Verification Completed";
+    static final readonly agull.auto_loan_demo.auto_loan_service.datastructure.Stipulations notRequired
+                property ads.attributeId "5"
+                property com.fasterxml.jackson.annotation.JsonProperty "Not Required";
 }
 
 class Thick$Thin
@@ -1188,6 +1284,28 @@ class TranUnionReport
                 property groups "BALA"
                 #prototype;
     TranUnionReport()
+                #dataio.default;
+}
+
+class VehicleValuationStipulationRequired
+        property ads.typeId "24"
+        property com.fasterxml.jackson.annotation.JsonTypeName "VehicleValuationStipulationRequired"
+        #de.generated
+{
+    string message
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "Message"
+                #update;
+    agull.auto_loan_demo.auto_loan_service.datastructure.Required$NotRequired output
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "Output"
+                #update;
+    VehicleValuationStipulationRequired(string message, agull.auto_loan_demo.auto_loan_service.datastructure.Required$NotRequired output)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    VehicleValuationStipulationRequired()
                 #dataio.default;
 }
 
