@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <com.ibm.rules.studio.model.decisionservice:Deployment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" ruleAppName="agull.auto_loan_demo.auto_loan_service:maximumPayment" ruleAppVersion="LATEST-SNAPSHOT" packageName="agull.auto_loan_demo.auto_loan_service.maximumpayment" managingXom="true">
   <name>Maximum_Payment</name>
-  <uuid>432de9a0-584c-46cd-b33d-377110045b41</uuid>
+  <uuid>d45bcbcf-6713-401d-96ab-78c5bd5865ad</uuid>
   <locales>en_US</locales>
   <operations operationName="operation">
-    <operation href="operation.dop#0811d70e-0493-45c0-b1d0-d37d495ba30c"/>
+    <operation href="operation.dop#57c7263e-ae22-4533-8130-7796939361c2"/>
     <properties key="ruleset.version">
       <value><![CDATA[1.0]]></value>
     </properties>

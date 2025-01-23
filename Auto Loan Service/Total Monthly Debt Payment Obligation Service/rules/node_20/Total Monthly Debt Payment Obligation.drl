@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Total Monthly Debt Payment Obligation</name>
+  <uuid>678cc634-01cf-4182-af19-111f735e332d</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[set decision to the sum of { 'Inflation Adjustment Payment', 'Insurance Payment', 'TDSR Housing Payment', 'Total Manually Added Monthly Debt Obligation', the TDSR total credit bureau monthly debt obligation computed from 
+	Customer being Customer , 
+	Application being Application } ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

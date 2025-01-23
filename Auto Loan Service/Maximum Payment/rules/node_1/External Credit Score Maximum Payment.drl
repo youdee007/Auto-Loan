@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
   <name>External Credit Score Maximum Payment</name>
-  <uuid>0d0b670d-15e9-41a5-8046-a54503dc074f</uuid>
+  <uuid>77d5ccd1-432a-46cc-8311-806c6f14c2bf</uuid>
   <locale>en_US</locale>
   <definition><![CDATA[definitions 
 	set 'a Customer' to a Customer in Customer ; 

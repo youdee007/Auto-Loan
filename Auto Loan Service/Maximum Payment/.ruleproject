@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ilog.rules.studio.model.base:RuleProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore" xmlns:ilog.rules.studio.model.bom="http://ilog.rules.studio/model/bom.ecore" xmlns:ilog.rules.studio.model.query="http://ilog.rules.studio/model/query.ecore" xmlns:ilog.rules.studio.model.xom="http://ilog.rules.studio/model/xom.ecore" buildMode="DecisionEngine" isADecisionService="true" projectKind="DecisionModel" projectVersion="2.0.0">
   <name>Maximum Payment</name>
-  <uuid>8b9f5f1d-8a99-4147-ba84-2a8307f20ad2</uuid>
+  <uuid>489c8557-0779-490a-abff-a838706c10cc</uuid>
   <outputLocation>output</outputLocation>
   <categories>any</categories>
   <paths xsi:type="ilog.rules.studio.model.xom:XOMPath" pathID="XOM">
@@ -9,7 +9,7 @@
   </paths>
   <paths xsi:type="ilog.rules.studio.model.bom:BOMPath" pathID="BOM">
     <entries xsi:type="ilog.rules.studio.model.bom:DecisionLibraryBOMEntry" name="agull.auto_loan_demo.auto_loan_service:dataStructure#LATEST-SNAPSHOT" packageId="agull.auto_loan_demo.auto_loan_service:dataStructure" version="LATEST-SNAPSHOT"/>
-    <entries xsi:type="ilog.rules.studio.model.bom:DecisionLibraryBOMEntry" name="agull.auto_loan_demo.auto_loan_service:TDSR-TotalCreditBureauMonthlyDebtObligation#LATEST-SNAPSHOT" packageId="agull.auto_loan_demo.auto_loan_service:TDSR-TotalCreditBureauMonthlyDebtObligation" version="LATEST-SNAPSHOT"/>
+    <entries xsi:type="ilog.rules.studio.model.bom:DecisionLibraryBOMEntry" name="agull.auto_loan_demo.auto_loan_service:totalMonthlyDebtPaymentObligationService#LATEST-SNAPSHOT" packageId="agull.auto_loan_demo.auto_loan_service:totalMonthlyDebtPaymentObligationService" version="LATEST-SNAPSHOT"/>
   </paths>
   <modelFolders xsi:type="ilog.rules.studio.model.base:SourceFolder">
     <name>rules</name>

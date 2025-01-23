@@ -13,7 +13,10 @@
             <Text><![CDATA[definitions 
 
 	set  'aCustomer' to a Customer in Customer ;
-    set 'aDebt'  to  a Debt in the Debts of aCustomer ; ]]></Text>
+    set 'aDebt'  to  a Debt in the Debts of aCustomer , made distinct ; 
+    
+    
+	set 'Calculation' to the balAmt of aDebt / the monthlyPmtAmt of aDebt ;]]></Text>
         </Preconditions>
         <Structure>
             <ConditionDefinitions>
@@ -51,22 +54,12 @@
                             <ActionSet>
                                 <Action DefId="A0">
                                     <Expression>
-                                        <Param><![CDATA[(the balAmt of aDebt / the monthlyPmtAmt of aDebt )]]></Param>
+                                        <Param><![CDATA[Calculation]]></Param>
                                     </Expression>
                                 </Action>
                             </ActionSet>
                         </Condition>
                     </Partition>
-                </Condition>
-                <Condition>
-                    <Expression/>
-                    <ActionSet>
-                        <Action DefId="A0">
-                            <Expression>
-                                <Param><![CDATA[0]]></Param>
-                            </Expression>
-                        </Action>
-                    </ActionSet>
                 </Condition>
             </Partition>
         </Contents>

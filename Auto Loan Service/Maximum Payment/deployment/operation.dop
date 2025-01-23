@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" rulesetName="operation" targetRuleProjectName="Maximum Payment">
   <name>Maximum_Payment</name>
-  <uuid>0811d70e-0493-45c0-b1d0-d37d495ba30c</uuid>
-  <decisionModel href="../rules/decisionModel.dmo#9e791f0c-10b1-4c27-9b3e-40201b0e5fa1"/>
-  <targetRuleProject href="../../Maximum%20Payment#8b9f5f1d-8a99-4147-ba84-2a8307f20ad2"/>
+  <uuid>57c7263e-ae22-4533-8130-7796939361c2</uuid>
+  <decisionModel href="../rules/decisionModel.dmo#4f157391-422c-46ca-8d4d-4675923e14a0"/>
+  <targetRuleProject href="../../Maximum%20Payment#489c8557-0779-490a-abff-a838706c10cc"/>
 </com.ibm.rules.studio.model.decisionservice:Operation>

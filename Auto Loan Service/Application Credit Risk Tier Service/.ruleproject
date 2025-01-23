@@ -31,5 +31,5 @@
   <modelFolders xsi:type="com.ibm.rules.studio.model.decisionservice:OperationFolder">
     <name>deployment</name>
   </modelFolders>
-  <documentation><![CDATA[Application Credit Risk Tier Service]]></documentation>
+  <documentation><![CDATA[Service]]></documentation>
 </ilog.rules.studio.model.base:RuleProject>

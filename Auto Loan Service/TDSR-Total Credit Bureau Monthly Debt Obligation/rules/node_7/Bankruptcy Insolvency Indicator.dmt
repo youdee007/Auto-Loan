@@ -12,7 +12,7 @@
         <Preconditions>
             <Text><![CDATA[definitions 
 
-	set 'aCustomer' to a Customer in Customer ;]]></Text>
+	set 'aCustomer' to a Customer in Customer , made distinct ;]]></Text>
         </Preconditions>
         <Structure>
             <ConditionDefinitions>

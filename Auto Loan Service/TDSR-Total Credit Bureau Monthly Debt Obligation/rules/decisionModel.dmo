@@ -13,6 +13,7 @@
                 <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Customer" collection="true" name="Customer"/>
                 <output bomType="java.lang.Double" collection="true" name="Trade Payment Frequency"/>
                 <rule defaultRule="false" href="node_1/Trade%20Payment%20Frequency.dmt" kind="DecisionTable" name="Trade Payment Frequency"/>
+                <rule defaultRule="true" href="node_1/output-default-setting.drl" kind="BusinessRule" name="output-default-setting"/>
             </ruleset>
         </extensionElements>
         <variable id="node_1_ii" name="Trade Payment Frequency" typeRef="java.lang.Double[]"/>
@@ -60,6 +61,7 @@
                 <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Customer" collection="true" name="Customer"/>
                 <output bomType="java.lang.Double" collection="true" name="Installment Debt Monthly Payments Remaining from Balance Amount"/>
                 <rule defaultRule="false" href="node_4/Installment%20Debt%20Monthly%20Payments%20Remaining%20from%20Balance%20Amount.dmt" kind="DecisionTable" name="Installment Debt Monthly Payments Remaining from Balance Amount"/>
+                <rule defaultRule="true" href="node_4/output-default-setting.drl" kind="BusinessRule" name="output-default-setting"/>
             </ruleset>
         </extensionElements>
         <variable id="node_4_ii" name="Installment Debt Monthly Payments Remaining from Balance Amount" typeRef="java.lang.Double[]"/>
@@ -74,6 +76,7 @@
                 <input bomType="java.lang.Double" collection="true" name="Trade Payment Frequency"/>
                 <output bomType="java.lang.Double" collection="true" name="Trade Equivalent Monthly Payment Amount"/>
                 <rule defaultRule="false" href="node_5/Trade%20Equivalent%20Monthly%20Payment%20Amount.drl" kind="BusinessRule" name="Trade Equivalent Monthly Payment Amount"/>
+                <rule defaultRule="false" href="node_5/Distinct%20Function.drl" kind="BusinessRule" name="Distinct Function"/>
             </ruleset>
         </extensionElements>
         <variable id="node_5_ii" name="Trade Equivalent Monthly Payment Amount" typeRef="java.lang.Double[]"/>
@@ -91,6 +94,7 @@
                 <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Qualified$NotQualified" collection="true" name="Debt Manual Edits Qualified"/>
                 <output bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Required$NotRequired" collection="true" name="Existing Loan To Be Paid In Full Stipulation Required"/>
                 <rule defaultRule="false" href="node_6/Existing%20Loan%20To%20Be%20Paid%20In%20Full%20Stipulation%20Required.dmt" kind="DecisionTable" name="Existing Loan To Be Paid In Full Stipulation Required"/>
+                <rule defaultRule="false" href="node_6/Distinct%20Function.drl" kind="BusinessRule" name="Distinct Function"/>
             </ruleset>
         </extensionElements>
         <variable id="node_6_ii" name="Existing Loan To Be Paid In Full Stipulation Required" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.Required$NotRequired[]"/>
@@ -122,6 +126,7 @@
                 <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Insolvency" collection="true" name="Bankruptcy Insolvency Indicator"/>
                 <output bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Required$NotRequired" collection="true" name="Subject To Trade In Stipulation Required"/>
                 <rule defaultRule="false" href="node_8/Subject%20To%20Trade%20In%20Stipulation%20Required.dmt" kind="DecisionTable" name="Subject To Trade In Stipulation Required"/>
+                <rule defaultRule="false" href="node_8/Distinct%20Function.drl" kind="BusinessRule" name="Distinct Function"/>
             </ruleset>
         </extensionElements>
         <variable id="node_8_ii" name="Subject To Trade In Stipulation Required" typeRef="agull.auto_loan_demo.auto_loan_service.datastructure.Required$NotRequired[]"/>
@@ -198,13 +203,15 @@
                 <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Qualified$NotQualified" collection="true" name="Debt Manual Edits Qualified"/>
                 <input bomType="java.lang.Double" collection="true" name="Installment Debt Monthly Payments Remaining from Balance Amount"/>
                 <input bomType="java.lang.Double" collection="true" name="Trade Equivalent Monthly Payment Amount"/>
-                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Active$InActive" collection="true" name="Active Debt"/>
                 <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Required$NotRequired" collection="true" name="Existing Loan To Be Paid In Full Stipulation Required"/>
+                <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Active$InActive" collection="true" name="Active Debt"/>
                 <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Application" collection="false" name="Application"/>
                 <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Required$NotRequired" collection="true" name="Subject To Trade In Stipulation Required"/>
                 <input bomType="java.lang.Double" collection="true" name="TDSR Trade Obligation Factor"/>
                 <output bomType="java.lang.Double" collection="true" name="Installment Trade Monthly Debt Obligation"/>
                 <rule defaultRule="false" href="node_13/Installment%20Trade%20Monthly%20Debt%20Obligation.dmt" kind="DecisionTable" name="Installment Trade Monthly Debt Obligation"/>
+                <rule defaultRule="true" href="node_13/output-default-setting.drl" kind="BusinessRule" name="output-default-setting"/>
+                <rule defaultRule="false" href="node_13/Distinct%20Function.drl" kind="BusinessRule" name="Distinct Function"/>
             </ruleset>
         </extensionElements>
         <variable id="node_13_ii" name="Installment Trade Monthly Debt Obligation" typeRef="java.lang.Double[]"/>
@@ -246,6 +253,7 @@
                 <input bomType="java.lang.Double" collection="true" name="TDSR Trade Obligation Factor"/>
                 <output bomType="java.lang.Double" collection="true" name="TDSR Balance Obligation Monthly Payment Amount"/>
                 <rule defaultRule="false" href="node_14/TDSR%20Balance%20Obligation%20Monthly%20Payment%20Amount.drl" kind="BusinessRule" name="TDSR Balance Obligation Monthly Payment Amount"/>
+                <rule defaultRule="false" href="node_14/Distinct%20Function.drl" kind="BusinessRule" name="Distinct Function"/>
             </ruleset>
         </extensionElements>
         <variable id="node_14_ii" name="TDSR Balance Obligation Monthly Payment Amount" typeRef="java.lang.Double[]"/>
@@ -266,6 +274,7 @@
                 <input bomType="agull.auto_loan_demo.auto_loan_service.datastructure.Active$InActive" collection="true" name="Active Debt"/>
                 <output bomType="java.lang.Double" collection="true" name="Revolving Trade Monthly Debt Obligation"/>
                 <rule defaultRule="false" href="node_15/Revolving%20Trade%20Monthly%20Debt%20Obligation.dmt" kind="DecisionTable" name="Revolving Trade Monthly Debt Obligation"/>
+                <rule defaultRule="false" href="node_15/Distinct%20Function.drl" kind="BusinessRule" name="Distinct Function"/>
             </ruleset>
         </extensionElements>
         <variable id="node_15_ii" name="Revolving Trade Monthly Debt Obligation" typeRef="java.lang.Double[]"/>

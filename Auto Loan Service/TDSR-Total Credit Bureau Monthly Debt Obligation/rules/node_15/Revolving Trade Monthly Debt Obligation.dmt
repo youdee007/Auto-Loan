@@ -11,17 +11,17 @@
         </Properties>
         <Preconditions>
             <Text><![CDATA[ definitions 
-	set 'aTradeType' to a Trade Type in 'Trade Type' ;
+	set 'aTradeType' to a Trade Type in 'Trade Type' , made distinct ;
     
-	set 'aDebtManualEdits' to a Qualified/Not Qualified in 'Debt Manual Edits Qualified';
+	set 'aDebtManualEdits' to a Qualified/Not Qualified in 'Debt Manual Edits Qualified' , made distinct ;
     
     
-	set  'anActiveDebt' to an Active/InActive  in 'Active Debt' ;
+	set  'anActiveDebt' to an Active/InActive  in 'Active Debt' , made distinct ;
     
     
 	set 'aCustomer' to a Customer  in Customer ;
      
-	set 'aDebt' to a Debt in the Debts of aCustomer ;]]></Text>
+	set 'aDebt' to a Debt in the Debts of aCustomer;]]></Text>
         </Preconditions>
         <Structure>
             <ConditionDefinitions>

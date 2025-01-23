@@ -68,6 +68,7 @@
         <module>Application Credit Risk Tier Service</module>
         <module>Application Pre Bureau Eligibility</module>
         <module>Auto Loan Application Recommended Outcome</module>
+        <module>Auto Loan End To End Service</module>
         <module>Conditional Approval Recommended Outcome</module>
         <module>Credit Bureau Report Functions</module>
         <module>Data Structure</module>
@@ -75,6 +76,8 @@
         <module>Maximum Payment</module>
         <module>Stipulations</module>
         <module>TDSR-Total Credit Bureau Monthly Debt Obligation</module>
+        <module>TDSR-Total Debt Service Ratio</module>
+        <module>Total Monthly Debt Payment Obligation Service</module>
     </modules>
 
     <build>

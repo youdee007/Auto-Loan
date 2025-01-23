@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" rulesetName="operation" targetRuleProjectName="TDSR-Total Debt Service Ratio">
+  <name>TDSR_Total_Debt_Service_Ratio</name>
+  <uuid>04c8fe72-f85e-420c-acf4-efc009a3ebd9</uuid>
+  <decisionModel href="../rules/decisionModel.dmo#bc5e1ad3-a129-4724-a37f-2804073e9f6d"/>
+  <targetRuleProject href="../../TDSR-Total%20Debt%20Service%20Ratio#87ce1e3e-bf6a-4e2d-b997-d35b8d0a3eaa"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>

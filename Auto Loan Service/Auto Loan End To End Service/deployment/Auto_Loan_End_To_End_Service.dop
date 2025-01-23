@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" rulesetName="Auto_Loan_End_To_End_Service" usingRuleflow="true" ruleflowName="Auto Loan Ruleflow" targetRuleProjectName="Auto Loan End To End Service">
+  <name>Auto_Loan_End_To_End_Service</name>
+  <uuid>630e46bf-9dec-44a4-9d48-7ec286c1f596</uuid>
+  <referencedVariables variableName="application" variableSetName="Auto Loan Variable Set">
+    <variableSet href="../rules/Auto%20Loan%20Variable%20Set.var#1f948a1e-e064-47e3-a17b-d8ef4f930898"/>
+  </referencedVariables>
+  <referencedVariables variableName="customer" variableSetName="Auto Loan Variable Set">
+    <variableSet href="../rules/Auto%20Loan%20Variable%20Set.var#1f948a1e-e064-47e3-a17b-d8ef4f930898"/>
+  </referencedVariables>
+  <referencedVariables variableName="ApplicationPreBureauEligibility" variableSetName="Auto Loan Variable Set" direction="OUT">
+    <variableSet href="../rules/Auto%20Loan%20Variable%20Set.var#1f948a1e-e064-47e3-a17b-d8ef4f930898"/>
+  </referencedVariables>
+  <referencedVariables variableName="TotalCreditBureauMonthlyDebtObligation" variableSetName="Auto Loan Variable Set" direction="OUT">
+    <variableSet href="../rules/Auto%20Loan%20Variable%20Set.var#1f948a1e-e064-47e3-a17b-d8ef4f930898"/>
+  </referencedVariables>
+  <ruleflow href="../rules/Auto%20Loan%20Ruleflow.rfl#afefbfa9-b323-456f-950f-17abe48708bb"/>
+  <targetRuleProject href="../../Auto%20Loan%20End%20To%20End%20Service#890910f4-3e49-43bb-9c49-f3879792e435"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>

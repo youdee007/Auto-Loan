@@ -13,9 +13,9 @@
             <Text><![CDATA[definitions 
  
 	set  'aCustomer' to a Customer  in Customer ; 
-	set 'aDebt'  to a Debt in the Debts of aCustomer ;
+	set 'aDebt'  to a Debt in the Debts of aCustomer , made distinct ;
     
-	set 'aDebtManualEditQualified'  to a Qualified/Not Qualified  in 'Debt Manual Edits Qualified' ;
+	set 'aDebtManualEditQualified'  to a Qualified/Not Qualified  in 'Debt Manual Edits Qualified' , made distinct ;
 	]]></Text>
         </Preconditions>
         <Structure>

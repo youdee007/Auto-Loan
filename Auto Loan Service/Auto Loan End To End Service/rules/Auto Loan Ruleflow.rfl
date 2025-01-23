@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.ruleflow:RuleFlow xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.ruleflow="http://ilog.rules.studio/model/ruleflow.ecore">
+  <name>Auto Loan Ruleflow</name>
+  <uuid>afefbfa9-b323-456f-950f-17abe48708bb</uuid>
+  <locale>en_US</locale>
+  <rfModel><Ruleflow xmlns="http://schemas.ilog.com/Rules/7.0/Ruleflow">
+    <Body>
+        <TaskList>
+            <StartTask Identifier="task_0"/>
+            <StopTask Identifier="task_2"/>
+            <FunctionTask Identifier="task_3">
+                <Invocation FunctionIdentifier="agull.auto_loan_demo.auto_loan_service.applicationprebureaueligibility.Application_Pre_Bureau_Eligibility">
+                    <InputBindings>
+                        <Binding Language="bal" Name="application"><![CDATA['the Application' ]]></Binding>
+                        <Binding Language="bal" Name="customer"><![CDATA['the Customer' ]]></Binding>
+                    </InputBindings>
+                    <OutputBindings>
+                        <Binding Language="bal" Name="ApplicationPreBureauEligibility"><![CDATA['application pre bureau eligibility' ]]></Binding>
+                    </OutputBindings>
+                </Invocation>
+            </FunctionTask>
+            <FunctionTask Identifier="task_4">
+                <Invocation FunctionIdentifier="agull.auto_loan_demo.auto_loan_service.tdsr_totalcreditbureaumonthlydebtobligation.TDSR_Total_Credit_Bureau_Monthly_Debt_Obligation">
+                    <InputBindings>
+                        <Binding Language="bal" Name="customer"><![CDATA['the Customer' ]]></Binding>
+                        <Binding Language="bal" Name="application"><![CDATA['the Application' ]]></Binding>
+                    </InputBindings>
+                    <OutputBindings>
+                        <Binding Language="bal" Name="TotalCreditBureauMonthlyDebtObligation"><![CDATA['TDSR total credit bureau monthly debt obligation' ]]></Binding>
+                    </OutputBindings>
+                </Invocation>
+            </FunctionTask>
+        </TaskList>
+        <NodeList>
+            <TaskNode Identifier="node_0" Task="task_0"/>
+            <TaskNode Identifier="node_2" Task="task_2"/>
+            <TaskNode Identifier="node_3" Task="task_3"/>
+            <TaskNode Identifier="node_4" Task="task_4"/>
+        </NodeList>
+        <TransitionList>
+            <Transition Identifier="transition_0" Source="node_0" Target="node_3"/>
+            <Transition Identifier="transition_2" Source="node_3" Target="node_4"/>
+            <Transition Identifier="transition_3" Source="node_4" Target="node_2"/>
+        </TransitionList>
+    </Body>
+    <Resources>
+        <ResourceSet Locale="en_US">
+            <Data Name="node_3#label"><![CDATA[Application PreBureau Eligibility]]></Data>
+            <Data Name="node_0#name"><![CDATA[Start node]]></Data>
+            <Data Name="node_4#label"><![CDATA[Total Credit Bureau Monthly Debt Obligation]]></Data>
+            <Data Name="node_2#name"><![CDATA[End node]]></Data>
+            <Data Name="node_4#name"><![CDATA[Total Credit Bureau Monthly Debt Obligation]]></Data>
+            <Data Name="node_3#name"><![CDATA[Application PreBureau Eligibility]]></Data>
+        </ResourceSet>
+    </Resources>
+</Ruleflow>
+</rfModel>
+</ilog.rules.studio.model.ruleflow:RuleFlow>

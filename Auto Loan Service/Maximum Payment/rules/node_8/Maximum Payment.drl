@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Maximum Payment</name>
+  <uuid>7c866823-9b06-4fdd-ad3e-4f1aaac0d9ba</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[set decision to the minimum of {'Conditional approval Total Debt Service Ratio Maximum Payment', 'Conditional Approval Payment to Income Maximum Payment', 'External Credit Score Maximum Payment'};]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

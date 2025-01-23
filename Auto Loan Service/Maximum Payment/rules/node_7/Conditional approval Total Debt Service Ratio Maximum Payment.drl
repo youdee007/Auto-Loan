@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Conditional approval Total Debt Service Ratio Maximum Payment</name>
+  <uuid>ff18d0a8-5066-4a6b-a118-a3571f0c0eff</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[ set decision to ('Credit Risk Tier Maximum Total Debt Service Ratio' * the tdsIncome of Application) - the total monthly debt payment obligation service computed from 
+	Customer being Customer , 
+	Application being Application ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
-  <name>Conditional Approval Payment to Income Maximum Payment</name>
-  <uuid>6559ed0a-cc80-4c43-9211-4385c43cc4ee</uuid>
+  <name>output-default-setting</name>
+  <uuid>66a72353-4096-43d3-b563-3ae65db7ac8b</uuid>
   <locale>en_US</locale>
-  <definition><![CDATA[set decision to 'Credit Risk Tier Maximum Payment to Income Ratio' * the tdsIncome of Application ;]]></definition>
+  <definition><![CDATA[add 0 to decision ;]]></definition>
 </ilog.rules.studio.model.brl:ActionRule>

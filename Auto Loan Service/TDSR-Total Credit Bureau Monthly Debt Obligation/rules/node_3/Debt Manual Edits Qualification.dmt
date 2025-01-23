@@ -13,7 +13,7 @@
             <Text><![CDATA[definitions 
 
 	set  'aCustomer' to a Customer in Customer ;
-    set 'aDebt'  to  a Debt in the Debts of aCustomer ; ]]></Text>
+    set 'aDebt'  to  a Debt in the Debts of aCustomer ;]]></Text>
         </Preconditions>
         <Structure>
             <ConditionDefinitions>

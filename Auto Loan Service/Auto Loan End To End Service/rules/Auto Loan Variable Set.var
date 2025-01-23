@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.base:VariableSet xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore" language="ARL">
+  <name>Auto Loan Variable Set</name>
+  <uuid>1f948a1e-e064-47e3-a17b-d8ef4f930898</uuid>
+  <variables name="application" type="agull.auto_loan_demo.auto_loan_service.datastructure.Application" initialValue="" verbalization="the Application" jsonName=""/>
+  <variables name="customer" type="java.util.List&lt;agull.auto_loan_demo.auto_loan_service.datastructure.Customer>" initialValue="" verbalization="the Customer" jsonName=""/>
+  <variables name="ApplicationPreBureauEligibility" type="agull.auto_loan_demo.auto_loan_service.datastructure.Eligible$NotEligible" initialValue="" verbalization="the Application Pre Bureau Eligibility" jsonName=""/>
+  <variables name="TotalCreditBureauMonthlyDebtObligation" type="double" initialValue="" verbalization="the TotalCreditBureauMonthlyDebtObligation" jsonName=""/>
+</ilog.rules.studio.model.base:VariableSet>

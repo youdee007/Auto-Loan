@@ -16,9 +16,9 @@
      
 	set 'aDebt' to a Debt  in the Debts of aCustomer ;
      
-	set 'aBankruptcyInsolvencyIndicator' to an Insolvency in 'Bankruptcy Insolvency Indicator' ;
+	set 'aBankruptcyInsolvencyIndicator' to an Insolvency in 'Bankruptcy Insolvency Indicator' , made distinct ;
     
-	set 'aDebtManualEditsQualification' to a Qualified/Not Qualified in 'Debt Manual Edits Qualified' ;]]></Text>
+	set 'aDebtManualEditsQualification' to a Qualified/Not Qualified in 'Debt Manual Edits Qualified' , made distinct ;]]></Text>
         </Preconditions>
         <Structure>
             <ConditionDefinitions>

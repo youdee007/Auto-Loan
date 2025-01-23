@@ -12,26 +12,26 @@
         <Preconditions>
             <Text><![CDATA[ definitions 
  
-	set 'aTradeType' to a Trade Type  in 'Trade Type' ; 
+	set 'aTradeType' to a Trade Type  in 'Trade Type' , made distinct ; 
     
-	set 'aDebtManualEditsQualified' to a Qualified/Not Qualified in 'Debt Manual Edits Qualified' ;
+	set 'aDebtManualEditsQualified' to a Qualified/Not Qualified in 'Debt Manual Edits Qualified' , made distinct ;
      
 	set 'aCustomer'  to a Customer  in Customer ;
      
 	set 'aDebt' to a Debt  in the Debts of aCustomer ;
      
-	set 'anInstallmentDebtMonthly'  to a number  in 'Installment Debt Monthly Payments Remaining from Balance Amount' ;
+	set 'anInstallmentDebtMonthly'  to a number  in 'Installment Debt Monthly Payments Remaining from Balance Amount'  , made distinct ;
     
     
-	set 'anActiveDebt' to an Active/InActive in 'Active Debt' ;
+	set 'anActiveDebt' to an Active/InActive in 'Active Debt'  , made distinct ;
     
-	set 'anExistingLoan' to a Required/Not Required in 'Existing Loan To Be Paid In Full Stipulation Required' ;
+	set 'anExistingLoan' to a Required/Not Required in 'Existing Loan To Be Paid In Full Stipulation Required'  , made distinct ;
     
-    set 'aSubjectToTrade' to a Required/Not Required in 'Subject To Trade In Stipulation Required' ;
+    set 'aSubjectToTrade' to a Required/Not Required in 'Subject To Trade In Stipulation Required'  , made distinct ;
     
-	set 'aTradeEquivalentMonthly' to a number  in 'Trade Equivalent Monthly Payment Amount' ;
+	set 'aTradeEquivalentMonthly' to a number  in 'Trade Equivalent Monthly Payment Amount'  , made distinct ;
      
-	set 'aTDSRTradeObligation' to a number in 'TDSR Trade Obligation Factor' ;]]></Text>
+	set 'aTDSRTradeObligation' to a number in 'TDSR Trade Obligation Factor' , made distinct ;]]></Text>
         </Preconditions>
         <Structure>
             <ConditionDefinitions>
@@ -782,19 +782,6 @@
                             </Partition>
                         </Condition>
                     </Partition>
-                </Condition>
-                <Condition>
-                    <Expression>
-                        <Text><![CDATA[<an object> is not one of <objects>]]></Text>
-                        <Param><![CDATA[{ Installment Debt , Student Loan }]]></Param>
-                    </Expression>
-                    <ActionSet>
-                        <Action DefId="A0">
-                            <Expression>
-                                <Param><![CDATA[0]]></Param>
-                            </Expression>
-                        </Action>
-                    </ActionSet>
                 </Condition>
             </Partition>
         </Contents>

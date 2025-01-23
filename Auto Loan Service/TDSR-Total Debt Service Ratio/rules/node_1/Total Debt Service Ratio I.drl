@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Total Debt Service Ratio I</name>
+  <uuid>010b136b-73e1-45f8-b592-4eb62a894ca0</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[if
+	the tdsIncome of Application is more than 0
+	and the worksheetTotalMthPay of Application is more than 0 
+then
+	set decision to ((the worksheetTotalMthPay of Application + the total monthly debt payment obligation service computed from 
+	Customer being Customer , 
+	Application being Application) / the tdsIncome of Application) * 100 ; ]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

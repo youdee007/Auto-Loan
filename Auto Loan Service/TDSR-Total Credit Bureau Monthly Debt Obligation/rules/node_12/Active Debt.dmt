@@ -13,10 +13,10 @@
             <Text><![CDATA[definitions 
 
 	set 'aCustomer' to a Customer  in Customer ; 
-	set 'aDebt' to a Debt in the Debts of aCustomer ; 
+	set 'aDebt' to a Debt in the Debts of aCustomer , made distinct ; 
     
     
-	set 'aMonthsSinceTradeDateReported' to a number in 'Months Since Trade Date Reported' ;
+	set 'aMonthsSinceTradeDateReported' to a number in 'Months Since Trade Date Reported' , made distinct ;
     
     ]]></Text>
         </Preconditions>

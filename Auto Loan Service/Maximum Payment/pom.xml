@@ -43,7 +43,7 @@
         </dependency>
         <dependency>
             <groupId>agull.auto_loan_demo.auto_loan_service</groupId>
-            <artifactId>TDSR-TotalCreditBureauMonthlyDebtObligation</artifactId>
+            <artifactId>totalMonthlyDebtPaymentObligationService</artifactId>
             <version>LATEST-SNAPSHOT</version>
         </dependency>
         <dependency>

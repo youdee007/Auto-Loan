@@ -14,5 +14,5 @@
 
 
 else 
-	add ((variable1 * the tradePmtAmt of the TransUnion Report of the Credit Bureau Report of aCustomer )/12) to decision ; ]]></definition>
+	add (variable1 * the tradePmtAmt of the TransUnion Report of the Credit Bureau Report of aCustomer )/12 to decision; ]]></definition>
 </ilog.rules.studio.model.brl:ActionRule>

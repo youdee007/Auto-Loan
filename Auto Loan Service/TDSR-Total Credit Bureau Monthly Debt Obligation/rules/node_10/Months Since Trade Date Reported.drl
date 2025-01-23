@@ -5,7 +5,7 @@
   <locale>en_US</locale>
   <definition><![CDATA[definitions 
 	set 'aCustomer' to a Customer in Customer ; 
-	set 'aDebt' to a Debt in the Debts of aCustomer ; 
+	set 'aDebt' to a Debt in the Debts of aCustomer , made distinct ; 
     
 	set 'variable1' to the number of years between the createdOn of Application and the dateReported of aDebt;  
     then 

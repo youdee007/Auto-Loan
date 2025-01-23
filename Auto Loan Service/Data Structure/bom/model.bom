@@ -915,6 +915,133 @@ class Debt
                 #dataio.default;
 }
 
+class DecisionOutputs
+        property ads.typeId "32"
+        property com.fasterxml.jackson.annotation.JsonTypeName "DecisionOutputs"
+        #de.generated
+{
+    agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReportFunctions applicantBankruptcyIndicator
+                property ads.attributeId "15"
+                property com.fasterxml.jackson.annotation.JsonProperty "ApplicantBankruptcyIndicator"
+                #update;
+    agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReportFunctions applicantCollectionsIndicator
+                property ads.attributeId "14"
+                property com.fasterxml.jackson.annotation.JsonProperty "ApplicantCollectionsIndicator"
+                #update;
+    agull.auto_loan_demo.auto_loan_service.datastructure.ApplicantLevelStipulations applicantLevelStipulations
+                property ads.attributeId "12"
+                property com.fasterxml.jackson.annotation.JsonProperty "ApplicantLevelStipulations"
+                #update;
+    agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReportFunctions applicantRepossessionsIndicator
+                property ads.attributeId "13"
+                property com.fasterxml.jackson.annotation.JsonProperty "ApplicantRepossessionsIndicator"
+                #update;
+    agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline applicationCreditHistoryRecommendedOutcome
+                property ads.attributeId "1"
+                property com.fasterxml.jackson.annotation.JsonProperty "ApplicationCreditHistoryRecommendedOutcome"
+                #update;
+    agull.auto_loan_demo.auto_loan_service.datastructure.Tier applicationCreditRiskTier
+                property ads.attributeId "2"
+                property com.fasterxml.jackson.annotation.JsonProperty "ApplicationCreditRiskTier"
+                #update;
+    agull.auto_loan_demo.auto_loan_service.datastructure.ApplicationLevelStipulaton applicationLevelStipulaton
+                property ads.attributeId "11"
+                property com.fasterxml.jackson.annotation.JsonProperty "ApplicationLevelStipulaton"
+                #update;
+    agull.auto_loan_demo.auto_loan_service.datastructure.Eligible$NotEligible applicationPreBureauEligibility
+                property ads.attributeId "3"
+                property com.fasterxml.jackson.annotation.JsonProperty "ApplicationPreBureauEligibility"
+                #update;
+    java.util.List assetLevelStipulations domain 0,* class agull.auto_loan_demo.auto_loan_service.datastructure.Stipulations
+                property ads.attributeId "9"
+                property com.fasterxml.jackson.annotation.JsonProperty "AssetLevelStipulations"
+                #update;
+    agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline autoLoanApplicationRecommendedOutcome
+                property ads.attributeId "4"
+                property com.fasterxml.jackson.annotation.JsonProperty "AutoLoanApplicationRecommendedOutcome"
+                #update;
+    agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline conditionalApprovalRecommendedOutcome
+                property ads.attributeId "5"
+                property com.fasterxml.jackson.annotation.JsonProperty "ConditionalApprovalRecommendedOutcome"
+                #update;
+    agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReportFunctions creditBureauReportFunctionses
+                property ads.attributeId "6"
+                property com.fasterxml.jackson.annotation.JsonProperty "CreditBureauReportFunctionses"
+                #update;
+    java.util.List debtLevelStipulationses domain 0,* class agull.auto_loan_demo.auto_loan_service.datastructure.Stipulations
+                property ads.attributeId "10"
+                property com.fasterxml.jackson.annotation.JsonProperty "DebtLevelStipulationses"
+                #update;
+    agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline loanAffordabilityRecommendedOutcome
+                property ads.attributeId "7"
+                property com.fasterxml.jackson.annotation.JsonProperty "LoanAffordabilityRecommendedOutcome"
+                #update;
+    double maximumPayment
+                property ads.attributeId "8"
+                property com.fasterxml.jackson.annotation.JsonProperty "MaximumPayment"
+                #update;
+    double totalCreditBureauMonthlyDebtObligation
+                property ads.attributeId "16"
+                property com.fasterxml.jackson.annotation.JsonProperty "TotalCreditBureauMonthlyDebtObligation"
+                #update;
+    double totalDebtServiceRatio
+                property ads.attributeId "17"
+                property com.fasterxml.jackson.annotation.JsonProperty "TotalDebtServiceRatio"
+                #update;
+    double totalMonthlyDebtPaymentObligation
+                property ads.attributeId "18"
+                property com.fasterxml.jackson.annotation.JsonProperty "TotalMonthlyDebtPaymentObligation"
+                #update;
+    DecisionOutputs(agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReportFunctions applicantBankruptcyIndicator, 
+        agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReportFunctions applicantCollectionsIndicator, 
+        agull.auto_loan_demo.auto_loan_service.datastructure.ApplicantLevelStipulations applicantLevelStipulations, 
+        agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReportFunctions applicantRepossessionsIndicator, 
+        agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline applicationCreditHistoryRecommendedOutcome, 
+        agull.auto_loan_demo.auto_loan_service.datastructure.Tier applicationCreditRiskTier, 
+        agull.auto_loan_demo.auto_loan_service.datastructure.ApplicationLevelStipulaton applicationLevelStipulaton, 
+        agull.auto_loan_demo.auto_loan_service.datastructure.Eligible$NotEligible applicationPreBureauEligibility, 
+        java.util.List assetLevelStipulations domain 0,* class agull.auto_loan_demo.auto_loan_service.datastructure.Stipulations, 
+        agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline autoLoanApplicationRecommendedOutcome, 
+        agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline conditionalApprovalRecommendedOutcome, 
+        agull.auto_loan_demo.auto_loan_service.datastructure.CreditBureauReportFunctions creditBureauReportFunctionses, 
+        java.util.List debtLevelStipulationses domain 0,* class agull.auto_loan_demo.auto_loan_service.datastructure.Stipulations, 
+        agull.auto_loan_demo.auto_loan_service.datastructure.AutoApprove$ManualReview$AutoDecline loanAffordabilityRecommendedOutcome, 
+        double maximumPayment, 
+        double totalCreditBureauMonthlyDebtObligation, 
+        double totalDebtServiceRatio, 
+        double totalMonthlyDebtPaymentObligation)
+                #autoExpand
+                #beanConstructor
+                property groups "BALA"
+                #prototype;
+    DecisionOutputs()
+                #dataio.default;
+    void addTo_assetLevelStipulations(agull.auto_loan_demo.auto_loan_service.datastructure.Stipulations assetLevelStipulations)
+                property collectionAttribute "assetLevelStipulations"
+                #update;
+    void addTo_debtLevelStipulationses(agull.auto_loan_demo.auto_loan_service.datastructure.Stipulations debtLevelStipulationses)
+                property collectionAttribute "debtLevelStipulationses"
+                #update;
+    void clear_assetLevelStipulations()
+                property collectionAttribute "assetLevelStipulations"
+                #update;
+    void clear_debtLevelStipulationses()
+                property collectionAttribute "debtLevelStipulationses"
+                #update;
+    void removeFrom_assetLevelStipulations(agull.auto_loan_demo.auto_loan_service.datastructure.Stipulations assetLevelStipulations)
+                property collectionAttribute "assetLevelStipulations"
+                #update;
+    void removeFrom_debtLevelStipulationses(agull.auto_loan_demo.auto_loan_service.datastructure.Stipulations debtLevelStipulationses)
+                property collectionAttribute "debtLevelStipulationses"
+                #update;
+    void set_assetLevelStipulations(java.util.Collection assetLevelStipulations domain 0,* class agull.auto_loan_demo.auto_loan_service.datastructure.Stipulations)
+                property collectionAttribute "assetLevelStipulations"
+                #update;
+    void set_debtLevelStipulationses(java.util.Collection debtLevelStipulationses domain 0,* class agull.auto_loan_demo.auto_loan_service.datastructure.Stipulations)
+                property collectionAttribute "debtLevelStipulationses"
+                #update;
+}
+
 class Eligible$NotEligible
         extends java.lang.Enum
         property ads.typeId "12"

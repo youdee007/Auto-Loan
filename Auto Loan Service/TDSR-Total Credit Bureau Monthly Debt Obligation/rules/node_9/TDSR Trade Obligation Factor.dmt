@@ -12,7 +12,7 @@
         <Preconditions>
             <Text><![CDATA[definitions 
  
-	set 'aTradeType' to a Trade Type  in 'Trade Type' ;]]></Text>
+	set 'aTradeType' to a Trade Type  in 'Trade Type' , made distinct ;]]></Text>
         </Preconditions>
         <Structure>
             <ConditionDefinitions>
